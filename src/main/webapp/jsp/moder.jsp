@@ -9,9 +9,7 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <!--Import materialize.css-->
         <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-        <!-- Compiled and minified CSS -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Conference</title>
     </head>
     <body>
@@ -26,23 +24,39 @@
         <br>
         <div class="row">
             <div class="col s5 offset-s1">
-                <h5>All reports:</h5>
-                <ul class="collection">
-                    <c:forEach items="${list}" var="i" >
-                        <li class="collection-item avatar">
-                            <i class="material-icons circle">event_available</i>
-                            <span class="title"><c:out value="${i.getTopic()}" /></span>
-                            <p>Place: <c:out value="${i.getPlace()}" /><br>
-                                <fmt:formatDate value="${i.getCalendar().getTime()}" type="both" timeStyle = "short"/>
-                            </p>
-                            <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-                        </li>
-                    </c:forEach>
-                </ul>
+                <div>
+                    <h5>All reports:</h5>
+                    <ul class="collection">
+                        <c:forEach items="${list}" var="i" >
+                            <li class="collection-item avatar">
+                                <i class="material-icons circle">event_available</i>
+                                <span class="title"><c:out value="${i.getTopic()}" /></span>
+                                <p>Place: <c:out value="${i.getPlace()}" /><br>
+                                    <fmt:formatDate value="${i.getCalendar().getTime()}" type="both" timeStyle = "short"/>
+                                </p>
+                                <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+                            </li>
+                        </c:forEach>
+                    </ul>
+                </div>
+                <div>
+                    <form name="loginForm" method="POST" action="controller">
+                        <input type="hidden" name="command" value="eventchange"/>
+                        <select class="browser-default" name="idevent" required>
+                            <option value="" disabled selected>Choose report</option>
+                            <c:forEach items="${eventlist}" var="el" >
+                                <option value="${el.getId()}"><c:out value="${el.getTopic()}" /></option>
+                            </c:forEach>
+                        </select><br>
+                        <br>
+                        <button class="btn waves-effect waves-light btn-large" type="submit" name="action">Change event
+                            <i class="material-icons right">content_paste</i>
+                        </button>
+                    </form>
+                </div>
             </div>
             <br>
             <div class="col s4 offset-s1">
-                <br>
                 <div class="card">
                     <div class="card-content">
                         <h4><c:out value="${event.getTopic()}" /></h4>
@@ -61,7 +75,7 @@
                         <div>
                             <form name="loginForm" method="POST" action="controller">
                                 <input type="hidden" name="command" value="update"/>
-                                <input type="hidden" name="id" value="1"/>
+                                <input type="hidden" name="id" value="${event.getId()}"/>
                                 <input type="hidden" name="topic" value="${event.getTopic()}"/>
                                 Place:<br/>
                                 <input type="text" name="place" value="" required>
@@ -85,7 +99,7 @@
                         <div>
                             <form name="loginForm" method="POST" action="controller">
                                 <input type="hidden" name="command" value="updatereport"/>
-                                <input type="hidden" name="idevent" value="1"/>
+                                <input type="hidden" name="idevent" value="${event.getId()}"/>
                                 <select class="browser-default" name="idreport" required>
                                     <option value="" disabled selected>Choose report</option>
                                     <c:forEach items="${list}" var="rp" >
@@ -107,7 +121,7 @@
                                     </c:forEach>
                                 </select>
                                 <br>
-                                <button class="btn waves-effect waves-light btn-large" type="submit" name="action">Update
+                                <button class="btn waves-effect waves-light" type="submit" name="action">Update
                                     <i class="material-icons left">update</i>
                                 </button>
                             </form>
@@ -121,7 +135,6 @@
                         <div class="collapsible-body">
                         <span>
                             <div>
-                                <h5>Propose topic for speaker:</h5>
                                 <form name="editEventForm" method="POST" action="controller">
                                     <input type="hidden" name="command" value="proptopicforspeaker"/>
                                     <i class="material-icons prefix">mode_edit</i>
@@ -136,7 +149,7 @@
                                         </c:forEach>
                                     </select>
                                     <br/>
-                                    <button class="btn waves-effect waves-light btn-large" type="submit" name="action">Send topic
+                                    <button class="btn waves-effect waves-light" type="submit" name="action">Send topic
                                     <i class="material-icons right">send</i>
                                     </button>
                                 </form>
@@ -158,6 +171,18 @@
                             </div>
                         </span>
                         </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">subject</i>Registration statistic</div>
+                            <div class="collapsible-body">
+                            <span>
+                                <div>
+                                    <h5>Registrations: <c:out value="${registrstat}" /> <i class="material-icons">person</i></h5>
+                                    <br>
+                                    <h5>Visitors: 10    <i class="material-icons">person</i></h5>
+                                </div>
+                            </span>
+                            </div>
                         </li>
                       </ul>
                 </div>
@@ -196,35 +221,8 @@
                 </div>
             </div>
         </footer>
-        <!--Import jQuery before materialize.js-->
-        <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-        <script>
-            $('.datepicker').pickadate({
-                selectMonths: true, // Creates a dropdown to control month
-                selectYears: 15, // Creates a dropdown of 15 years to control year,
-                format: 'yyyy-mm-dd',
-                today: 'Today',
-                clear: 'Clear',
-                close: 'Ok',
-                closeOnSelect: false // Close upon selecting a date,
-              });
-
-            $('.timepicker').pickatime({
-                default: 'now', // Set default time: 'now', '1:30AM', '16:30'
-                fromnow: 0,       // set default time to * milliseconds from now (using with default = 'now')
-                twelvehour: false, // Use AM/PM or 24-hour format
-                donetext: 'OK', // text for done-button
-                cleartext: 'Clear', // text for clear-button
-                canceltext: 'Cancel', // Text for cancel-button
-                autoclose: false, // automatic close timepicker
-                ampmclickable: true, // make AM PM clickable
-                aftershow: function(){} //Function for after opening timepicker
-              });
-
-            $(document).ready(function(){
-                $('.collapsible').collapsible();
-              });
-        </script>
+        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+        <script type="text/javascript" src="js/moder.js"></script>
     </body>
 </html>

@@ -1,9 +1,11 @@
 package com.conference.service;
 
 import com.conference.persistence.dao.MySqlDaoFactory;
+import com.conference.persistence.dao.PersistException;
 import com.conference.persistence.entity.Report;
 import com.conference.persistence.idao.IFactory;
 import com.conference.persistence.idao.IGeneric;
+import com.sun.org.apache.regexp.internal.RE;
 import org.apache.log4j.Logger;
 
 import java.sql.Connection;
@@ -42,6 +44,17 @@ public class ReportService {
         try (Connection connection = (Connection) factory.getContext()) {
             IGeneric reportDao = factory.getDao(connection, Report.class);
             result = (Report) reportDao.getByPK(id);
+        } catch (Exception e) {
+            LOG.error("Exception: ", e);
+        }
+        return result;
+    }
+
+    public static List<Report> getReportsByParam(String param, String value)  throws PersistException {
+        List<Report> result = null;
+        try (Connection connection = (Connection) factory.getContext()) {
+            IGeneric dao = factory.getDao(connection, Report.class);
+            result = dao.getAllByParam(param, value);
         } catch (Exception e) {
             LOG.error("Exception: ", e);
         }

@@ -7,6 +7,8 @@ import com.conference.persistence.idao.IGeneric;
 import org.apache.log4j.Logger;
 
 import java.sql.Connection;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by gleb on 27.12.17.
@@ -24,5 +26,16 @@ public class RegistrationService {
             LOG.error("Exception: ", e);
         }
         return result;
+    }
+
+    public static int getRegistrationsCount() {
+        List<Registration> result = new ArrayList<>();
+        try (Connection connection = (Connection) factory.getContext()) {
+            IGeneric registrationDao = factory.getDao(connection, Registration.class);
+            result = registrationDao.getAll();
+        } catch (Exception e) {
+            LOG.error("Exception: ", e);
+        }
+        return result.size();
     }
 }

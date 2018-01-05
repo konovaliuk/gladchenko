@@ -35,19 +35,24 @@ public class LoginCommand implements ICommand {
             page = ConfigProperties.getInstance().ADMIN_PAGE_PATH;
         } else if (LoginService.checkLogin(login, pass) && LoginService.checkRole(login, 2)) {
             HttpSession session = request.getSession(true);
-            session.setAttribute("list", ReportService.getAllReport());
+            session.setAttribute("list", ReportService.getReportsByParam("id_event", "1"));
             session.setAttribute("event", EventService.getEventById(1L));
             session.setAttribute("speakers", UserService.getUsersByParam("id_role", "3"));
             session.setAttribute("moderid",  LoginService.getUserId(login));
             session.setAttribute("conftopic", TopicService.getTopicsByParam("status", "confirmed"));
+            session.setAttribute("registrstat", RegistrationService.getRegistrationsCount());
+            session.setAttribute("role", UserService.getUserRole(login));
+            session.setAttribute("eventlist", EventService.getAllEvent());
             //определение пути к moder.jsp
             page = ConfigProperties.getInstance().MODER_PAGE_PATH;
         } else if (LoginService.checkLogin(login, pass) && LoginService.checkRole(login, 3)) {
             HttpSession session = request.getSession(true);
-            session.setAttribute("list", ReportService.getAllReport());
+            session.setAttribute("list", ReportService.getReportsByParam("id_event", "1"));
             session.setAttribute("event", EventService.getEventById(1L));
             session.setAttribute("salary", SalaryService.getSalary(LoginService.getUserId(login)));
             session.setAttribute("userid",  LoginService.getUserId(login));
+            session.setAttribute("role", UserService.getUserRole(login));
+            session.setAttribute("eventlist", EventService.getAllEvent());
             session.setAttribute("newtopic", TopicService.getNewTopicsByParam("id_speaker",
                                                         String.valueOf(LoginService.getUserId(login))));
             //определение пути к speaker.jsp
@@ -56,11 +61,13 @@ public class LoginCommand implements ICommand {
             HttpSession session = request.getSession(true);
             session.setAttribute("event", EventService.getEventById(1L));
             session.setAttribute("userid",  LoginService.getUserId(login));
-            session.setAttribute("list", ReportService.getAllReport());
+            session.setAttribute("list", ReportService.getReportsByParam("id_event", "1"));
+            session.setAttribute("role", UserService.getUserRole(login));
+            session.setAttribute("eventlist", EventService.getAllEvent());
             //определение пути к user.jsp
             page = ConfigProperties.getInstance().USER_PAGE_PATH;
         } else {
-            request.setAttribute("errorMessage",
+            request.setAttribute("errormessage",
                     MessageProperties.getInstance().LOGIN_ERROR_MESSAGE);
             page = ConfigProperties.getInstance().ERROR_PAGE_PATH;
         }

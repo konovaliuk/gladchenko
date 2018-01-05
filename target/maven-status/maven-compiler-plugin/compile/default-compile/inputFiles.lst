@@ -6,6 +6,8 @@
 /home/gleb/IdeaProjects/ConferenceManagement/src/main/java/com/conference/persistence/dao/RegistrationDao.java
 /home/gleb/IdeaProjects/ConferenceManagement/src/main/java/com/conference/web/comands/UpdateReportCommand.java
 /home/gleb/IdeaProjects/ConferenceManagement/src/main/java/com/conference/web/ControllerHelper.java
+/home/gleb/IdeaProjects/ConferenceManagement/src/main/java/com/conference/web/comands/ChangeEventCommand.java
+/home/gleb/IdeaProjects/ConferenceManagement/src/main/java/com/conference/web/comands/BackToModerPageCommand.java
 /home/gleb/IdeaProjects/ConferenceManagement/src/main/java/com/conference/service/RegistrationService.java
 /home/gleb/IdeaProjects/ConferenceManagement/src/main/java/com/conference/persistence/dao/SalaryDao.java
 /home/gleb/IdeaProjects/ConferenceManagement/src/main/java/com/conference/persistence/idao/Identified.java
@@ -29,6 +31,7 @@
 /home/gleb/IdeaProjects/ConferenceManagement/src/main/java/com/conference/persistence/dao/ReportDao.java
 /home/gleb/IdeaProjects/ConferenceManagement/src/main/java/com/conference/web/Controller.java
 /home/gleb/IdeaProjects/ConferenceManagement/src/main/java/com/conference/persistence/entity/Salary.java
+/home/gleb/IdeaProjects/ConferenceManagement/src/main/java/com/conference/web/comands/ProposeTopicForModerCommand.java
 /home/gleb/IdeaProjects/ConferenceManagement/src/main/java/com/conference/persistence/entity/Report.java
 /home/gleb/IdeaProjects/ConferenceManagement/src/main/java/com/conference/persistence/entity/Topic.java
 /home/gleb/IdeaProjects/ConferenceManagement/src/main/java/com/conference/persistence/entity/Registration.java

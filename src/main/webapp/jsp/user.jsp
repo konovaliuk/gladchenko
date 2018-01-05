@@ -9,10 +9,7 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <!--Import materialize.css-->
         <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-        <!-- Compiled and minified CSS -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-
-        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Conference</title>
     </head>
     <body>
@@ -32,22 +29,38 @@
         <br>
         <div class="row">
             <div class="col s5 offset-s1">
-                <h5>All reports:</h5>
-                <br>
-                <ul class="collection">
-                    <c:forEach items="${list}" var="i" >
-                        <li class="collection-item avatar">
-                            <i class="material-icons circle">event_available</i>
-                            <span class="title"><c:out value="${i.getTopic()}" /></span>
-                            <p>Place: <c:out value="${i.getPlace()}" /><br>
-                                <fmt:formatDate value="${i.getCalendar().getTime()}" type="time" timeStyle = "short"/>
-                            </p>
-                            <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-                        </li>
-                    </c:forEach>
-                </ul>
-                <br>
-
+                <div>
+                    <h5>All reports:</h5>
+                    <br>
+                    <ul class="collection">
+                        <c:forEach items="${list}" var="i" >
+                            <li class="collection-item avatar">
+                                <i class="material-icons circle">event_available</i>
+                                <span class="title"><c:out value="${i.getTopic()}" /></span>
+                                <p>Place: <c:out value="${i.getPlace()}" /><br>
+                                    <fmt:formatDate value="${i.getCalendar().getTime()}" type="time" timeStyle = "short"/>
+                                </p>
+                                <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+                            </li>
+                        </c:forEach>
+                    </ul>
+                    <br>
+                </div>
+                <div>
+                    <form name="loginForm" method="POST" action="controller">
+                        <input type="hidden" name="command" value="eventchange"/>
+                        <select class="browser-default" name="idevent" required>
+                            <option value="" disabled selected>Choose report</option>
+                            <c:forEach items="${eventlist}" var="el" >
+                                <option value="${el.getId()}"><c:out value="${el.getTopic()}" /></option>
+                            </c:forEach>
+                        </select><br>
+                        <br>
+                        <button class="btn waves-effect waves-light btn-large" type="submit" name="action">Change event
+                            <i class="material-icons right">content_paste</i>
+                        </button>
+                    </form>
+                </div>
             </div>
             <div class="col s4 offset-s1">
                 <div class="card">
@@ -65,7 +78,7 @@
                 <form name="loginForm" method="POST" action="controller">
                     <input type="hidden" name="command" value="reportregistr"/>
                     <input type="hidden" name="userid" value="${userid}"/>
-                    <input type="hidden" name="eventid" value="1"/>
+                    <input type="hidden" name="eventid" value="${event.getId()}"/>
                     <select class="browser-default" name="reportid" required>
                         <option value="" disabled selected>Choose report</option>
                         <c:forEach items="${list}" var="rp" >

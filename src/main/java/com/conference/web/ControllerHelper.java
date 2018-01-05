@@ -20,6 +20,9 @@ public class ControllerHelper {
         commands.put("reportregistr", new RegistrationCommand());
         commands.put("proptopicforspeaker", new ProposeTopicForSpeakerCommand());
         commands.put("conftopic", new ConfirmTopicCommand());
+        commands.put("proptopicformoder", new ProposeTopicForModerCommand());
+        commands.put("backtomoder", new BackToModerPageCommand());
+        commands.put("eventchange", new ChangeEventCommand());
     }
 
     /**

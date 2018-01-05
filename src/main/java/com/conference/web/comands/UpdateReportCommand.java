@@ -27,11 +27,12 @@ public class UpdateReportCommand implements ICommand {
         report.setPlace(request.getParameter("placereport"));
         report.setCalendar(dateTimeToCalendar(request.getParameter("datereport"),
                                             request.getParameter("timereport")));
-        report.setIdEvent(Long.parseLong(request.getParameter("idevent")));
+        long eventId = Long.parseLong(request.getParameter("idevent"));
+        report.setIdEvent(eventId);
         report.setIdSpeaker(Long.parseLong(request.getParameter("idspeaker")));
         ReportService.updateReport(report);
         HttpSession session = request.getSession(true);
-        session.setAttribute("list", ReportService.getAllReport());
+        session.setAttribute("list", ReportService.getReportsByParam("id_event", String.valueOf(eventId)));
         page = ConfigProperties.getInstance().MODER_PAGE_PATH;
         return page;
     }

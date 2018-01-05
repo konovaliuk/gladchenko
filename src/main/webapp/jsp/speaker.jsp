@@ -9,9 +9,7 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <!--Import materialize.css-->
         <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-        <!-- Compiled and minified CSS -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Conference</title>
     </head>
     <body>
@@ -24,77 +22,117 @@
             </div>
         </nav>
         <br>
-        <br>
         <div class="row">
+            <div class="col s5 offset-s1">
+                <div>
+                    <h5>All reports:</h5>
+                    <ul class="collection">
+                        <c:forEach items="${list}" var="i" >
+                            <li class="collection-item avatar">
+                                <i class="material-icons circle">event_available</i>
+                                <span class="title"><c:out value="${i.getTopic()}" /></span>
+                                <p>Place: <c:out value="${i.getPlace()}" /><br>
+                                    <fmt:formatDate value="${i.getCalendar().getTime()}" type="both" timeStyle = "short"/>
+                                </p>
+                                <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+                            </li>
+                        </c:forEach>
+                    </ul>
+                </div>
+                <div>
+                    <form name="loginForm" method="POST" action="controller">
+                        <input type="hidden" name="command" value="eventchange"/>
+                        <select class="browser-default" name="idevent" required>
+                            <option value="" disabled selected>Choose report</option>
+                            <c:forEach items="${eventlist}" var="el" >
+                                <option value="${el.getId()}"><c:out value="${el.getTopic()}" /></option>
+                            </c:forEach>
+                        </select><br>
+                        <br>
+                        <button class="btn waves-effect waves-light btn-large" type="submit" name="action">Change event
+                            <i class="material-icons right">content_paste</i>
+                        </button>
+                    </form>
+                </div>
+            </div>
             <div class="col s4 offset-s1">
                 <div class="card">
                     <div class="card-content">
                         <h4><c:out value="${event.getTopic()}" /></h4>
-                        <h5><i class="material-icons">place</i> - <c:out value="${event.getPlace()}" /></h5>
-                        <h5><i class="material-icons">date_range</i> - <fmt:formatDate value="${event.getCalendar().getTime()}" type="date"/></h5>
-                        <h5><i class="material-icons">timer</i> - <fmt:formatDate value="${event.getCalendar().getTime()}" type="time" timeStyle = "short"/></h5>
+                        <h5>Place : <c:out value="${event.getPlace()}" /></h5>
+                        <h5>Date : <fmt:formatDate value="${event.getCalendar().getTime()}" type="date"/></h5>
+                        <h5>Time : <fmt:formatDate value="${event.getCalendar().getTime()}" type="time" timeStyle = "short"/></h5>
                     </div>
                 </div>
-            </div>
-            <div class="col s3 offset-s2">
-                <div class="card">
-                    <div class="card-content" align="center">
-                        <h5>Rating: <c:out value="${salary.getRating()}" /> - <i class="material-icons">star_border</i></h5>
-                        <br>
-                        <h5>Bonus: <c:out value="${salary.getBonus()}" /> - <i class="material-icons">attach_money</i></h5>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <br>
-        <div class="divider"></div>
-        <br>
-        <div class="row">
-            <div class="col s5 offset-s1">
-                <h5>All reports:</h5>
-                <ul class="collection">
-                    <c:forEach items="${list}" var="i" >
-                        <li class="collection-item avatar">
-                            <i class="material-icons circle">event_available</i>
-                            <span class="title"><c:out value="${i.getTopic()}" /></span>
-                            <p>Place: <c:out value="${i.getPlace()}" /><br>
-                                <fmt:formatDate value="${i.getCalendar().getTime()}" type="both" timeStyle = "short"/>
-                            </p>
-                            <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+                <br>
+                <div>
+                    <ul class="collapsible" data-collapsible="accordion">
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">monetization_on</i>Salary</div>
+                            <div class="collapsible-body">
+                            <span>
+                                <div>
+                                    <h5>Rating: <c:out value="${salary.getRating()}" /> <i class="material-icons">star_border</i></h5>
+                                    <br>
+                                    <h5>Bonus: <c:out value="${salary.getBonus()}" />   <i class="material-icons">attach_money</i></h5>
+                                </div>
+                            </span>
+                            </div>
                         </li>
-                    </c:forEach>
-                </ul>
-            </div>
-            <div class="col s3 offset-s1">
-                <h5>Propose topic:</h5>
-                <form name="editEventForm" method="POST" action="controller">
-                    <input type="hidden" name="command" value="proptopictomoder"/>
-                    <i class="material-icons prefix">mode_edit</i>
-                    <label for="icon_prefix2">Topic:</label><br>
-                    <textarea id="icon_prefix2" class="materialize-textarea" required></textarea>
-                    <br/>
-                    <br/>
-                    <button class="btn waves-effect waves-light" type="submit" name="action">Send topic
-                    <i class="material-icons right">send</i>
-                    </button>
-                </form>
-                <br>
-                <br>
-                <h5>You have new topics:</h5>
-                <br>
-                <form name="editEventForm" method="POST" action="controller">
-                    <input type="hidden" name="command" value="conftopic"/>
-                    <c:forEach items="${newtopic}" var="nt" >
-                        <p>
-                          <input class="with-gap" name="idconftopic" type="radio" id="${nt.getId()}" value="${nt.getId()}" checked/>
-                          <label for="${nt.getId()}"><c:out value="${nt.getTopic()}" /></label>
-                        </p>
-                    </c:forEach>
-                    <br>
-                    <button class="btn waves-effect waves-light" type="submit" name="action">Confirm
-                        <i class="material-icons left">send</i>
-                    </button>
-                </form>
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">message</i>Propose topic</div>
+                            <div class="collapsible-body">
+                            <span>
+                            <div>
+                                <form name="editEventForm" method="POST" action="controller">
+                                <input type="hidden" name="command" value="proptopicformoder"/>
+                                <input type="hidden" name="idspeaker" value="${userid}"/>
+                                <i class="material-icons prefix">mode_edit</i>
+                                <label for="icon_prefix2">Topic:</label><br>
+                                <input type="text"  name="topicformoder" required>
+                                <br/>
+                                <br/>
+                                <button class="btn waves-effect waves-light" type="submit" name="action">Send topic
+                                <i class="material-icons right">send</i>
+                                </button>
+                                </form>
+                            </div>
+                            </span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">mail_outline</i>New topics</div>
+                            <div class="collapsible-body">
+                            <span>
+                            <div>
+                                <form name="editEventForm" method="POST" action="controller">
+                                <input type="hidden" name="command" value="conftopic"/>
+                                <c:forEach items="${newtopic}" var="nt" >
+                                <p>
+                                  <input class="with-gap" name="idconftopic" type="radio" id="${nt.getId()}" value="${nt.getId()}" checked/>
+                                  <label for="${nt.getId()}"><c:out value="${nt.getTopic()}" /></label>
+                                </p>
+                                </c:forEach>
+                                <br>
+                                <select class="browser-default" name="topicstatus" required>
+                                    <option value="" disabled selected>Confirm or cancel</option>
+                                    <option value="confirm">Confirm</option>
+                                    <option value="cancel">Cancel</option>
+                                </select>
+                                <br>
+                                <button class="btn waves-effect waves-light" type="submit" name="action">Send
+                                <i class="material-icons left">send</i>
+                                </button>
+                                </form>
+                            </div>
+                            </span>
+                            </div>
+                        </li>
+                      </ul>
+                </div>
+                <div>
+                    <h5><c:out value="${msg}" /></h5>
+                </div>
             </div>
         </div>
         <br>
@@ -125,5 +163,12 @@
                 </div>
             </div>
         </footer>
+        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $('.collapsible').collapsible();
+            });
+        </script>
     </body>
 </html>

@@ -18,7 +18,12 @@ public class ConfirmTopicCommand implements ICommand {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, PersistException {
         Topic topic = TopicService.getTopicById(Long.parseLong(request.getParameter("idconftopic")));
-        topic.setStatus("confirmed");
+        String status = request.getParameter("topicstatus");
+        if (status.equalsIgnoreCase("confirm")) {
+            topic.setStatus("confirmed");
+        } else {
+            topic.setStatus("cancel");
+        }
         TopicService.updateTopic(topic);
         HttpSession session = request.getSession(true);
         session.setAttribute("newtopic", TopicService.getNewTopicsByParam("id_speaker",

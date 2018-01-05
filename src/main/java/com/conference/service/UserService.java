@@ -29,4 +29,16 @@ public class UserService {
         }
         return users;
     }
+
+    public static long getUserRole(String login) {
+        long result = 0L;
+        try (Connection connection = (Connection) factory.getContext()) {
+            IGeneric dao = factory.getDao(connection, User.class);
+            User user = (User) dao.getByParam("login", login);
+            result = user.getIdUserType();
+        } catch (Exception e) {
+            LOG.error("Exception: ", e);
+        }
+        return result;
+    }
 }

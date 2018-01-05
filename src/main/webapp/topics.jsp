@@ -14,9 +14,7 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <!--Import materialize.css-->
         <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-        <!-- Compiled and minified CSS -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Conference</title>
     </head>
     <body>
@@ -56,6 +54,15 @@
                    </c:forEach>
                 </ul>
                 <br>
+                <div>
+                    <form name="editEventForm" method="POST" action="controller">
+                        <input type="hidden" name="command" value="backtomoder"/>
+                        <button class="btn waves-effect waves-light btn-large" type="submit" name="action">Back
+                        <i class="material-icons left">arrow_back</i>
+                        </button>
+                    </form>
+                    <br>
+                </div>
             </div>
          </div>
         <footer class="cyan darken-4">

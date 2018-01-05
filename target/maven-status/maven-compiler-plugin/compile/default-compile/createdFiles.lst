@@ -3,12 +3,14 @@ com/conference/persistence/dao/DateTimeParser.class
 com/conference/web/properties/ConfigProperties.class
 com/conference/persistence/idao/IFactory$IDaoCreator.class
 com/conference/persistence/entity/Registration.class
+com/conference/web/comands/ChangeEventCommand.class
 com/conference/persistence/dao/PersistException.class
 com/conference/persistence/dao/ReportDao.class
 com/conference/persistence/dao/UserDao$PersistUser.class
 com/conference/persistence/dao/RegistrationDao$1.class
 com/conference/service/RegistrationService.class
 com/conference/persistence/dao/AbstractDao.class
+com/conference/web/comands/BackToModerPageCommand.class
 com/conference/persistence/entity/Role.class
 com/conference/persistence/dao/MySqlDaoFactory.class
 com/conference/web/comands/ProposeTopicForSpeakerCommand.class
@@ -46,6 +48,7 @@ com/conference/persistence/dao/MySqlDaoFactory$4.class
 com/conference/persistence/entity/Event.class
 com/conference/persistence/dao/TopicDao$1.class
 com/conference/persistence/entity/Salary.class
+com/conference/web/comands/ProposeTopicForModerCommand.class
 com/conference/web/comands/ICommand.class
 com/conference/persistence/dao/SalaryDao$PersistSalary.class
 com/conference/web/comands/LoginCommand.class
