@@ -2,54 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bff2945c-bd83-474c-ad87-fd02d552b190" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/conference/web/comands/BackToModerPageCommand.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/conference/web/comands/ChangeEventCommand.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/conference/web/comands/ProposeTopicForModerCommand.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/moder.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/conference/service/RegistrationService.class" afterPath="$PROJECT_DIR$/target/classes/com/conference/service/RegistrationService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/conference/service/ReportService.class" afterPath="$PROJECT_DIR$/target/classes/com/conference/service/ReportService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/conference/service/UserService.class" afterPath="$PROJECT_DIR$/target/classes/com/conference/service/UserService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/conference/web/ControllerHelper.class" afterPath="$PROJECT_DIR$/target/classes/com/conference/web/ControllerHelper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/conference/web/comands/ConfirmTopicCommand.class" afterPath="$PROJECT_DIR$/target/classes/com/conference/web/comands/ConfirmTopicCommand.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/conference/web/comands/LoginCommand.class" afterPath="$PROJECT_DIR$/target/classes/com/conference/web/comands/LoginCommand.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/conference/web/comands/ProposeTopicForSpeakerCommand.class" afterPath="$PROJECT_DIR$/target/classes/com/conference/web/comands/ProposeTopicForSpeakerCommand.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/conference.war" afterPath="$PROJECT_DIR$/target/conference.war" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/service/RegistrationService.class" afterPath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/service/RegistrationService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/service/ReportService.class" afterPath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/service/ReportService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/service/UserService.class" afterPath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/service/UserService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/web/ControllerHelper.class" afterPath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/web/ControllerHelper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/web/comands/ConfirmTopicCommand.class" afterPath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/web/comands/ConfirmTopicCommand.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/web/comands/LoginCommand.class" afterPath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/web/comands/LoginCommand.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/web/comands/ProposeTopicForSpeakerCommand.class" afterPath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/web/comands/ProposeTopicForSpeakerCommand.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/conference/service/RegistrationService.java" afterPath="$PROJECT_DIR$/src/main/java/com/conference/service/RegistrationService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/conference/service/ReportService.java" afterPath="$PROJECT_DIR$/src/main/java/com/conference/service/ReportService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/conference/service/UserService.java" afterPath="$PROJECT_DIR$/src/main/java/com/conference/service/UserService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/conference/web/ControllerHelper.java" afterPath="$PROJECT_DIR$/src/main/java/com/conference/web/ControllerHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/conference/web/comands/ConfirmTopicCommand.java" afterPath="$PROJECT_DIR$/src/main/java/com/conference/web/comands/ConfirmTopicCommand.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/conference/web/comands/LoginCommand.java" afterPath="$PROJECT_DIR$/src/main/java/com/conference/web/comands/LoginCommand.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/conference/web/comands/ProposeTopicForSpeakerCommand.java" afterPath="$PROJECT_DIR$/src/main/java/com/conference/web/comands/ProposeTopicForSpeakerCommand.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/conference/web/comands/UpdateReportCommand.java" afterPath="$PROJECT_DIR$/src/main/java/com/conference/web/comands/UpdateReportCommand.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/jsp/error.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/error.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/jsp/login.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/login.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/jsp/moder.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/moder.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/jsp/speaker.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/speaker.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/jsp/user.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/user.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/topics.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/topics.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/conference/jsp/error.jsp" afterPath="$PROJECT_DIR$/target/conference/jsp/error.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/conference/jsp/login.jsp" afterPath="$PROJECT_DIR$/target/conference/jsp/login.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/conference/jsp/moder.jsp" afterPath="$PROJECT_DIR$/target/conference/jsp/moder.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/conference/jsp/speaker.jsp" afterPath="$PROJECT_DIR$/target/conference/jsp/speaker.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/conference/jsp/user.jsp" afterPath="$PROJECT_DIR$/target/conference/jsp/user.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/conference/topics.jsp" afterPath="$PROJECT_DIR$/target/conference/topics.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/DaoTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/DaoTest.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-DaoTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-DaoTest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-WebTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-WebTest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/WebTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/WebTest.txt" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -93,11 +47,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UpdateReportCommand.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UpdateReportCommand.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/conference/web/comands/UpdateReportCommand.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="270">
               <caret line="27" column="81" lean-forward="true" selection-start-line="27" selection-start-column="81" selection-end-line="27" selection-end-column="81" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -108,16 +72,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="108">
               <caret line="45" column="25" lean-forward="true" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RegistrationCommand.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/conference/web/comands/RegistrationCommand.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="22" column="79" lean-forward="false" selection-start-line="22" selection-start-column="79" selection-end-line="22" selection-end-column="79" />
               <folding />
             </state>
           </provider>
@@ -238,7 +192,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/conference/service/TopicService.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/testPagin.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/conference/persistence/dao/ReportDao.java" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/main/webapp/jsp/login.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/js/moder.js" />
         <option value="$PROJECT_DIR$/src/main/java/com/conference/service/RegistrationService.java" />
@@ -258,6 +211,7 @@
         <option value="$PROJECT_DIR$/src/main/webapp/jsp/speaker.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/conference/web/comands/LoginCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/conference/web/comands/UpdateReportCommand.java" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -1145,7 +1099,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1301" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1161,7 +1115,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3482972" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27011952" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27011952" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24940239" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24940239" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1464,14 +1418,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="57" lean-forward="true" selection-start-line="8" selection-start-column="57" selection-end-line="8" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/conference/web/comands/ProposeTopicForSpeakerCommand.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
@@ -1629,6 +1575,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="27" column="81" lean-forward="true" selection-start-line="27" selection-start-column="81" selection-end-line="27" selection-end-column="81" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding />
         </state>
       </provider>
