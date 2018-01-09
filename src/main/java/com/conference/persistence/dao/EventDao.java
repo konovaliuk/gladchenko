@@ -46,15 +46,15 @@ public class EventDao extends AbstractDao<Event, Long> {
 
     @Override
     public String getCreateQuery() {
-        return "BEGIN; INSERT INTO event (e_date, e_time) VALUES(?, ?); INSERT INTO eventEn (event_id, topic, place) VALUES(?, ?, ?); COMMIT;";
+        //return "BEGIN; INSERT INTO event (e_date, e_time) VALUES(?, ?); INSERT INTO eventEn (event_id, topic, place) VALUES(?, ?, ?); COMMIT;";
 
-        //return "insert into event (topic, place, e_date, e_time) "
-           //     + "values(?, ?, ?, ?);";
+        return "insert into event (topic, place, e_date, e_time) "
+               + "values(?, ?, ?, ?);";
     }
 
     @Override
     public String getUpdateQuery() {
-        return "update event, "+language+" set topic = ?, place = ?, e_date = ?, e_time = ? where id = ?;";
+        return "update event, "+language+" set topic = ?, place = ?, e_date = ?, e_time = ? where event.id = "+language+".event_id and id = ?;";
     }
 
     @Override
