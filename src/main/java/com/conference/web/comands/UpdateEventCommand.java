@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.Locale;
 import java.util.StringTokenizer;
 
 /**
@@ -29,7 +30,7 @@ public class UpdateEventCommand implements ICommand {
         EventService.updateEvent(event);
         HttpSession session = request.getSession(true);
         session.setAttribute("event", event);
-        page = ConfigProperties.getInstance().MODER_PAGE_PATH;
+        page = ConfigProperties.getInstance().getProperty(ConfigProperties.MODER_PAGE_PATH);
         return page;
     }
 

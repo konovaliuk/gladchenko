@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.Locale;
 import java.util.StringTokenizer;
 
 /**
@@ -33,7 +34,7 @@ public class UpdateReportCommand implements ICommand {
         ReportService.updateReport(report);
         HttpSession session = request.getSession(true);
         session.setAttribute("list", ReportService.getReportsByParam("id_event", String.valueOf(eventId)));
-        page = ConfigProperties.getInstance().MODER_PAGE_PATH;
+        page = ConfigProperties.getInstance().getProperty(ConfigProperties.MODER_PAGE_PATH);
         return page;
     }
 

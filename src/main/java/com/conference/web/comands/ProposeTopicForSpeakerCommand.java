@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.Locale;
 
 /**
  * Created by gleb on 01.01.18.
@@ -20,12 +21,11 @@ public class ProposeTopicForSpeakerCommand implements ICommand {
         Topic topic = new Topic();
         topic.setTopic(request.getParameter("topicforprop"));
         topic.setIdSpeaker(Long.parseLong(request.getParameter("idspeaker")));
-
         topic.setStatus("new");
         topic = TopicService.createTopic(topic);
         String message = "Propose topic " + topic.getTopic() + " successful!";
         HttpSession session = request.getSession(true);
         session.setAttribute("msg", message);
-        return ConfigProperties.getInstance().MODER_PAGE_PATH;
+        return ConfigProperties.getInstance().getProperty(ConfigProperties.MODER_PAGE_PATH);
     }
 }

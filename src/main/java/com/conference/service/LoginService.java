@@ -9,6 +9,7 @@ import org.apache.log4j.Logger;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.Locale;
 
 /**
  * Created by gleb on 19.12.17.
@@ -52,5 +53,15 @@ public class LoginService {
             LOG.error("Exception: ", e);
         }
         return result;
+    }
+
+    public static void checkLanguage(String lang) {
+        if (lang.equalsIgnoreCase("eng")) {
+            Locale.setDefault(Locale.US);
+        } else if (lang.equalsIgnoreCase("ger")) {
+            Locale.setDefault(Locale.GERMANY);
+        } else if (lang.equalsIgnoreCase("ru")) {
+            Locale.setDefault(new Locale("ru", "UA"));
+        }
     }
 }

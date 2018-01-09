@@ -35,6 +35,12 @@
                     <input type="text" name="login" value=""><br/>
                     Password:<br/>
                     <input type="password" name="password" value="" required>
+                    <select name="lang" required>
+                        <option value="" disabled selected>Choose language</option>
+                        <option value="eng">English</option>
+                        <option value="ger">Deutsch</option>
+                        <option value="ru">Русский</option>
+                    </select><br>
                     <br/>
                     <br/>
                     <br/>
@@ -44,5 +50,12 @@
                 </form>
             </div>
         </div>
+        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+        <script>
+            $(document).ready(function() {
+               $('select').material_select();
+             });
+       </script>
     </body>
 </html>

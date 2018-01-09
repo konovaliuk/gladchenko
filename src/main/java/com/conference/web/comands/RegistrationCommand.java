@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.Locale;
 
 /**
  * Created by gleb on 27.12.17.
@@ -29,6 +30,6 @@ public class RegistrationCommand implements ICommand {
         session.setAttribute("report", report);
         String message = "Registration successful! \n Report: " + report.getTopic();
         session.setAttribute("succesmsg", message);
-        return ConfigProperties.getInstance().USER_PAGE_PATH;
+        return ConfigProperties.getInstance().getProperty(ConfigProperties.USER_PAGE_PATH);
     }
 }

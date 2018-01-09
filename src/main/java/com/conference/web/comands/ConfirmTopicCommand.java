@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.Locale;
 
 /**
  * Created by gleb on 02.01.18.
@@ -28,6 +29,6 @@ public class ConfirmTopicCommand implements ICommand {
         HttpSession session = request.getSession(true);
         session.setAttribute("newtopic", TopicService.getNewTopicsByParam("id_speaker",
                                                                 String.valueOf(topic.getIdSpeaker())));
-        return ConfigProperties.getInstance().SPEAKER_PAGE_PATH;
+        return ConfigProperties.getInstance().getProperty(ConfigProperties.SPEAKER_PAGE_PATH);
     }
 }

@@ -34,40 +34,50 @@
                                 <p>Place: <c:out value="${i.getPlace()}" /><br>
                                     <fmt:formatDate value="${i.getCalendar().getTime()}" type="both" timeStyle = "short"/>
                                 </p>
-                                <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+                                <a class="secondary-content"><i class="material-icons">grade</i></a>
                             </li>
                         </c:forEach>
                     </ul>
                 </div>
-                <div>
-                    <form name="loginForm" method="POST" action="controller">
-                        <input type="hidden" name="command" value="eventchange"/>
-                        <select class="browser-default" name="idevent" required>
-                            <option value="" disabled selected>Choose report</option>
-                            <c:forEach items="${eventlist}" var="el" >
-                                <option value="${el.getId()}"><c:out value="${el.getTopic()}" /></option>
-                            </c:forEach>
-                        </select><br>
-                        <br>
-                        <button class="btn waves-effect waves-light btn-large" type="submit" name="action">Change event
-                            <i class="material-icons right">content_paste</i>
-                        </button>
-                    </form>
-                </div>
             </div>
-            <br>
             <div class="col s4 offset-s1">
-                <div class="card">
-                    <div class="card-content">
-                        <h4><c:out value="${event.getTopic()}" /></h4>
-                        <h5>Place : <c:out value="${event.getPlace()}" /></h5>
-                        <h5>Date : <fmt:formatDate value="${event.getCalendar().getTime()}" type="date"/></h5>
-                        <h5>Time : <fmt:formatDate value="${event.getCalendar().getTime()}" type="time" timeStyle = "short"/></h5>
-                    </div>
-                </div>
-                <br>
                 <div>
                     <ul class="collapsible" data-collapsible="accordion">
+                        <li>
+                            <div class="collapsible-header active"><h4><c:out value="${event.getTopic()}" /></h4></div>
+                            <div class="collapsible-body">
+                            <span>
+                            <h5>Place : <c:out value="${event.getPlace()}" /></h5>
+                            <h5>Date : <fmt:formatDate value="${event.getCalendar().getTime()}" type="date"/></h5>
+                            <h5>Time : <fmt:formatDate value="${event.getCalendar().getTime()}" type="time" timeStyle = "short"/></h5>
+                            </span></div>
+                        </li>
+                      </ul>
+                </div>
+                <div>
+                    <ul class="collapsible popout" data-collapsible="accordion">
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">autorenew</i>Change event</div>
+                            <div class="collapsible-body">
+                            <span>
+                                <div>
+                                    <form name="loginForm" method="POST" action="controller">
+                                        <input type="hidden" name="command" value="eventchange"/>
+                                        <select name="idevent" required>
+                                            <option value="" disabled selected>Choose event</option>
+                                            <c:forEach items="${eventlist}" var="el" >
+                                                <option value="${el.getId()}"><c:out value="${el.getTopic()}" /></option>
+                                            </c:forEach>
+                                        </select><br>
+                                        <br>
+                                        <button class="btn waves-effect waves-light" type="submit" name="action">Change
+                                            <i class="material-icons right">content_paste</i>
+                                        </button>
+                                    </form>
+                                </div>
+                            </span>
+                            </div>
+                        </li>
                         <li>
                         <div class="collapsible-header"><i class="material-icons">edit_location</i>Edit place & date</div>
                         <div class="collapsible-body">
@@ -78,7 +88,7 @@
                                 <input type="hidden" name="id" value="${event.getId()}"/>
                                 <input type="hidden" name="topic" value="${event.getTopic()}"/>
                                 Place:<br/>
-                                <input type="text" name="place" value="" required>
+                                <input type="text" name="place" value="${event.getPlace()}" required>
                                 Date:<br/>
                                 <input type="text" class="datepicker" name="date" required>
                                 Time:<br/>
@@ -100,7 +110,7 @@
                             <form name="loginForm" method="POST" action="controller">
                                 <input type="hidden" name="command" value="updatereport"/>
                                 <input type="hidden" name="idevent" value="${event.getId()}"/>
-                                <select class="browser-default" name="idreport" required>
+                                <select name="idreport" required>
                                     <option value="" disabled selected>Choose report</option>
                                     <c:forEach items="${list}" var="rp" >
                                         <option value="${rp.getId()}"><c:out value="${rp.getTopic()}" /></option>
@@ -114,7 +124,7 @@
                                 <input type="text" class="datepicker" name="datereport" required>
                                 Time:<br/>
                                 <input type="text" class="timepicker" name="timereport" required>
-                                <select class="browser-default" name="idspeaker" required>
+                                <select name="idspeaker" required>
                                     <option value="" disabled selected>Choose Speaker</option>
                                     <c:forEach items="${speakers}" var="sp" >
                                         <option value="${sp.getId()}"><c:out value="${sp.getLastName()}" /></option>
@@ -142,7 +152,7 @@
                                     <input type="text"  name="topicforprop" required>
                                     <br/>
                                     <br/>
-                                    <select class="browser-default" name="idspeaker" required>
+                                    <select name="idspeaker" required>
                                         <option value="" disabled selected>Choose Speaker</option>
                                         <c:forEach items="${speakers}" var="s" >
                                             <option value="${s.getId()}"><c:out value="${s.getLastName()}" /></option>
@@ -224,5 +234,10 @@
         <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
         <script type="text/javascript" src="js/materialize.min.js"></script>
         <script type="text/javascript" src="js/moder.js"></script>
+        <script>
+           $(document).ready(function() {
+               $('select').material_select();
+             });
+       </script>
     </body>
 </html>

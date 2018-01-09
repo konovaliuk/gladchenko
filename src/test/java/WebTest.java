@@ -4,6 +4,8 @@ import com.conference.web.properties.MessageProperties;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.Locale;
+
 /**
  * Created by gleb on 29.12.17.
  */

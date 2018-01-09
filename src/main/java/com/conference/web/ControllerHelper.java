@@ -21,8 +21,9 @@ public class ControllerHelper {
         commands.put("proptopicforspeaker", new ProposeTopicForSpeakerCommand());
         commands.put("conftopic", new ConfirmTopicCommand());
         commands.put("proptopicformoder", new ProposeTopicForModerCommand());
-        commands.put("backtomoder", new BackToModerPageCommand());
+        commands.put("backtomoder", new BackToMainPageCommand());
         commands.put("eventchange", new ChangeEventCommand());
+        commands.put("logout", new LogoutCommand());
     }
 
     /**

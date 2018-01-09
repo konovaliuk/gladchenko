@@ -39,34 +39,45 @@
                         </c:forEach>
                     </ul>
                 </div>
-                <div>
-                    <form name="loginForm" method="POST" action="controller">
-                        <input type="hidden" name="command" value="eventchange"/>
-                        <select class="browser-default" name="idevent" required>
-                            <option value="" disabled selected>Choose report</option>
-                            <c:forEach items="${eventlist}" var="el" >
-                                <option value="${el.getId()}"><c:out value="${el.getTopic()}" /></option>
-                            </c:forEach>
-                        </select><br>
-                        <br>
-                        <button class="btn waves-effect waves-light btn-large" type="submit" name="action">Change event
-                            <i class="material-icons right">content_paste</i>
-                        </button>
-                    </form>
-                </div>
             </div>
             <div class="col s4 offset-s1">
-                <div class="card">
-                    <div class="card-content">
-                        <h4><c:out value="${event.getTopic()}" /></h4>
-                        <h5>Place : <c:out value="${event.getPlace()}" /></h5>
-                        <h5>Date : <fmt:formatDate value="${event.getCalendar().getTime()}" type="date"/></h5>
-                        <h5>Time : <fmt:formatDate value="${event.getCalendar().getTime()}" type="time" timeStyle = "short"/></h5>
-                    </div>
-                </div>
-                <br>
                 <div>
                     <ul class="collapsible" data-collapsible="accordion">
+                        <li>
+                            <div class="collapsible-header active"><h4><c:out value="${event.getTopic()}" /></h4></div>
+                            <div class="collapsible-body">
+                            <span>
+                            <h5>Place : <c:out value="${event.getPlace()}" /></h5>
+                            <h5>Date : <fmt:formatDate value="${event.getCalendar().getTime()}" type="date"/></h5>
+                            <h5>Time : <fmt:formatDate value="${event.getCalendar().getTime()}" type="time" timeStyle = "short"/></h5>
+                            </span></div>
+                        </li>
+                      </ul>
+                </div>
+                <div>
+                    <ul class="collapsible popout" data-collapsible="accordion">
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">autorenew</i>Change event</div>
+                            <div class="collapsible-body">
+                            <span>
+                                <div>
+                                    <form name="loginForm" method="POST" action="controller">
+                                        <input type="hidden" name="command" value="eventchange"/>
+                                        <select name="idevent" required>
+                                            <option value="" disabled selected>Choose event</option>
+                                            <c:forEach items="${eventlist}" var="el" >
+                                                <option value="${el.getId()}"><c:out value="${el.getTopic()}" /></option>
+                                            </c:forEach>
+                                        </select><br>
+                                        <br>
+                                        <button class="btn waves-effect waves-light" type="submit" name="action">Change
+                                            <i class="material-icons right">content_paste</i>
+                                        </button>
+                                    </form>
+                                </div>
+                            </span>
+                            </div>
+                        </li>
                         <li>
                             <div class="collapsible-header"><i class="material-icons">monetization_on</i>Salary</div>
                             <div class="collapsible-body">
@@ -114,7 +125,7 @@
                                 </p>
                                 </c:forEach>
                                 <br>
-                                <select class="browser-default" name="topicstatus" required>
+                                <select name="topicstatus" required>
                                     <option value="" disabled selected>Confirm or cancel</option>
                                     <option value="confirm">Confirm</option>
                                     <option value="cancel">Cancel</option>
@@ -170,5 +181,10 @@
                 $('.collapsible').collapsible();
             });
         </script>
+        <script>
+           $(document).ready(function() {
+               $('select').material_select();
+             });
+       </script>
     </body>
 </html>
