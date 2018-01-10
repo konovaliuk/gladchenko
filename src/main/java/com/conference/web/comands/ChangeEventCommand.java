@@ -20,14 +20,14 @@ public class ChangeEventCommand implements ICommand {
     public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, PersistException {
         String page = null;
         long eventId = Long.parseLong(request.getParameter("idevent"));
-        HttpSession session = request.getSession(true);
+        HttpSession session = request.getSession();
         session.setAttribute("idevent", eventId);
         session.setAttribute("list", ReportService.getReportsByParam("id_event", String.valueOf(eventId)));
         long role = (long) session.getAttribute("role");
         if (role == 4) {
             String language = "eventEn";
-            String lang = (String) session.getAttribute("language");
-            if (!lang.equalsIgnoreCase(null)) language = lang;
+            String lang = (String) session.getAttribute("local");
+            if (lang.equalsIgnoreCase("RU")) language = "eventRu";
             session.setAttribute("event", EventService.getEventById(eventId, language));
             page = ConfigProperties.getInstance().getProperty(ConfigProperties.USER_PAGE_PATH);
         } else if (role == 3) {
