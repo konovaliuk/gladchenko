@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="DaoTest" time="4.322" tests="25" errors="0" skipped="0" failures="0">
+<testsuite name="DaoTest" time="6.291" tests="25" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64"/>
@@ -59,29 +59,29 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase name="testPersist[0]" classname="DaoTest" time="1.928"/>
-  <testcase name="testGetByPK[0]" classname="DaoTest" time="0.202"/>
-  <testcase name="testCreate[0]" classname="DaoTest" time="0.13"/>
-  <testcase name="testDelete[0]" classname="DaoTest" time="0.153"/>
-  <testcase name="testGetAll[0]" classname="DaoTest" time="0.06"/>
-  <testcase name="testPersist[1]" classname="DaoTest" time="0.127"/>
-  <testcase name="testGetByPK[1]" classname="DaoTest" time="0.101"/>
-  <testcase name="testCreate[1]" classname="DaoTest" time="0.106"/>
-  <testcase name="testDelete[1]" classname="DaoTest" time="0.148"/>
-  <testcase name="testGetAll[1]" classname="DaoTest" time="0.061"/>
-  <testcase name="testPersist[2]" classname="DaoTest" time="0.081"/>
-  <testcase name="testGetByPK[2]" classname="DaoTest" time="0.143"/>
-  <testcase name="testCreate[2]" classname="DaoTest" time="0.078"/>
-  <testcase name="testDelete[2]" classname="DaoTest" time="0.088"/>
-  <testcase name="testGetAll[2]" classname="DaoTest" time="0.041"/>
-  <testcase name="testPersist[3]" classname="DaoTest" time="0.1"/>
-  <testcase name="testGetByPK[3]" classname="DaoTest" time="0.098"/>
-  <testcase name="testCreate[3]" classname="DaoTest" time="0.066"/>
-  <testcase name="testDelete[3]" classname="DaoTest" time="0.074"/>
-  <testcase name="testGetAll[3]" classname="DaoTest" time="0.07"/>
-  <testcase name="testPersist[4]" classname="DaoTest" time="0.111"/>
-  <testcase name="testGetByPK[4]" classname="DaoTest" time="0.143"/>
-  <testcase name="testCreate[4]" classname="DaoTest" time="0.079"/>
-  <testcase name="testDelete[4]" classname="DaoTest" time="0.08"/>
-  <testcase name="testGetAll[4]" classname="DaoTest" time="0.054"/>
+  <testcase name="testPersist[0]" classname="DaoTest" time="2.256"/>
+  <testcase name="testGetByPK[0]" classname="DaoTest" time="0.215"/>
+  <testcase name="testCreate[0]" classname="DaoTest" time="0.225"/>
+  <testcase name="testDelete[0]" classname="DaoTest" time="0.187"/>
+  <testcase name="testGetAll[0]" classname="DaoTest" time="0.092"/>
+  <testcase name="testPersist[1]" classname="DaoTest" time="0.259"/>
+  <testcase name="testGetByPK[1]" classname="DaoTest" time="0.143"/>
+  <testcase name="testCreate[1]" classname="DaoTest" time="0.148"/>
+  <testcase name="testDelete[1]" classname="DaoTest" time="0.467"/>
+  <testcase name="testGetAll[1]" classname="DaoTest" time="0.105"/>
+  <testcase name="testPersist[2]" classname="DaoTest" time="0.137"/>
+  <testcase name="testGetByPK[2]" classname="DaoTest" time="0.215"/>
+  <testcase name="testCreate[2]" classname="DaoTest" time="0.183"/>
+  <testcase name="testDelete[2]" classname="DaoTest" time="0.176"/>
+  <testcase name="testGetAll[2]" classname="DaoTest" time="0.078"/>
+  <testcase name="testPersist[3]" classname="DaoTest" time="0.159"/>
+  <testcase name="testGetByPK[3]" classname="DaoTest" time="0.149"/>
+  <testcase name="testCreate[3]" classname="DaoTest" time="0.158"/>
+  <testcase name="testDelete[3]" classname="DaoTest" time="0.114"/>
+  <testcase name="testGetAll[3]" classname="DaoTest" time="0.085"/>
+  <testcase name="testPersist[4]" classname="DaoTest" time="0.169"/>
+  <testcase name="testGetByPK[4]" classname="DaoTest" time="0.192"/>
+  <testcase name="testCreate[4]" classname="DaoTest" time="0.133"/>
+  <testcase name="testDelete[4]" classname="DaoTest" time="0.131"/>
+  <testcase name="testGetAll[4]" classname="DaoTest" time="0.115"/>
 </testsuite>

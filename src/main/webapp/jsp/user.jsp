@@ -115,7 +115,7 @@
                                 <input type="hidden" name="command" value="logout"/>
                                 <br>
                                 <button class="btn waves-effect waves-light" type="submit" name="action">${varlogoutbtn}
-                                    <i class="material-icons left">send</i>
+                                    <i class="material-icons left">exit_to_app</i>
                                 </button>
                             </form>
                         </div>

@@ -57,17 +57,17 @@ public class LoginCommand implements ICommand {
             page = ConfigProperties.getInstance().getProperty(ConfigProperties.SPEAKER_PAGE_PATH);
         } else if (LoginService.checkLogin(login, pass)) {
             String lang = request.getParameter("lang");
-            String language = null;
-            Locale locale = null;
-            if (lang.equalsIgnoreCase("eng")) {
-                locale = Locale.US;
-                language = "eventEn";
-            } else if (lang.equalsIgnoreCase("ger")) {
+            String language;
+            Locale locale;
+            if (lang.equalsIgnoreCase("ger")) {
                 locale = Locale.GERMANY;
                 language = "eventEn";
             } else if (lang.equalsIgnoreCase("ru")) {
                 locale = new Locale("ru", "UA");
                 language = "eventRu";
+            } else {
+                locale = Locale.US;
+                language = "eventEn";
             }
             //LoginService.checkLanguage(lang);
             HttpSession session = request.getSession();

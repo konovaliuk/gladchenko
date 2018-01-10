@@ -196,8 +196,18 @@
                         </li>
                       </ul>
                 </div>
+                <br>
                 <div>
                     <h5><c:out value="${msg}" /></h5>
+                </div>
+                <div>
+                    <form name="loginForm" method="POST" action="controller">
+                        <input type="hidden" name="command" value="logout"/>
+                        <br>
+                        <button class="btn waves-effect waves-light" type="submit" name="action">Logout
+                            <i class="material-icons left">exit_to_app</i>
+                        </button>
+                    </form>
                 </div>
             </div>
             <br>
