@@ -24,6 +24,8 @@ public class ConfigProperties {
     public static final String CHOOSE_REPORT = "CHOOSE_REPORT";
     public static final String CHANGE_REPORT = "CHANGE_REPORT";
     public static final String REGISTRATION_BTN = "REGISTRATION_BTN";
+    public static final String LOGOUT = "LOGOUT";
+    public static final String LOGOUT_BTN = "LOGOUT_BTN";
 
     public static ConfigProperties getInstance() {
         if (instance == null) {

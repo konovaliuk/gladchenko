@@ -51,9 +51,9 @@
                             <div class="collapsible-header active"><h4><c:out value="${event.getTopic()}" /></h4></div>
                             <div class="collapsible-body">
                             <span>
-                            <h5>Place : <c:out value="${event.getPlace()}" /></h5>
-                            <h5>Date : <fmt:formatDate value="${event.getCalendar().getTime()}" type="date"/></h5>
-                            <h5>Time : <fmt:formatDate value="${event.getCalendar().getTime()}" type="time" timeStyle = "short"/></h5>
+                            <h5><i class="material-icons">location_on</i> <c:out value="${event.getPlace()}" /></h5>
+                            <h5><i class="material-icons">date_range</i> <fmt:formatDate value="${event.getCalendar().getTime()}" type="date"/></h5>
+                            <h5><i class="material-icons">timer</i> <fmt:formatDate value="${event.getCalendar().getTime()}" type="time" timeStyle = "short"/></h5>
                             </span></div>
                         </li>
                       </ul>
@@ -107,14 +107,14 @@
                     </div>
                     </li>
                     <li>
-                    <div class="collapsible-header"><i class="material-icons">filter_drama</i>Logout</div>
+                    <div class="collapsible-header"><i class="material-icons">filter_drama</i>${varlogout}</div>
                     <div class="collapsible-body">
                     <span>
                         <div>
                             <form name="loginForm" method="POST" action="controller">
                                 <input type="hidden" name="command" value="logout"/>
                                 <br>
-                                <button class="btn waves-effect waves-light" type="submit" name="action">Logout
+                                <button class="btn waves-effect waves-light" type="submit" name="action">${varlogoutbtn}
                                     <i class="material-icons left">send</i>
                                 </button>
                             </form>

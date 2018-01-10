@@ -91,6 +91,10 @@ public class LoginCommand implements ICommand {
                                                     .getProperty(ConfigProperties.CHANGE_REPORT));
             session.setAttribute("varregistrbtn", ConfigProperties.getInstance(locale)
                                                     .getProperty(ConfigProperties.REGISTRATION_BTN));
+            session.setAttribute("varlogout", ConfigProperties.getInstance(locale)
+                    .getProperty(ConfigProperties.LOGOUT));
+            session.setAttribute("varlogoutbtn", ConfigProperties.getInstance(locale)
+                    .getProperty(ConfigProperties.LOGOUT_BTN));
             page = ConfigProperties.getInstance(locale).getProperty(ConfigProperties.USER_PAGE_PATH);
         } else {
             request.setAttribute("errormessage",
