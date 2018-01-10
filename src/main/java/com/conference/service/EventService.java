@@ -2,15 +2,12 @@ package com.conference.service;
 
 import com.conference.persistence.dao.EventDao;
 import com.conference.persistence.dao.MySqlDaoFactory;
-import com.conference.persistence.dao.PersistException;
 import com.conference.persistence.entity.Event;
 import com.conference.persistence.idao.IFactory;
 import com.conference.persistence.idao.IGeneric;
-import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 
 import java.sql.Connection;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 

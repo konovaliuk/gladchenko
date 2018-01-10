@@ -35,12 +35,6 @@
                     <input type="text" name="login" value=""><br/>
                     Password:<br/>
                     <input type="password" name="password" value="" required>
-                    <select name="lang" required>
-                        <option value="" disabled selected>Choose language</option>
-                        <option value="eng">English</option>
-                        <option value="ger">Deutsch</option>
-                        <option value="ru">Русский</option>
-                    </select><br>
                     <br/>
                     <br/>
                     <br/>

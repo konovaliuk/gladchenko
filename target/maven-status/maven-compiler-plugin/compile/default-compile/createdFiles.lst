@@ -1,5 +1,6 @@
 com/conference/persistence/idao/Identified.class
 com/conference/persistence/dao/DateTimeParser.class
+com/conference/web/Localization.class
 com/conference/web/properties/ConfigProperties.class
 com/conference/persistence/idao/IFactory$IDaoCreator.class
 com/conference/persistence/entity/Registration.class
@@ -34,11 +35,13 @@ com/conference/persistence/dao/MySqlDaoFactory$5.class
 com/conference/persistence/dao/TopicDao$PersistTopic.class
 com/conference/persistence/entity/Report.class
 com/conference/persistence/dao/ReportDao$1.class
+com/conference/web/properties/LocalProperties.class
 com/conference/web/Controller.class
 com/conference/persistence/dao/SalaryDao.class
 com/conference/persistence/dao/MySqlDaoFactory$1.class
 com/conference/web/comands/ConfirmTopicCommand.class
 com/conference/persistence/dao/MySqlDaoFactory$2.class
+com/conference/web/comands/ChangeLanguageCommand.class
 com/conference/persistence/dao/ReportDao$PersistReport.class
 com/conference/web/comands/RegistrationCommand.class
 com/conference/persistence/dao/RegistrationDao.class

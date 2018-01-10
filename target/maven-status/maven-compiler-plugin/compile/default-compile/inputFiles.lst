@@ -9,6 +9,7 @@
 /home/gleb/IdeaProjects/ConferenceManagement/src/main/java/com/conference/web/ControllerHelper.java
 /home/gleb/IdeaProjects/ConferenceManagement/src/main/java/com/conference/web/comands/ChangeEventCommand.java
 /home/gleb/IdeaProjects/ConferenceManagement/src/main/java/com/conference/web/comands/BackToMainPageCommand.java
+/home/gleb/IdeaProjects/ConferenceManagement/src/main/java/com/conference/web/Localization.java
 /home/gleb/IdeaProjects/ConferenceManagement/src/main/java/com/conference/service/RegistrationService.java
 /home/gleb/IdeaProjects/ConferenceManagement/src/main/java/com/conference/persistence/dao/SalaryDao.java
 /home/gleb/IdeaProjects/ConferenceManagement/src/main/java/com/conference/persistence/idao/Identified.java
@@ -40,5 +41,7 @@
 /home/gleb/IdeaProjects/ConferenceManagement/src/main/java/com/conference/service/UserService.java
 /home/gleb/IdeaProjects/ConferenceManagement/src/main/java/com/conference/persistence/dao/MySqlDaoFactory.java
 /home/gleb/IdeaProjects/ConferenceManagement/src/main/java/com/conference/persistence/dao/UserDao.java
+/home/gleb/IdeaProjects/ConferenceManagement/src/main/java/com/conference/web/properties/LocalProperties.java
 /home/gleb/IdeaProjects/ConferenceManagement/src/main/java/com/conference/service/SalaryService.java
 /home/gleb/IdeaProjects/ConferenceManagement/src/main/java/com/conference/persistence/dao/PersistException.java
+/home/gleb/IdeaProjects/ConferenceManagement/src/main/java/com/conference/web/comands/ChangeLanguageCommand.java

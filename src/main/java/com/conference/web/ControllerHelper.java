@@ -13,7 +13,6 @@ public class ControllerHelper {
     private HashMap<String, ICommand> commands = new HashMap<>();
 
     public ControllerHelper() {
-        //заполнение таблицы командами
         commands.put("login", new LoginCommand());
         commands.put("update", new UpdateEventCommand());
         commands.put("updatereport", new UpdateReportCommand());
@@ -24,6 +23,7 @@ public class ControllerHelper {
         commands.put("backtomoder", new BackToMainPageCommand());
         commands.put("eventchange", new ChangeEventCommand());
         commands.put("logout", new LogoutCommand());
+        commands.put("changelang", new ChangeLanguageCommand());
     }
 
     /**
@@ -37,13 +37,15 @@ public class ControllerHelper {
         return instance;
     }
 
+    /**
+     * Создание объекта, соответствующего команде
+     * @param request
+     * @return
+     */
     public ICommand getCommand(HttpServletRequest request) {
-        //извлечение команды из запроса
         String action = request.getParameter("command");
-        //получение объекта, соответствующего команде
         ICommand command = commands.get(action);
         if (command == null){
-            //если команды не существует в текущем объекте
             command = new NoCommand();
         }
         return command;

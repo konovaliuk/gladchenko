@@ -2,107 +2,46 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bff2945c-bd83-474c-ad87-fd02d552b190" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference.war" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/META-INF/context.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/persistence/dao/AbstractDao.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/persistence/dao/DateTimeParser.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/persistence/dao/EventDao$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/persistence/dao/EventDao$PersistEvent.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/persistence/dao/EventDao.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/persistence/dao/MySqlDaoFactory$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/persistence/dao/MySqlDaoFactory$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/persistence/dao/MySqlDaoFactory$3.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/persistence/dao/MySqlDaoFactory$4.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/persistence/dao/MySqlDaoFactory$5.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/persistence/dao/MySqlDaoFactory$6.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/persistence/dao/MySqlDaoFactory.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/persistence/dao/PersistException.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/persistence/dao/RegistrationDao$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/persistence/dao/RegistrationDao$PersistRegistration.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/persistence/dao/RegistrationDao.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/persistence/dao/ReportDao$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/persistence/dao/ReportDao$PersistReport.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/persistence/dao/ReportDao.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/persistence/dao/RoleDao.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/persistence/dao/SalaryDao$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/persistence/dao/SalaryDao$PersistSalary.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/persistence/dao/SalaryDao.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/persistence/dao/TopicDao$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/persistence/dao/TopicDao$PersistTopic.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/persistence/dao/TopicDao.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/persistence/dao/UserDao$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/persistence/dao/UserDao$PersistUser.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/persistence/dao/UserDao.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/persistence/entity/Event.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/persistence/entity/Registration.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/persistence/entity/Report.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/persistence/entity/Role.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/persistence/entity/Salary.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/persistence/entity/Topic.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/persistence/entity/User.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/persistence/idao/IFactory$IDaoCreator.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/persistence/idao/IFactory.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/persistence/idao/IGeneric.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/persistence/idao/Identified.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/service/EventService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/service/LoginService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/service/RegistrationService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/service/ReportService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/service/SalaryService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/service/TopicService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/service/UserService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/web/Controller.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/web/ControllerHelper.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/web/comands/BackToMainPageCommand.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/web/comands/ChangeEventCommand.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/web/comands/ConfirmTopicCommand.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/web/comands/ICommand.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/web/comands/LoginCommand.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/web/comands/LogoutCommand.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/web/comands/NoCommand.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/web/comands/ProposeTopicForModerCommand.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/web/comands/ProposeTopicForSpeakerCommand.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/web/comands/RegistrationCommand.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/web/comands/UpdateEventCommand.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/web/comands/UpdateReportCommand.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/web/properties/ConfigProperties.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/web/properties/MessageProperties.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/local.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/local_de_DE.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/local_en_US.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/local_ru_UA.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/message.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/message_ru_UA.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/lib/hamcrest-core-1.3.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/lib/jstl-1.2.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/lib/junit-4.12.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/lib/log4j-1.2.17.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/lib/mysql-connector-java-5.1.44-bin.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/lib/mysql-connector-java-5.1.6.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/web.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/css/materialize.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/js/jquery-3.2.1.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/js/materialize.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/js/moder.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/jsp/admin.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/jsp/error.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/jsp/login.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/jsp/moder.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/jsp/speaker.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/jsp/user.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/test.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/conference/topics.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/surefire-reports/DaoTest.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-DaoTest.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-WebTest.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/surefire-reports/WebTest.txt" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/conference/web/Localization.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/conference/web/comands/ChangeLanguageCommand.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/conference/web/properties/LocalProperties.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/config.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/conference/service/EventService.class" afterPath="$PROJECT_DIR$/target/classes/com/conference/service/EventService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/conference/web/ControllerHelper.class" afterPath="$PROJECT_DIR$/target/classes/com/conference/web/ControllerHelper.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/conference/web/comands/LoginCommand.class" afterPath="$PROJECT_DIR$/target/classes/com/conference/web/comands/LoginCommand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/conference/web/properties/ConfigProperties.class" afterPath="$PROJECT_DIR$/target/classes/com/conference/web/properties/ConfigProperties.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/conference.war" afterPath="$PROJECT_DIR$/target/conference.war" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/service/EventService.class" afterPath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/service/EventService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/web/ControllerHelper.class" afterPath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/web/ControllerHelper.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/web/comands/LoginCommand.class" afterPath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/web/comands/LoginCommand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/web/properties/ConfigProperties.class" afterPath="$PROJECT_DIR$/target/conference/WEB-INF/classes/com/conference/web/properties/ConfigProperties.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/conference/service/EventService.java" afterPath="$PROJECT_DIR$/src/main/java/com/conference/service/EventService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/conference/web/ControllerHelper.java" afterPath="$PROJECT_DIR$/src/main/java/com/conference/web/ControllerHelper.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/conference/web/comands/LoginCommand.java" afterPath="$PROJECT_DIR$/src/main/java/com/conference/web/comands/LoginCommand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/conference/web/properties/ConfigProperties.java" afterPath="$PROJECT_DIR$/src/main/java/com/conference/web/properties/ConfigProperties.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/local.properties" afterPath="$PROJECT_DIR$/src/main/resources/local.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/jsp/moder.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/moder.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/jsp/speaker.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/speaker.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/local_de_DE.properties" afterPath="$PROJECT_DIR$/src/main/resources/local_de_DE.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/local_en_US.properties" afterPath="$PROJECT_DIR$/src/main/resources/local_en_US.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/local_ru_UA.properties" afterPath="$PROJECT_DIR$/src/main/resources/local_ru_UA.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/jsp/login.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/login.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/jsp/user.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/user.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/local.properties" afterPath="$PROJECT_DIR$/target/classes/local.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/local_de_DE.properties" afterPath="$PROJECT_DIR$/target/classes/local_de_DE.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/local_en_US.properties" afterPath="$PROJECT_DIR$/target/classes/local_en_US.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/local_ru_UA.properties" afterPath="$PROJECT_DIR$/target/classes/local_ru_UA.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/local.properties" afterPath="$PROJECT_DIR$/target/conference/WEB-INF/classes/local.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/local_de_DE.properties" afterPath="$PROJECT_DIR$/target/conference/WEB-INF/classes/local_de_DE.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/local_en_US.properties" afterPath="$PROJECT_DIR$/target/conference/WEB-INF/classes/local_en_US.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/conference/WEB-INF/classes/local_ru_UA.properties" afterPath="$PROJECT_DIR$/target/conference/WEB-INF/classes/local_ru_UA.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/conference/jsp/login.jsp" afterPath="$PROJECT_DIR$/target/conference/jsp/login.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/conference/jsp/user.jsp" afterPath="$PROJECT_DIR$/target/conference/jsp/user.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/DaoTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/DaoTest.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-DaoTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-DaoTest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/WebTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/WebTest.txt" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -129,19 +68,41 @@
       <file leaf-file-name="LoginCommand.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/conference/web/comands/LoginCommand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="60" column="25" lean-forward="false" selection-start-line="60" selection-start-column="25" selection-end-line="60" selection-end-column="25" />
+            <state relative-caret-position="211">
+              <caret line="58" column="70" lean-forward="false" selection-start-line="58" selection-start-column="70" selection-end-line="58" selection-end-column="70" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoginService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/conference/service/LoginService.java">
+      <file leaf-file-name="login.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/login.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
-              <caret line="57" column="51" lean-forward="false" selection-start-line="57" selection-start-column="51" selection-end-line="57" selection-end-column="51" />
+            <state relative-caret-position="166">
+              <caret line="30" column="57" lean-forward="false" selection-start-line="30" selection-start-column="57" selection-end-line="30" selection-end-column="57" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EventService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/conference/service/EventService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-54">
+              <caret line="3" column="54" lean-forward="false" selection-start-line="3" selection-start-column="54" selection-end-line="3" selection-end-column="54" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ChangeLanguageCommand.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/conference/web/comands/ChangeLanguageCommand.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1">
+              <caret line="11" column="27" lean-forward="false" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -149,51 +110,54 @@
       <file leaf-file-name="user.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/user.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="117" column="78" lean-forward="false" selection-start-line="117" selection-start-column="78" selection-end-line="117" selection-end-column="78" />
+            <state relative-caret-position="94">
+              <caret line="127" column="55" lean-forward="false" selection-start-line="127" selection-start-column="55" selection-end-line="127" selection-end-column="55" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="moder.jsp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/moder.jsp">
+      <file leaf-file-name="ControllerHelper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/conference/web/ControllerHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-576">
-              <caret line="206" column="103" lean-forward="false" selection-start-line="206" selection-start-column="103" selection-end-line="206" selection-end-column="103" />
+            <state relative-caret-position="198">
+              <caret line="14" column="31" lean-forward="false" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="speaker.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/speaker.jsp">
+      <file leaf-file-name="Localization.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/conference/web/Localization.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="151" column="97" lean-forward="true" selection-start-line="151" selection-start-column="97" selection-end-line="151" selection-end-column="103" />
-              <folding />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="local_ru_UA.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/local_ru_UA.properties">
-          <provider editor-type-id="ResourceBundle">
-            <state />
-          </provider>
+      <file leaf-file-name="LocalProperties.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/conference/web/properties/LocalProperties.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="14" column="11" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="11" />
-              <folding />
+            <state relative-caret-position="486">
+              <caret line="27" column="69" lean-forward="false" selection-start-line="27" selection-start-column="69" selection-end-line="27" selection-end-column="69" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1352#1353#0" expanded="true" />
+                <element signature="e#1412#1413#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ChangeEventCommand.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/conference/web/comands/ChangeEventCommand.java">
+      <file leaf-file-name="config.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/config.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="22" column="55" lean-forward="false" selection-start-line="22" selection-start-column="55" selection-end-line="22" selection-end-column="55" />
+            <state relative-caret-position="90">
+              <caret line="5" column="34" lean-forward="false" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -202,41 +166,11 @@
       <file leaf-file-name="EventDao.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/conference/persistence/dao/EventDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="62" column="5" lean-forward="false" selection-start-line="62" selection-start-column="5" selection-end-line="62" selection-end-column="5" />
+            <state relative-caret-position="144">
+              <caret line="14" column="36" lean-forward="false" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="38" />
               <folding>
-                <element signature="e#387#388#0" expanded="true" />
-                <element signature="e#418#419#0" expanded="true" />
-                <element signature="e#466#467#0" expanded="true" />
-                <element signature="e#506#507#0" expanded="true" />
-                <element signature="e#553#554#0" expanded="true" />
-                <element signature="e#586#587#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AbstractDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/conference/persistence/dao/AbstractDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="133" column="57" lean-forward="false" selection-start-line="133" selection-start-column="57" selection-end-line="133" selection-end-column="57" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#617#618#0" expanded="false" />
-                <element signature="e#661#662#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ConfigProperties.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/conference/web/properties/ConfigProperties.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="27" column="51" lean-forward="false" selection-start-line="27" selection-start-column="51" selection-end-line="27" selection-end-column="51" />
-              <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#1603#1604#0" expanded="true" />
+                <element signature="e#1659#1660#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -274,11 +208,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/test/java/ServiceTest.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/conference/service/RegistratioService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/conference/service/SalaryService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/conference/persistence/dao/TopicDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/conference/persistence/dao/MySqlDaoFactory.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/conference/web/comands/ProposeTopicCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/conference/web/comands/PaginationCommand.java" />
@@ -295,8 +224,6 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/main/webapp/js/moder.js" />
         <option value="$PROJECT_DIR$/src/main/resources/config_ru_UA.properties" />
-        <option value="$PROJECT_DIR$/src/main/resources/config.properties" />
-        <option value="$PROJECT_DIR$/src/main/resources/local_de_DE.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/locale_en_US.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/conference/web/comands/BackToMainPageCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/conference/web/comands/NoCommand.java" />
@@ -306,25 +233,32 @@
         <option value="$PROJECT_DIR$/src/main/java/com/conference/web/comands/UpdateReportCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/conference/web/Controller.java" />
         <option value="$PROJECT_DIR$/src/test/java/WebTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/conference/web/comands/ChangeLanguageCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/conference/web/comands/LogoutCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/conference/web/comands/ConfirmTopicCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/conference/service/LoginService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/conference/web/ControllerHelper.java" />
         <option value="$PROJECT_DIR$/src/test/java/DaoTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/conference/service/EventService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/conference/web/comands/UpdateEventCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/conference/persistence/dao/AbstractDao.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/jsp/login.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/conference/persistence/dao/EventDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/conference/web/comands/ChangeEventCommand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/conference/web/properties/ConfigProperties.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/local_ru_UA.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/com/conference/web/comands/LoginCommand.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/local.properties" />
-        <option value="$PROJECT_DIR$/src/main/webapp/jsp/user.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/jsp/speaker.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/jsp/moder.jsp" />
+        <option value="$PROJECT_DIR$/src/main/resources/config.properties" />
+        <option value="$PROJECT_DIR$/src/main/resources/local.properties" />
+        <option value="$PROJECT_DIR$/src/main/resources/local_de_DE.properties" />
+        <option value="$PROJECT_DIR$/src/main/resources/local_en_US.properties" />
+        <option value="$PROJECT_DIR$/src/main/resources/local_ru_UA.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/conference/web/properties/LocaleProperties.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/conference/web/Localization.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/conference/web/properties/ConfigProperties.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/conference/web/comands/ChangeLanguage.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/conference/service/EventService.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/jsp/login.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/conference/web/properties/LocalProperties.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/jsp/user.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/conference/web/comands/ChangeLanguageCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/conference/web/comands/LoginCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/conference/web/ControllerHelper.java" />
       </list>
     </option>
   </component>
@@ -651,6 +585,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ConferenceManagement" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ConferenceManagement" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -824,6 +780,10 @@
               <option name="myItemId" value="persistence" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="entity" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -861,8 +821,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -1290,7 +1250,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1301" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1303,10 +1263,11 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3513932" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34674922" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34674922" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25338647" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25737053" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32817337" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24940239" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24940239" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1320,7 +1281,6 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32988048" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1348,8 +1308,8 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3513932" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32988048" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34674922" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24940239" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25737053" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32817337" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
     </layout-to-restore>
@@ -1372,34 +1332,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/materialize.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/conference/service/RegistrationService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="30" column="26" lean-forward="false" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/error.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="25" column="46" lean-forward="false" selection-start-line="25" selection-start-column="46" selection-end-line="25" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/conference/service/TopicService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1048">
-          <caret line="81" column="22" lean-forward="false" selection-start-line="81" selection-start-column="22" selection-end-line="81" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/conference/persistence/entity/Topic.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
@@ -1463,23 +1395,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/local_de_DE.properties">
-      <provider editor-type-id="ResourceBundle">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="23" lean-forward="false" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/local_en_US.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="29" lean-forward="false" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/js/moder.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
@@ -1536,14 +1451,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/conference/web/properties/MessageProperties.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="32" lean-forward="false" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1566,7 +1473,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/conference/web/comands/ChangeLanguageCommand.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/conference/service/ReportService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="364">
@@ -1629,24 +1535,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/login.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="738">
-          <caret line="41" column="43" lean-forward="false" selection-start-line="41" selection-start-column="43" selection-end-line="41" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/conference/service/EventService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1332">
-          <caret line="86" column="5" lean-forward="false" selection-start-line="86" selection-start-column="5" selection-end-line="86" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/conference/web/comands/UpdateEventCommand.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -1654,6 +1542,28 @@
           <folding>
             <element signature="imports" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/conference/persistence/dao/AbstractDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2250">
+          <caret line="133" column="57" lean-forward="false" selection-start-line="133" selection-start-column="57" selection-end-line="133" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/speaker.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="151" column="97" lean-forward="true" selection-start-line="151" selection-start-column="97" selection-end-line="151" selection-end-column="103" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/moder.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3708">
+          <caret line="206" column="103" lean-forward="false" selection-start-line="206" selection-start-column="103" selection-end-line="206" selection-end-column="103" />
         </state>
       </provider>
     </entry>
@@ -1665,110 +1575,172 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/conference/web/ControllerHelper.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/conference/service/LoginService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="24" column="62" lean-forward="false" selection-start-line="24" selection-start-column="62" selection-end-line="24" selection-end-column="62" />
+        <state relative-caret-position="733">
+          <caret line="57" column="51" lean-forward="false" selection-start-line="57" selection-start-column="51" selection-end-line="57" selection-end-column="51" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/local_de_DE.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="ResourceBundle">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/local_en_US.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="ResourceBundle">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/local_ru_UA.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="ResourceBundle">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/conference/web/properties/MessageProperties.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="32" lean-forward="false" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/local.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="17" lean-forward="true" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="ResourceBundle">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/conference/web/properties/ConfigProperties.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="27" column="51" lean-forward="false" selection-start-line="27" selection-start-column="51" selection-end-line="27" selection-end-column="51" />
+        <state relative-caret-position="373">
+          <caret line="27" column="5" lean-forward="false" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/conference/persistence/dao/AbstractDao.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/conference/web/comands/ChangeLanguage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="133" column="57" lean-forward="false" selection-start-line="133" selection-start-column="57" selection-end-line="133" selection-end-column="57" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#617#618#0" expanded="false" />
-            <element signature="e#661#662#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="90">
+          <caret line="5" column="24" lean-forward="false" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/conference/persistence/dao/EventDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="62" column="5" lean-forward="false" selection-start-line="62" selection-start-column="5" selection-end-line="62" selection-end-column="5" />
+        <state relative-caret-position="144">
+          <caret line="14" column="36" lean-forward="false" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="38" />
           <folding>
-            <element signature="e#387#388#0" expanded="true" />
-            <element signature="e#418#419#0" expanded="true" />
-            <element signature="e#466#467#0" expanded="true" />
-            <element signature="e#506#507#0" expanded="true" />
-            <element signature="e#553#554#0" expanded="true" />
-            <element signature="e#586#587#0" expanded="true" />
+            <element signature="e#1603#1604#0" expanded="true" />
+            <element signature="e#1659#1660#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/conference/service/LoginService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/login.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="57" column="51" lean-forward="false" selection-start-line="57" selection-start-column="51" selection-end-line="57" selection-end-column="51" />
+        <state relative-caret-position="166">
+          <caret line="30" column="57" lean-forward="false" selection-start-line="30" selection-start-column="57" selection-end-line="30" selection-end-column="57" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/local.properties">
-      <provider editor-type-id="ResourceBundle">
-        <state />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/config.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" column="17" lean-forward="false" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+        <state relative-caret-position="90">
+          <caret line="5" column="34" lean-forward="false" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/local_ru_UA.properties">
-      <provider editor-type-id="ResourceBundle">
-        <state />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/conference/service/EventService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="11" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/user.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="117" column="78" lean-forward="false" selection-start-line="117" selection-start-column="78" selection-end-line="117" selection-end-column="78" />
+        <state relative-caret-position="-54">
+          <caret line="3" column="54" lean-forward="false" selection-start-line="3" selection-start-column="54" selection-end-line="3" selection-end-column="54" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/conference/web/comands/LoginCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="60" column="25" lean-forward="false" selection-start-line="60" selection-start-column="25" selection-end-line="60" selection-end-column="25" />
+        <state relative-caret-position="211">
+          <caret line="58" column="70" lean-forward="false" selection-start-line="58" selection-start-column="70" selection-end-line="58" selection-end-column="70" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/speaker.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/conference/web/properties/LocalProperties.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="151" column="97" lean-forward="true" selection-start-line="151" selection-start-column="97" selection-end-line="151" selection-end-column="103" />
+        <state relative-caret-position="486">
+          <caret line="27" column="69" lean-forward="false" selection-start-line="27" selection-start-column="69" selection-end-line="27" selection-end-column="69" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1352#1353#0" expanded="true" />
+            <element signature="e#1412#1413#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/conference/web/Localization.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/conference/web/ControllerHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="14" column="31" lean-forward="false" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/moder.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/user.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-576">
-          <caret line="206" column="103" lean-forward="false" selection-start-line="206" selection-start-column="103" selection-end-line="206" selection-end-column="103" />
+        <state relative-caret-position="94">
+          <caret line="127" column="55" lean-forward="false" selection-start-line="127" selection-start-column="55" selection-end-line="127" selection-end-column="55" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/conference/web/comands/ChangeLanguageCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1">
+          <caret line="11" column="27" lean-forward="false" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
