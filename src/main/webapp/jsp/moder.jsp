@@ -194,6 +194,27 @@
                             </span>
                             </div>
                         </li>
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">email</i>Send Emails</div>
+                            <div class="collapsible-body">
+                            <span>
+                                <div>
+                                    <form name="editEventForm" method="POST" action="controller">
+                                        <input type="hidden" name="command" value="sendemail"/>
+                                        Topic:<br/>
+                                        <input type="text" name="emailtopic" value="" required>
+                                        Text:<br/>
+                                        <input type="text" name="emailtext" value="" required>
+                                        <br/>
+                                        <br/>
+                                        <button class="btn waves-effect waves-light" type="submit" name="action">Send Emails
+                                        <i class="material-icons right">send</i>
+                                        </button>
+                                    </form>
+                                </div>
+                            </span>
+                            </div>
+                        </li>
                       </ul>
                 </div>
                 <br>

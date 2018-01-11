@@ -24,6 +24,7 @@ public class ControllerHelper {
         commands.put("eventchange", new ChangeEventCommand());
         commands.put("logout", new LogoutCommand());
         commands.put("changelang", new ChangeLanguageCommand());
+        commands.put("sendemail", new SendEmailCommand());
     }
 
     /**

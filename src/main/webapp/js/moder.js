@@ -23,3 +23,6 @@ $('.timepicker').pickatime({
 $(document).ready(function(){
     $('.collapsible').collapsible();
 });
+
+$('#textarea1').val('New Text');
+$('#textarea1').trigger('autoresize')
