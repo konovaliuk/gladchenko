@@ -45,19 +45,6 @@ public class EmailService {
             counter++;
         }
 
-        /*
-        String[] emailArr = new String[emailList.size()];
-        emailArr = emailList.toArray(emailArr);
-        Address[] addressArr = new Address[emailList.size()];
-        InternetAddress[] iAdressArray = InternetAddress.parse(emailArr);
-        for (int j=0; j< emailList.size(); j++) {
-            addressArr[j] = emailArr[j];
-            emailArr[j] =
-            InternetAddress adr = InternetAddress.parse(emailArr[j]);
-            iAdressArray = InternetAddress.parse(emailArr);
-        }
-        */
-
         Properties props = new Properties();
         props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.starttls.enable", "true");
