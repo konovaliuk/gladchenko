@@ -145,7 +145,7 @@
                 <div>
                     <h5><c:out value="${msg}" /></h5>
                 </div>
-                <div>
+                <div align="center">
                     <form name="loginForm" method="POST" action="controller">
                         <input type="hidden" name="command" value="logout"/>
                         <br>

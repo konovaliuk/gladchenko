@@ -56,7 +56,7 @@ public class LoginCommand implements ICommand {
             page = ConfigProperties.getInstance().getProperty(ConfigProperties.SPEAKER_PAGE_PATH);
         } else if (LoginService.checkLogin(login, pass)) {
             HttpSession session = request.getSession();
-            session.setAttribute("event", EventService.getEventById(1L));
+            session.setAttribute("event", EventService.getEventById(1L, "eventRu"));
             session.setAttribute("local", "EN");
             Localization.setLocalProp(session);
             session.setAttribute("userid",  LoginService.getUserId(login));
