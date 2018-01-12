@@ -23,53 +23,6 @@
         </nav>
         <br>
         <div class="row">
-            <div class="col s5 offset-s1">
-                <div>
-                    <h5>All reports:</h5>
-                    <ul class="collection">
-                        <c:forEach items="${list}" var="i" >
-                            <li class="collection-item avatar">
-                                <i class="material-icons circle">event_available</i>
-                                <span class="title"><c:out value="${i.getTopic()}" /></span>
-                                <p>Place: <c:out value="${i.getPlace()}" /><br>
-                                    <fmt:formatDate value="${i.getCalendar().getTime()}" type="both" timeStyle = "short"/>
-                                </p>
-                                <a class="secondary-content"><i class="material-icons">grade</i></a>
-                            </li>
-                        </c:forEach>
-                    </ul>
-                </div>
-                <div>
-                    <ul class="collapsible popout" data-collapsible="accordion">
-
-                        <li>
-                            <div class="collapsible-header"><i class="material-icons">email</i>Send Emails</div>
-                            <div class="collapsible-body">
-                            <span>
-                                <div>
-                                    <form name="editEventForm" method="POST" action="controller">
-                                        <input type="hidden" name="command" value="sendemail"/>
-                                        <div class="input-field">
-                                            <label for="topic">Topic</label>
-                                            <input type="text" name="emailtopic" value="" required>
-                                        </div>
-                                        <div class="input-field">
-                                            <label for="textarea1">Text</label>
-                                            <textarea id="textarea1" class="materialize-textarea" name="emailtext"></textarea>
-                                        </div>
-                                        <br/>
-                                        <br/>
-                                        <button class="btn waves-effect waves-light" type="submit" name="action">Send Emails
-                                        <i class="material-icons right">send</i>
-                                        </button>
-                                    </form>
-                                </div>
-                            </span>
-                            </div>
-                        </li>
-                      </ul>
-                </div>
-            </div>
             <div class="col s4 offset-s1">
                 <div>
                     <ul class="collapsible" data-collapsible="accordion">
@@ -258,6 +211,48 @@
                             </span>
                             </div>
                         </li>
+                        <li>
+                        <div class="collapsible-header"><i class="material-icons">email</i>Send Emails</div>
+                        <div class="collapsible-body">
+                        <span>
+                            <div>
+                                <form name="editEventForm" method="POST" action="controller">
+                                    <input type="hidden" name="command" value="sendemail"/>
+                                    <div class="input-field">
+                                        <label for="topic">Topic</label>
+                                        <input type="text" name="emailtopic" value="" required>
+                                    </div>
+                                    <div class="input-field">
+                                        <label for="textarea1">Text</label>
+                                        <textarea id="textarea1" class="materialize-textarea" name="emailtext"></textarea>
+                                    </div>
+                                    <br/>
+                                    <br/>
+                                    <button class="btn waves-effect waves-light" type="submit" name="action">Send Emails
+                                    <i class="material-icons right">send</i>
+                                    </button>
+                                </form>
+                            </div>
+                        </span>
+                        </div>
+                    </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col s4 offset-s2">
+                <div>
+                    <h5>All reports:</h5>
+                    <ul class="collection">
+                        <c:forEach items="${list}" var="i" >
+                            <li class="collection-item avatar">
+                                <i class="material-icons circle">event_available</i>
+                                <span class="title"><c:out value="${i.getTopic()}" /></span>
+                                <p>Place: <c:out value="${i.getPlace()}" /><br>
+                                    <fmt:formatDate value="${i.getCalendar().getTime()}" type="both" timeStyle = "short"/>
+                                </p>
+                                <a class="secondary-content"><i class="material-icons">grade</i></a>
+                            </li>
+                        </c:forEach>
                     </ul>
                 </div>
                 <br>
