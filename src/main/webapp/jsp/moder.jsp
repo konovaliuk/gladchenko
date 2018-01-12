@@ -41,51 +41,7 @@
                 </div>
                 <div>
                     <ul class="collapsible popout" data-collapsible="accordion">
-                        <li>
-                        <div class="collapsible-header"><i class="material-icons">edit</i>Edit report</div>
-                        <div class="collapsible-body">
-                        <span>
-                        <div>
-                            <form name="loginForm" method="POST" action="controller">
-                                <input type="hidden" name="command" value="updatereport"/>
-                                <input type="hidden" name="idevent" value="${event.getId()}"/>
-                                <select name="idreport" required>
-                                    <option value="" disabled selected>Choose report</option>
-                                    <c:forEach items="${list}" var="rp" >
-                                        <option value="${rp.getId()}"><c:out value="${rp.getTopic()}" /></option>
-                                    </c:forEach>
-                                </select>
-                                <div class="input-field">
-                                    <label for="topic">Topic</label>
-                                    <input id="topic" type="text" class="validate" name="topicreport" value="" required>
-                                </div>
-                                <div class="input-field">
-                                    <label for="place">Place</label>
-                                    <input id="place" type="text" class="validate" name="placereport" value="" required>
-                                </div>
-                                <div class="input-field">
-                                    <label for="date">Date</label>
-                                    <input id="date" type="text" class="datepicker" name="datereport" required>
-                                </div>
-                                <div class="input-field">
-                                    <label for="time">Time</label>
-                                    <input id="time" type="text" class="timepicker" name="timereport" required>
-                                </div>
-                                <select name="idspeaker" required>
-                                    <option value="" disabled selected>Choose Speaker</option>
-                                    <c:forEach items="${speakers}" var="sp" >
-                                        <option value="${sp.getId()}"><c:out value="${sp.getLastName()}" /></option>
-                                    </c:forEach>
-                                </select>
-                                <button class="btn waves-effect waves-light" type="submit" name="action">Update
-                                    <i class="material-icons left">update</i>
-                                </button>
-                            </form>
-                            <br>
-                        </div>
-                        </span>
-                        </div>
-                        </li>
+
                         <li>
                             <div class="collapsible-header"><i class="material-icons">email</i>Send Emails</div>
                             <div class="collapsible-body">
@@ -183,17 +139,61 @@
                         </div>
                         </li>
                         <li>
+                        <div class="collapsible-header"><i class="material-icons">edit</i>Edit report</div>
+                        <div class="collapsible-body">
+                        <span>
+                        <div>
+                            <form name="loginForm" method="POST" action="controller">
+                                <input type="hidden" name="command" value="updatereport"/>
+                                <input type="hidden" name="idevent" value="${event.getId()}"/>
+                                <select name="idreport" required>
+                                    <option value="" disabled selected>Choose report</option>
+                                    <c:forEach items="${list}" var="rp" >
+                                        <option value="${rp.getId()}"><c:out value="${rp.getTopic()}" /></option>
+                                    </c:forEach>
+                                </select>
+                                <div class="input-field">
+                                    <label for="topic">Topic</label>
+                                    <input id="topic" type="text" class="validate" name="topicreport" value="" required>
+                                </div>
+                                <div class="input-field">
+                                    <label for="place">Place</label>
+                                    <input id="place" type="text" class="validate" name="placereport" value="" required>
+                                </div>
+                                <div class="input-field">
+                                    <label for="date">Date</label>
+                                    <input id="date" type="text" class="datepicker" name="datereport" required>
+                                </div>
+                                <div class="input-field">
+                                    <label for="time">Time</label>
+                                    <input id="time" type="text" class="timepicker" name="timereport" required>
+                                </div>
+                                <select name="idspeaker" required>
+                                    <option value="" disabled selected>Choose Speaker</option>
+                                    <c:forEach items="${speakers}" var="sp" >
+                                        <option value="${sp.getId()}"><c:out value="${sp.getLastName()}" /></option>
+                                    </c:forEach>
+                                </select>
+                                <button class="btn waves-effect waves-light" type="submit" name="action">Update
+                                    <i class="material-icons left">update</i>
+                                </button>
+                            </form>
+                            <br>
+                        </div>
+                        </span>
+                        </div>
+                        </li>
+                        <li>
                         <div class="collapsible-header"><i class="material-icons">message</i>Propose topic for speaker</div>
                         <div class="collapsible-body">
                         <span>
                             <div>
                                 <form name="editEventForm" method="POST" action="controller">
                                     <input type="hidden" name="command" value="proptopicforspeaker"/>
-                                    <i class="material-icons prefix">mode_edit</i>
-                                    <label for="icon_prefix2">Topic:</label><br>
-                                    <input type="text"  name="topicforprop" required>
-                                    <br/>
-                                    <br/>
+                                    <div class="input-field">
+                                        <label for="topicfs">Topic</label><br>
+                                        <input id="topicfs" type="text" class="validate" name="topicforprop" required>
+                                    </div>
                                     <select name="idspeaker" required>
                                         <option value="" disabled selected>Choose Speaker</option>
                                         <c:forEach items="${speakers}" var="s" >
