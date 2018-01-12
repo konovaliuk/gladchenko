@@ -173,11 +173,33 @@
                         <div class="collapsible-body">
                         <span>
                             <div>
-                                <ul>
+                                <ul id="dropdown2" class="dropdown-content">
                                     <c:forEach items="${conftopic}" var="ct" >
                                         <li><c:out value="${ct.getTopic()}" /> - Speaker: <c:out value="${ct.getIdSpeaker()}" /></li>
                                     </c:forEach>
                                 </ul>
+                                <a class="btn dropdown-button" href="#!" data-activates="dropdown2">Confirmed topics<i class="material-icons right">arrow_drop_down</i></a>
+                            </div>
+                            <div>
+                                <form name="editEventForm" method="POST" action="controller">
+                                <input type="hidden" name="command" value="confspeakertopic"/>
+                                <c:forEach items="${newspeakertopics}" var="nt" >
+                                <p>
+                                  <input class="with-gap" name="idconftopic" type="radio" id="${nt.getId()}" value="${nt.getId()}" checked/>
+                                  <label for="${nt.getId()}"><c:out value="${nt.getTopic()}" /></label>
+                                </p>
+                                </c:forEach>
+                                <br>
+                                <select name="topicstatus" required>
+                                    <option value="" disabled selected>Confirm or cancel</option>
+                                    <option value="confirm">Confirm</option>
+                                    <option value="cancel">Cancel</option>
+                                </select>
+                                <br>
+                                <button class="btn waves-effect waves-light" type="submit" name="action">Send
+                                <i class="material-icons left">send</i>
+                                </button>
+                                </form>
                             </div>
                         </span>
                         </div>

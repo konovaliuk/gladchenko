@@ -38,7 +38,6 @@ public class Controller extends HttpServlet {
     private void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        Locale locale = Locale.getDefault();
         String page = null;
         try {
             ICommand command = controllerHelper.getCommand(request);        //определение команды, пришедшей из JSP

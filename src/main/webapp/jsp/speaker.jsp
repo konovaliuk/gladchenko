@@ -116,6 +116,14 @@
                             <div class="collapsible-body">
                             <span>
                             <div>
+                                <ul id="dropdown2" class="dropdown-content">
+                                    <c:forEach items="${confmodtopic}" var="ct" >
+                                        <li><c:out value="${ct.getTopic()}" /></li>
+                                    </c:forEach>
+                                </ul>
+                                <a class="btn dropdown-button" href="#!" data-activates="dropdown2">Confirmed topics<i class="material-icons right">arrow_drop_down</i></a>
+                            </div>
+                            <div>
                                 <form name="editEventForm" method="POST" action="controller">
                                 <input type="hidden" name="command" value="conftopic"/>
                                 <c:forEach items="${newtopic}" var="nt" >

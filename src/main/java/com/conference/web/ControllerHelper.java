@@ -25,6 +25,7 @@ public class ControllerHelper {
         commands.put("logout", new LogoutCommand());
         commands.put("changelang", new ChangeLanguageCommand());
         commands.put("sendemail", new SendEmailCommand());
+        commands.put("confspeakertopic", new ConfirmSpeakerTopicCommand());
     }
 
     /**

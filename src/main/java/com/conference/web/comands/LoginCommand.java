@@ -43,6 +43,7 @@ public class LoginCommand implements ICommand {
             session.setAttribute("registrstat", RegistrationService.getRegistrationsCount());
             session.setAttribute("role", UserService.getUserRole(login));
             session.setAttribute("eventlist", EventService.getAllEvent());
+            session.setAttribute("newspeakertopics", TopicService.getTopicsByParam("status", "newsp"));
             page = ConfigProperties.getInstance().getProperty(ConfigProperties.MODER_PAGE_PATH);
         } else if (LoginService.checkLogin(login, pass) && LoginService.checkRole(login, 3)) {
             HttpSession session = request.getSession(true);
@@ -53,6 +54,7 @@ public class LoginCommand implements ICommand {
             session.setAttribute("role", UserService.getUserRole(login));
             session.setAttribute("eventlist", EventService.getAllEvent());
             session.setAttribute("newtopic", TopicService.getNewTopicsByParam("id_speaker", String.valueOf(LoginService.getUserId(login))));
+            session.setAttribute("confmodtopic", TopicService.getConfModerTopicsByParam("id_speaker", String.valueOf(LoginService.getUserId(login))));
             page = ConfigProperties.getInstance().getProperty(ConfigProperties.SPEAKER_PAGE_PATH);
         } else if (LoginService.checkLogin(login, pass)) {
             HttpSession session = request.getSession();

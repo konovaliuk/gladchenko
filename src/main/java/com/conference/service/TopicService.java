@@ -39,12 +39,23 @@ public class TopicService {
         return result;
     }
 
+    public static List<Topic> getConfModerTopicsByParam(String param, String value) {
+        List<Topic> topics = getTopicsByParam(param, value);
+        List<Topic> result = new ArrayList<>();
+        for (Topic t : topics) {
+            if (t.getStatus().equalsIgnoreCase("confmod")) {
+                result.add(t);
+            }
+        }
+        return result;
+    }
+
+
     public static List<Topic> getTopicsByParam(String param, String value) {
         List<Topic> topics = null;
         try (Connection connection = (Connection) factory.getContext()) {
             IGeneric topicDao = factory.getDao(connection, Topic.class);
             topics = topicDao.getAllByParam(param, value);
-
         } catch (Exception e) {
             LOG.error("Exception: ", e);
         }

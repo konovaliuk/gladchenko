@@ -66,9 +66,7 @@ public class EmailService {
             message.setSubject(subject);
             message.setText(text);
             Transport.send(message);
-            //System.out.println("Done");
         } catch (MessagingException e) {
-            e.printStackTrace();
             throw new RuntimeException(e);
         }
     }
