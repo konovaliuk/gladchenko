@@ -23,7 +23,7 @@
         </nav>
         <br>
         <div class="row">
-            <div class="col s4 offset-s1">
+            <div class="col s4 offset-s2">
                 <div>
                     <ul class="collapsible" data-collapsible="accordion">
                         <li>
@@ -239,7 +239,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="col s4 offset-s2">
+            <div class="col s4 offset-s1">
                 <div>
                     <h5>All reports:</h5>
                     <ul class="collection">
