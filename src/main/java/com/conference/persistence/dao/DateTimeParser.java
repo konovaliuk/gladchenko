@@ -1,5 +1,7 @@
 package com.conference.persistence.dao;
 
+import org.apache.log4j.Logger;
+
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.StringTokenizer;
@@ -8,6 +10,7 @@ import java.util.StringTokenizer;
  * Created by gleb on 25.12.17.
  */
 public class DateTimeParser {
+    private static final Logger LOG = Logger.getLogger(DateTimeParser.class.getName());
     public static Calendar dateTimeToCalendar(String date, String time) throws PersistException {
         try {
             Calendar calendar = new GregorianCalendar();
@@ -21,6 +24,7 @@ public class DateTimeParser {
             calendar.set(Calendar.SECOND, Integer.parseInt(tokenizer.nextToken()));
             return calendar;
         } catch (Exception e) {
+            LOG.error("Exception: ", e);
             throw  new PersistException(e);
         }
     }
