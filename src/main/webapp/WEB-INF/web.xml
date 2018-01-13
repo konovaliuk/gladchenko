@@ -39,7 +39,7 @@ http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
 
     <filter-mapping>
         <filter-name>FilterName</filter-name>
-        <servlet-name>/*</servlet-name>
+        <url-pattern>/controller</url-pattern>
     </filter-mapping>
 
 </web-app>

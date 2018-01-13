@@ -67,7 +67,7 @@ public class LoginCommand implements ICommand {
             session.setAttribute("eventlist", EventService.getAllEvent("eventRu"));
             page = ConfigProperties.getInstance().getProperty(ConfigProperties.USER_PAGE_PATH);
         } else {
-            request.setAttribute("errormessage", MessageProperties.getInstance().LOGIN_ERROR_MESSAGE);
+            request.setAttribute("errormessage", MessageProperties.getInstance().getProperty(MessageProperties.LOGIN_ERROR_MESSAGE));
             page = ConfigProperties.getInstance().getProperty(ConfigProperties.ERROR_PAGE_PATH);
         }
         return page;
