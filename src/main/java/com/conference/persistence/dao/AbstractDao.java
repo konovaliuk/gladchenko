@@ -2,6 +2,8 @@ package com.conference.persistence.dao;
 
 import com.conference.persistence.idao.IGeneric;
 import com.conference.persistence.idao.Identified;
+import com.conference.web.filters.FilterConnect;
+import org.apache.log4j.Logger;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -18,6 +20,7 @@ import java.util.List;
  * @param <PK>
  */
 public abstract class AbstractDao<T extends Identified<PK>, PK extends Long> implements IGeneric<T, PK> {
+    private static final Logger LOG = Logger.getLogger(AbstractDao.class.getName());
     protected Connection connection;
 
     public AbstractDao(Connection connection) {
@@ -88,7 +91,7 @@ public abstract class AbstractDao<T extends Identified<PK>, PK extends Long> imp
             ResultSet resultSet = statement.executeQuery();
             list = parseResultSet(resultSet);
         } catch (Exception e) {
-                e.printStackTrace();
+            LOG.error("Exception: ", e);
             throw new PersistException(e);
         }
         if (list == null || list.size() == 0) {
@@ -107,7 +110,7 @@ public abstract class AbstractDao<T extends Identified<PK>, PK extends Long> imp
             ResultSet rs = statement.executeQuery();
             list = parseResultSet(rs);
         } catch (Exception e) {
-            e.printStackTrace();
+            LOG.error("Exception: ", e);
             throw new PersistException(e);
         }
         return list;
@@ -122,7 +125,7 @@ public abstract class AbstractDao<T extends Identified<PK>, PK extends Long> imp
             ResultSet rs = statement.executeQuery();
             list = parseResultSet(rs);
         } catch (Exception e) {
-            e.printStackTrace();
+            LOG.error("Exception: ", e);
             throw new PersistException(e);
         }
         return list;
@@ -137,6 +140,7 @@ public abstract class AbstractDao<T extends Identified<PK>, PK extends Long> imp
                 throw new PersistException("On update modify more then 1 record: " + count);
             }
         } catch (Exception e) {
+            LOG.error("Exception: ", e);
             throw new PersistException(e);
         }
     }
@@ -155,6 +159,7 @@ public abstract class AbstractDao<T extends Identified<PK>, PK extends Long> imp
             }
             statement.close();
         } catch (Exception e) {
+            LOG.error("Exception: ", e);
             throw new PersistException(e);
         }
     }
@@ -170,6 +175,7 @@ public abstract class AbstractDao<T extends Identified<PK>, PK extends Long> imp
                 throw new PersistException("On persist modify more then 1 record: " + count);
             }
         } catch (Exception e) {
+            LOG.error("Exception: ", e);
             throw new PersistException(e);
         }
         // Получаем только что вставленную запись
@@ -182,6 +188,7 @@ public abstract class AbstractDao<T extends Identified<PK>, PK extends Long> imp
             }
             persistInstance = list.iterator().next();
         } catch (Exception e) {
+            LOG.error("Exception: ", e);
             throw new PersistException(e);
         }
         return persistInstance;
@@ -196,7 +203,7 @@ public abstract class AbstractDao<T extends Identified<PK>, PK extends Long> imp
             ResultSet resultSet = statement.executeQuery();
             list = parseResultSet(resultSet);
         } catch (Exception e) {
-            e.printStackTrace();
+            LOG.error("Exception: ", e);
             throw new PersistException(e);
         }
         if (list == null || list.size() == 0) {
