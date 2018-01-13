@@ -1,6 +1,9 @@
 package com.conference.web.filters;
 
+import org.apache.log4j.Logger;
+
 import javax.servlet.*;
+
 import java.io.IOException;
 import java.util.Date;
 
@@ -8,6 +11,7 @@ import java.util.Date;
  * Created by gleb on 13.01.18.
  */
 public class FilterConnect implements Filter {
+    private static final Logger LOG = Logger.getLogger(FilterConnect.class.getName());
     private FilterConfig filterConfig = null;
     private boolean active = false;
 
@@ -26,7 +30,8 @@ public class FilterConnect implements Filter {
             String ipAddress = servletRequest.getRemoteAddr();
 
             // Log the IP address and current timestamp.
-            //System.out.println("IP "+ ipAddress + ", Time "+ new Date().toString());
+            String message = "IP "+ ipAddress + ", Time "+ new Date().toString();
+            LOG.info(message);
 
             // Pass request back down the filter chain
             filterChain.doFilter(servletRequest,servletResponse);
