@@ -1,6 +1,7 @@
 package com.conference.persistence.dao;
 
 import com.conference.persistence.entity.Topic;
+import org.apache.log4j.Logger;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -12,6 +13,7 @@ import java.util.List;
  * Created by gleb on 27.12.17.
  */
 public class TopicDao extends AbstractDao<Topic, Long> {
+    private static final Logger LOG = Logger.getLogger(EventDao.class.getName());
     public TopicDao(Connection connection) {
         super(connection);
     }
@@ -62,6 +64,7 @@ public class TopicDao extends AbstractDao<Topic, Long> {
                 result.add(topic);
             }
         } catch (Exception e) {
+            LOG.error("Exception: ", e);
             throw new PersistException(e);
         }
         return result;
@@ -75,6 +78,7 @@ public class TopicDao extends AbstractDao<Topic, Long> {
             statement.setLong(3, object.getIdModer());
             statement.setString(4, object.getStatus());
         } catch (Exception e) {
+            LOG.error("Exception: ", e);
             throw new PersistException(e);
         }
     }
@@ -88,6 +92,7 @@ public class TopicDao extends AbstractDao<Topic, Long> {
             statement.setString(4, object.getStatus());
             statement.setLong(5, object.getId());
         } catch (Exception e) {
+            LOG.error("Exception: ", e);
             throw new PersistException(e);
         }
     }
@@ -97,6 +102,7 @@ public class TopicDao extends AbstractDao<Topic, Long> {
         try {
             statement.setLong(1, object.getId());
         } catch (Exception e) {
+            LOG.error("Exception: ", e);
             throw new PersistException(e);
         }
     }

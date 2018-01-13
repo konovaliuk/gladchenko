@@ -1,6 +1,7 @@
 package com.conference.persistence.dao;
 
 import com.conference.persistence.entity.Event;
+import org.apache.log4j.Logger;
 
 import java.sql.*;
 import java.sql.Date;
@@ -12,6 +13,7 @@ import java.util.*;
  * Created by gleb on 12.12.17.
  */
 public class EventDao extends AbstractDao<Event, Long> {
+    private static final Logger LOG = Logger.getLogger(EventDao.class.getName());
     private String language = "eventEn";
 
     public String getLanguage() {
@@ -75,6 +77,7 @@ public class EventDao extends AbstractDao<Event, Long> {
                 result.add(event);
             }
         } catch (Exception e) {
+            LOG.error("Exception: ", e);
             throw new PersistException(e);
         }
         return result;
@@ -90,6 +93,7 @@ public class EventDao extends AbstractDao<Event, Long> {
             statement.setString(4, object.getTopic());
             statement.setString(5, object.getPlace());
         } catch (Exception e) {
+            LOG.error("Exception: ", e);
             throw new PersistException(e);
         }
     }
@@ -104,6 +108,7 @@ public class EventDao extends AbstractDao<Event, Long> {
             statement.setTime(4, new Time(object.getCalendar().getTimeInMillis()));
             statement.setLong(5, object.getId());
         } catch (Exception e) {
+            LOG.error("Exception: ", e);
             throw new PersistException(e);
         }
     }
@@ -114,6 +119,7 @@ public class EventDao extends AbstractDao<Event, Long> {
         try {
             statement.setLong(1, object.getId());
         } catch (Exception e) {
+            LOG.error("Exception: ", e);
             throw new PersistException(e);
         }
     }

@@ -1,6 +1,7 @@
 package com.conference.persistence.dao;
 
 import com.conference.persistence.entity.Salary;
+import org.apache.log4j.Logger;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -12,6 +13,7 @@ import java.util.List;
  * Created by gleb on 26.12.17.
  */
 public class SalaryDao extends AbstractDao<Salary, Long> {
+    private static final Logger LOG = Logger.getLogger(EventDao.class.getName());
     public SalaryDao(Connection connection) {
         super(connection);
     }
@@ -61,6 +63,7 @@ public class SalaryDao extends AbstractDao<Salary, Long> {
                 result.add(salary);
             }
         } catch (Exception e) {
+            LOG.error("Exception: ", e);
             throw new PersistException(e);
         }
         return result;
@@ -73,6 +76,7 @@ public class SalaryDao extends AbstractDao<Salary, Long> {
             statement.setDouble(2, object.getBonus());
             statement.setLong(3, object.getUserId());
         } catch (Exception e) {
+            LOG.error("Exception: ", e);
             throw new PersistException(e);
         }
     }
@@ -85,6 +89,7 @@ public class SalaryDao extends AbstractDao<Salary, Long> {
             statement.setLong(3, object.getUserId());
             statement.setLong(4, object.getId());
         } catch (Exception e) {
+            LOG.error("Exception: ", e);
             throw new PersistException(e);
         }
     }
@@ -94,6 +99,7 @@ public class SalaryDao extends AbstractDao<Salary, Long> {
         try {
             statement.setLong(1, object.getId());
         } catch (Exception e) {
+            LOG.error("Exception: ", e);
             throw new PersistException(e);
         }
     }

@@ -1,6 +1,7 @@
 package com.conference.persistence.dao;
 
 import com.conference.persistence.entity.User;
+import org.apache.log4j.Logger;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -13,6 +14,7 @@ import java.util.List;
  */
 
 public class UserDao extends AbstractDao<User, Long> {
+    private static final Logger LOG = Logger.getLogger(UserDao.class.getName());
     public UserDao(Connection connection) {
         super(connection);
     }
@@ -65,6 +67,7 @@ public class UserDao extends AbstractDao<User, Long> {
                 result.add(user);
             }
         } catch (Exception e) {
+            LOG.error("Exception: ", e);
             throw new PersistException(e);
         }
         return result;
@@ -80,6 +83,7 @@ public class UserDao extends AbstractDao<User, Long> {
             statement.setString(5, object.getLastName());
             statement.setLong(6, object.getIdUserType());
         } catch (Exception e) {
+            LOG.error("Exception: ", e);
             throw new PersistException(e);
         }
     }
@@ -95,6 +99,7 @@ public class UserDao extends AbstractDao<User, Long> {
             statement.setLong(6, object.getIdUserType());
             statement.setLong(7, object.getId());
         } catch (Exception e) {
+            LOG.error("Exception: ", e);
             throw new PersistException(e);
         }
     }
@@ -104,6 +109,7 @@ public class UserDao extends AbstractDao<User, Long> {
         try {
             statement.setLong(1, object.getId());
         } catch (Exception e) {
+            LOG.error("Exception: ", e);
             throw new PersistException(e);
         }
     }

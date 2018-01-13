@@ -3,6 +3,7 @@ package com.conference.persistence.dao;
 import com.conference.persistence.entity.*;
 import com.conference.persistence.idao.IFactory;
 import com.conference.persistence.idao.IGeneric;
+import org.apache.log4j.Logger;
 
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
@@ -17,6 +18,7 @@ import java.util.Map;
  * Created by gleb on 12.12.17.
  */
 public class MySqlDaoFactory implements IFactory<Connection> {
+    private static final Logger LOG = Logger.getLogger(MySqlDaoFactory.class.getName());
     private Map<Class, IDaoCreator> creators;
 
     public MySqlDaoFactory() {
@@ -74,6 +76,7 @@ public class MySqlDaoFactory implements IFactory<Connection> {
             DataSource ds = (DataSource) initContext.lookup("java:comp/env/jdbc/TestDB");
             connection = ds.getConnection();
         } catch (Exception e) {
+            LOG.error("Exception: ", e);
             throw new PersistException(e);
         }
         return  connection;

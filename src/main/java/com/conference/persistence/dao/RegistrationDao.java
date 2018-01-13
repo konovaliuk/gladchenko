@@ -1,6 +1,7 @@
 package com.conference.persistence.dao;
 
 import com.conference.persistence.entity.Registration;
+import org.apache.log4j.Logger;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -12,6 +13,7 @@ import java.util.List;
  * Created by gleb on 26.12.17.
  */
 public class RegistrationDao extends AbstractDao<Registration, Long> {
+    private static final Logger LOG = Logger.getLogger(RegistrationDao.class.getName());
     public RegistrationDao(Connection connection) {
         super(connection);
     }
@@ -61,6 +63,7 @@ public class RegistrationDao extends AbstractDao<Registration, Long> {
                 result.add(registration);
             }
         } catch (Exception e) {
+            LOG.error("Exception: ", e);
             throw new PersistException(e);
         }
         return result;
@@ -73,6 +76,7 @@ public class RegistrationDao extends AbstractDao<Registration, Long> {
             statement.setLong(2, object.getEventId());
             statement.setLong(3, object.getReportId());
         } catch (Exception e) {
+            LOG.error("Exception: ", e);
             throw new PersistException(e);
         }
     }
@@ -85,6 +89,7 @@ public class RegistrationDao extends AbstractDao<Registration, Long> {
             statement.setLong(3, object.getReportId());
             statement.setLong(4, object.getId());
         } catch (Exception e) {
+            LOG.error("Exception: ", e);
             throw new PersistException(e);
         }
     }
@@ -94,6 +99,7 @@ public class RegistrationDao extends AbstractDao<Registration, Long> {
         try {
             statement.setLong(1, object.getId());
         } catch (Exception e) {
+            LOG.error("Exception: ", e);
             throw new PersistException(e);
         }
     }

@@ -2,6 +2,7 @@ package com.conference.persistence.dao;
 
 import com.conference.persistence.entity.Report;
 import com.conference.persistence.entity.User;
+import org.apache.log4j.Logger;
 
 import java.sql.*;
 import java.util.LinkedList;
@@ -11,6 +12,7 @@ import java.util.List;
  * Created by gleb on 20.12.17.
  */
 public class ReportDao extends AbstractDao<Report, Long> {
+    private static final Logger LOG = Logger.getLogger(ReportDao.class.getName());
     public ReportDao(Connection connection) {
         super(connection);
     }
@@ -64,6 +66,7 @@ public class ReportDao extends AbstractDao<Report, Long> {
                 result.add(report);
             }
         } catch (Exception e) {
+            LOG.error("Exception: ", e);
             throw new PersistException(e);
         }
         return result;
@@ -79,6 +82,7 @@ public class ReportDao extends AbstractDao<Report, Long> {
             statement.setLong(5, object.getIdSpeaker());
             statement.setLong(6, object.getIdEvent());
         } catch (Exception e) {
+            LOG.error("Exception: ", e);
             throw new PersistException(e);
         }
     }
@@ -94,6 +98,7 @@ public class ReportDao extends AbstractDao<Report, Long> {
             statement.setLong(6, object.getIdEvent());
             statement.setLong(7, object.getId());
         } catch (Exception e) {
+            LOG.error("Exception: ", e);
             throw new PersistException(e);
         }
     }
@@ -103,6 +108,7 @@ public class ReportDao extends AbstractDao<Report, Long> {
         try {
             statement.setLong(1, object.getId());
         } catch (Exception e) {
+            LOG.error("Exception: ", e);
             throw new PersistException(e);
         }
     }
