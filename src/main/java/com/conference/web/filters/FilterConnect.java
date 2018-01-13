@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import java.io.IOException;
-import java.util.Date;
 
 /**
  * Created by gleb on 13.01.18.
@@ -30,27 +29,33 @@ public class FilterConnect implements Filter {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         if (active) {
-            /*
             HttpServletRequest request = (HttpServletRequest) servletRequest;
             HttpServletResponse response = (HttpServletResponse) servletResponse;
             HttpSession session = request.getSession();
-            long role = (long) session.getAttribute("role");
-            if (role == 3) {
-                String page = ConfigProperties.getInstance().getProperty(ConfigProperties.SPEAKER_PAGE_PATH);
+            long role = 0L;
+            if (session.getAttribute("role") != null) {
+                role = (long) session.getAttribute("role");
+            } else {
+                String page = ConfigProperties.getInstance().getProperty(ConfigProperties.LOGIN_PAGE_PATH);
                 RequestDispatcher dispatcher = request.getRequestDispatcher(page);  //вызов страницы ответа на запрос
                 dispatcher.forward(request, response);
             }
-               */
-            // Get the IP address of client machine.
-            String ipAddress = servletRequest.getRemoteAddr();
-            // Log the IP address and current timestamp.
-            String message = "IP "+ ipAddress + ", Time "+ new Date().toString();
-            LOG.info(message);
+            if (role == 2 || role == 3) {
+                filterChain.doFilter(servletRequest,servletResponse);
+            } else {
+                String page = ConfigProperties.getInstance().getProperty(ConfigProperties.LOGIN_PAGE_PATH);
+                RequestDispatcher dispatcher = request.getRequestDispatcher(page);  //вызов страницы ответа на запрос
+                dispatcher.forward(request, response);
+            }
 
+            // Get the IP address of client machine.
+            //String ipAddress = servletRequest.getRemoteAddr();
+            // Log the IP address and current timestamp.
+            //String message = "IP "+ ipAddress + ", Time "+ new Date().toString();
+            //LOG.info(message);
             // Pass request back down the filter chain
-            filterChain.doFilter(servletRequest,servletResponse);
+            //filterChain.doFilter(servletRequest, servletResponse);
         }
-        //filterChain.doFilter(servletRequest, servletResponse);
     }
 
     @Override
