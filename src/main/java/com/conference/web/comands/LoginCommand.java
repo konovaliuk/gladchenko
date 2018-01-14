@@ -59,14 +59,14 @@ public class LoginCommand implements ICommand {
             page = ConfigProperties.getInstance().getProperty(ConfigProperties.SPEAKER_PAGE_PATH);
         } else if (LoginService.checkLogin(login, pass)) {
             HttpSession session = request.getSession();
-            session.setAttribute("event", EventService.getEventById(1L, "eventEn"));
-            session.setAttribute("local", "EN");
-            ResourceBundle bundle = ResourceBundle.getBundle("local", Locale.GERMANY);
+            session.setAttribute("event", EventService.getEventById(1L, "eventRu"));
+            session.setAttribute("local", "RU");
+            ResourceBundle bundle = ResourceBundle.getBundle("local", new Locale("ru", "RU"));
             Localization.setLocalProp(session, bundle);
             session.setAttribute("userid",  LoginService.getUserId(login));
             session.setAttribute("list", ReportService.getReportsByParam("id_event", "1"));
             session.setAttribute("role", UserService.getUserRole(login));
-            session.setAttribute("eventlist", EventService.getAllEvent("eventEn"));
+            session.setAttribute("eventlist", EventService.getAllEvent("eventRu"));
             page = ConfigProperties.getInstance().getProperty(ConfigProperties.USER_PAGE_PATH);
         } else {
             request.setAttribute("errormessage", MessageProperties.getInstance().getProperty(MessageProperties.LOGIN_ERROR_MESSAGE));
