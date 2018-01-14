@@ -130,15 +130,15 @@
                     <form name="loginForm" method="POST" action="controller">
                         <input type="hidden" name="command" value="changelang"/>
                         <input class="with-gap" name="lang" type="radio" id="1" value="EN" checked/>
-                        <label for="1">English</label>
+                        <label for="1">English</label> |
                         <input class="with-gap" name="lang" type="radio" id="2" value="DE" checked/>
-                        <label for="2">Deutsch</label>
+                        <label for="2">Deutsch</label> |
                         <input class="with-gap" name="lang" type="radio" id="3" value="RU" checked/>
                         <label for="3">Русский</label>
                         <br>
                         <br>
                         <br>
-                        <button class="btn waves-effect waves-light" type="submit" name="action">Change
+                        <button class="btn waves-effect waves-light" type="submit" name="action">${varchangelangbtn}
                             <i class="material-icons left">autorenew</i>
                         </button>
                     </form>

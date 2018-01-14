@@ -27,8 +27,8 @@ public class ChangeLanguageCommand implements ICommand {
             Locale locale = Locale.GERMANY;
             ResourceBundle bundle = ResourceBundle.getBundle("local", locale);
             Localization.setLocalProp(session, bundle);
-            session.setAttribute("event", EventService.getEventById(1L, "eventEn"));
-            session.setAttribute("eventlist", EventService.getAllEvent("eventEn"));
+            session.setAttribute("event", EventService.getEventById(1L, "eventDe"));
+            session.setAttribute("eventlist", EventService.getAllEvent("eventDe"));
         }
         if (lang.equalsIgnoreCase("RU")) {
             session.setAttribute("local", "RU");

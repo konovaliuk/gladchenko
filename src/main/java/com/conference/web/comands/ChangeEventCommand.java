@@ -28,6 +28,8 @@ public class ChangeEventCommand implements ICommand {
             String lang = (String) session.getAttribute("local");
             if (lang.equalsIgnoreCase("RU")) {
                 language = "eventRu";
+            } else if (lang.equalsIgnoreCase("DE")) {
+                language = "eventDe";
             } else {
                 language = "eventEn";
             }
