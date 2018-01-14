@@ -36,7 +36,6 @@ http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
             <param-value>true</param-value>
         </init-param>
     </filter>
-
     <filter-mapping>
         <filter-name>FilterName</filter-name>
         <url-pattern>/topics.jsp</url-pattern>

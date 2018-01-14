@@ -14,6 +14,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 import java.util.Locale;
+import java.util.ResourceBundle;
 
 /**
  * Created by gleb on 19.12.17.
@@ -58,13 +59,14 @@ public class LoginCommand implements ICommand {
             page = ConfigProperties.getInstance().getProperty(ConfigProperties.SPEAKER_PAGE_PATH);
         } else if (LoginService.checkLogin(login, pass)) {
             HttpSession session = request.getSession();
-            session.setAttribute("event", EventService.getEventById(1L, "eventRu"));
+            session.setAttribute("event", EventService.getEventById(1L, "eventEn"));
             session.setAttribute("local", "EN");
-            Localization.setLocalProp(session);
+            ResourceBundle bundle = ResourceBundle.getBundle("local", Locale.GERMANY);
+            Localization.setLocalProp(session, bundle);
             session.setAttribute("userid",  LoginService.getUserId(login));
             session.setAttribute("list", ReportService.getReportsByParam("id_event", "1"));
             session.setAttribute("role", UserService.getUserRole(login));
-            session.setAttribute("eventlist", EventService.getAllEvent("eventRu"));
+            session.setAttribute("eventlist", EventService.getAllEvent("eventEn"));
             page = ConfigProperties.getInstance().getProperty(ConfigProperties.USER_PAGE_PATH);
         } else {
             request.setAttribute("errormessage", MessageProperties.getInstance().getProperty(MessageProperties.LOGIN_ERROR_MESSAGE));

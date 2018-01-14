@@ -131,9 +131,9 @@
                         <input type="hidden" name="command" value="changelang"/>
                         <select name="lang" required>
                         	<option value="" disabled selected>Choose language</option>
-                        	<option value="eng">English</option>
-                        	<option value="ger">Deutsch</option>
-                        	<option value="ru">Русский</option>
+                        	<option value="EN">English</option>
+                        	<option value="DE">Deutsch</option>
+                        	<option value="RU">Русский</option>
                         </select><br>
                         <br>
                         <button class="btn waves-effect waves-light" type="submit" name="action">Change

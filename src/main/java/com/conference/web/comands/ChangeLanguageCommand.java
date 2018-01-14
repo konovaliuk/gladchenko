@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 /**
  * Created by gleb on 10.01.18.
@@ -18,20 +20,31 @@ public class ChangeLanguageCommand implements ICommand {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, PersistException {
         String lang = request.getParameter("lang");
-        String dbLang = null;
         HttpSession session = request.getSession();
-        if (lang.equalsIgnoreCase("EN")) {
-            session.setAttribute("local", "EN");
-            Localization.setLocalProp(session);
-            dbLang = "eventEn";
+
+        if (lang.equalsIgnoreCase("DE")) {
+            session.setAttribute("local", "DE");
+            Locale locale = Locale.GERMANY;
+            ResourceBundle bundle = ResourceBundle.getBundle("local", locale);
+            Localization.setLocalProp(session, bundle);
+            session.setAttribute("event", EventService.getEventById(1L, "eventEn"));
+            session.setAttribute("eventlist", EventService.getAllEvent("eventEn"));
         }
         if (lang.equalsIgnoreCase("RU")) {
             session.setAttribute("local", "RU");
-            Localization.setLocalProp(session);
-            dbLang = "eventRu";
+            Locale locale = new Locale("ru", "RU");
+            ResourceBundle bundle = ResourceBundle.getBundle("local", locale);
+            Localization.setLocalProp(session, bundle);
+            session.setAttribute("event", EventService.getEventById(1L, "eventRu"));
+            session.setAttribute("eventlist", EventService.getAllEvent("eventRu"));
         }
-        session.setAttribute("event", EventService.getEventById(1L, dbLang));
-        session.setAttribute("eventlist", EventService.getAllEvent(dbLang));
+        if (lang.equalsIgnoreCase("EN")) {
+            session.setAttribute("local", "EN");
+            ResourceBundle bundle = ResourceBundle.getBundle("local", Locale.getDefault());
+            Localization.setLocalProp(session, bundle);
+            session.setAttribute("event", EventService.getEventById(1L, "eventEn"));
+            session.setAttribute("eventlist", EventService.getAllEvent("eventEn"));
+        }
         return ConfigProperties.getInstance().getProperty(ConfigProperties.USER_PAGE_PATH);
     }
 }

@@ -7,7 +7,6 @@ $('.datepicker').pickadate({
     close: 'Ok',
     closeOnSelect: false // Close upon selecting a date,
 });
-
 $('.timepicker').pickatime({
     default: 'now', // Set default time: 'now', '1:30AM', '16:30'
     fromnow: 0,       // set default time to * milliseconds from now (using with default = 'now')
@@ -19,10 +18,8 @@ $('.timepicker').pickatime({
     ampmclickable: true, // make AM PM clickable
     aftershow: function(){} //Function for after opening timepicker
   });
-
 $(document).ready(function(){
     $('.collapsible').collapsible();
 });
-
 $('#textarea1').val('New Text');
 $('#textarea1').trigger('autoresize')
