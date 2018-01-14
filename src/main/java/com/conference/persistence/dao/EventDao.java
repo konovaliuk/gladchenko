@@ -5,8 +5,6 @@ import org.apache.log4j.Logger;
 
 import java.sql.*;
 import java.sql.Date;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
@@ -48,10 +46,11 @@ public class EventDao extends AbstractDao<Event, Long> {
 
     @Override
     public String getCreateQuery() {
-        //return "BEGIN; INSERT INTO event (e_date, e_time) VALUES(?, ?); INSERT INTO eventEn (event_id, topic, place) VALUES(?, ?, ?); COMMIT;";
+        return "INSERT INTO event (e_date, e_time) VALUES(?, ?);";
+    }
 
-        return "insert into event (topic, place, e_date, e_time) "
-               + "values(?, ?, ?, ?);";
+    public String getCreateQuerySecond() {
+        return "INSERT INTO "+language+" (event_id, topic, place) VALUES(last_insert_id(), ?, ?);";
     }
 
     @Override
@@ -89,11 +88,19 @@ public class EventDao extends AbstractDao<Event, Long> {
         try {
             statement.setDate(1, new Date(object.getCalendar().getTimeInMillis()));
             statement.setTime(2, new Time(object.getCalendar().getTimeInMillis()));
-            statement.setString(3, "LAST_INSERT_ID()");
-            statement.setString(4, object.getTopic());
-            statement.setString(5, object.getPlace());
         } catch (Exception e) {
             LOG.error("Exception: ", e);
+            throw new PersistException(e);
+        }
+    }
+
+    protected void prepareStatementForInsertSecond(PreparedStatement statement,
+                                             Event object) throws PersistException {
+        try {
+            statement.setString(1, object.getTopic());
+            statement.setString(2, object.getPlace());
+        } catch (Exception e) {
+           LOG.error("Exception: ", e);
             throw new PersistException(e);
         }
     }
@@ -122,5 +129,44 @@ public class EventDao extends AbstractDao<Event, Long> {
             LOG.error("Exception: ", e);
             throw new PersistException(e);
         }
+    }
+
+    public Event persist(Event object) throws PersistException {
+        Event persistInstance;
+        Event obj = object;
+        // Добавляем запись
+        String sql = getCreateQuery();
+        String sql2 = getCreateQuerySecond();
+        try (PreparedStatement statement = connection.prepareStatement(sql);
+             PreparedStatement statement2 = connection.prepareStatement(sql2)) {
+            prepareStatementForInsert(statement, obj);
+            int count = statement.executeUpdate();
+            if (count != 1) {
+                throw new PersistException("On persist modify more then 1 record: " + count);
+            }
+            prepareStatementForInsertSecond(statement2, obj);
+            int count2 = statement2.executeUpdate();
+            if (count2 != 1) {
+                throw new PersistException("On persist modify more then 1 record: " + count2);
+            }
+            connection.commit();
+        } catch (Exception e) {
+            LOG.error("Exception: ", e);
+            throw new PersistException(e);
+        }
+        // Получаем только что вставленную запись
+        sql = getSelectQuery() + " WHERE id = last_insert_id();";
+        try (PreparedStatement statement = connection.prepareStatement(sql)) {
+            ResultSet resultSet = statement.executeQuery();
+            List<Event> list = parseResultSet(resultSet);
+            if ((list == null) || (list.size() != 1)) {
+                throw new PersistException("Exception on findByPK new persist data.");
+            }
+            persistInstance = list.iterator().next();
+        } catch (Exception e) {
+            LOG.error("Exception: ", e);
+            throw new PersistException(e);
+        }
+        return persistInstance;
     }
 }

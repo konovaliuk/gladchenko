@@ -33,7 +33,7 @@ public class DaoTest extends IGenericTest<Connection> {
     @Parameterized.Parameters
     public static Collection getParameters() {
         return Arrays.asList(new Object[][]{
-                //{Event.class, new Event()},
+                {Event.class, new Event()},
                 {User.class, new User()},
                 {Report.class, new Report()},
                 {Salary.class, new Salary()},
