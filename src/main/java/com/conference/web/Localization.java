@@ -18,5 +18,6 @@ public class Localization {
         session.setAttribute("varlogout", bundle.getString("LOGOUT"));
         session.setAttribute("varlogoutbtn", bundle.getString("LOGOUT_BTN"));
         session.setAttribute("varchangelangbtn", bundle.getString("CHANGE_LANG_BTN"));
+        session.setAttribute("varreportlocation", bundle.getString("REPORT_LOCATION"));
     }
 }

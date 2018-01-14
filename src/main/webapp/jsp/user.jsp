@@ -33,7 +33,7 @@
                             <li class="collection-item avatar">
                                 <i class="material-icons circle">event_available</i>
                                 <span class="title"><c:out value="${i.getTopic()}" /></span>
-                                <p>Place: <c:out value="${i.getPlace()}" /><br>
+                                <p>${varreportlocation} <c:out value="${i.getPlace()}" /><br>
                                     <fmt:formatDate value="${i.getCalendar().getTime()}" type="time" timeStyle = "short"/>
                                 </p>
                                 <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
