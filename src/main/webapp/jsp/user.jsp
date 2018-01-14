@@ -126,15 +126,17 @@
                <br>
                <br>
                 <h5><c:out value="${succesmsg}" /></h5>
-                <div>
+                <div align="center">
                     <form name="loginForm" method="POST" action="controller">
                         <input type="hidden" name="command" value="changelang"/>
-                        <select name="lang" required>
-                        	<option value="" disabled selected>Choose language</option>
-                        	<option value="EN">English</option>
-                        	<option value="DE">Deutsch</option>
-                        	<option value="RU">Русский</option>
-                        </select><br>
+                        <input class="with-gap" name="lang" type="radio" id="1" value="EN" checked/>
+                        <label for="1">English</label>
+                        <input class="with-gap" name="lang" type="radio" id="2" value="DE" checked/>
+                        <label for="2">Deutsch</label>
+                        <input class="with-gap" name="lang" type="radio" id="3" value="RU" checked/>
+                        <label for="3">Русский</label>
+                        <br>
+                        <br>
                         <br>
                         <button class="btn waves-effect waves-light" type="submit" name="action">Change
                             <i class="material-icons left">autorenew</i>
