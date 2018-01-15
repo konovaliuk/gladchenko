@@ -67,6 +67,7 @@ public class EmailService {
             message.setText(text);
             Transport.send(message);
         } catch (MessagingException e) {
+            LOG.error("Exception: ", e);
             throw new RuntimeException(e);
         }
     }

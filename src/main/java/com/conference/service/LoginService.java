@@ -54,14 +54,4 @@ public class LoginService {
         }
         return result;
     }
-
-    public static void checkLanguage(String lang) {
-        if (lang.equalsIgnoreCase("eng")) {
-            Locale.setDefault(Locale.US);
-        } else if (lang.equalsIgnoreCase("ger")) {
-            Locale.setDefault(Locale.GERMANY);
-        } else if (lang.equalsIgnoreCase("ru")) {
-            Locale.setDefault(new Locale("ru", "UA"));
-        }
-    }
 }

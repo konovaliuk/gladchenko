@@ -2,6 +2,7 @@ package com.conference.web;
 
 import com.conference.web.comands.ICommand;
 import com.conference.web.properties.ConfigProperties;
+import com.conference.web.properties.MessageProperties;
 import org.apache.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
@@ -43,7 +44,8 @@ public class Controller extends HttpServlet {
             ICommand command = controllerHelper.getCommand(request);        //определение команды, пришедшей из JSP
             page = command.execute(request,response);                       //передача параметров классу-обработчику конкретной команды
         } catch (Exception e) {
-            LOG.error("Exception: ", e);                           //генерация сообщения об ошибке
+            LOG.error("Exception: ", e);
+            request.setAttribute("errormessage", MessageProperties.getInstance().getProperty(MessageProperties.SERVLET_EXCEPTION_ERROR_MESSAGE));//генерация сообщения об ошибке
             page = ConfigProperties.getInstance().getProperty(ConfigProperties.ERROR_PAGE_PATH);          //вызов JSP-страницы с сообщением об ошибке
         }
         RequestDispatcher dispatcher = request.getRequestDispatcher(page);  //вызов страницы ответа на запрос

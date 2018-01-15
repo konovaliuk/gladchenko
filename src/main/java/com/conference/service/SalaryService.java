@@ -18,7 +18,7 @@ public class SalaryService {
     private static final Logger LOG = Logger.getLogger(EventService.class.getName());
     private static IFactory factory = new MySqlDaoFactory();
 
-    public static Salary getSalary(long userId)  throws PersistException {
+    public Salary getSalary(long userId)  throws PersistException {
         Salary result = null;
         try (Connection connection = (Connection) factory.getContext()) {
             IGeneric dao = factory.getDao(connection, Salary.class);

@@ -1,7 +1,6 @@
 package com.conference.web.comands;
 
 import com.conference.persistence.dao.PersistException;
-import com.conference.persistence.entity.Report;
 import com.conference.service.*;
 import com.conference.web.Localization;
 import com.conference.web.properties.ConfigProperties;
@@ -12,7 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.List;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
@@ -50,7 +48,7 @@ public class LoginCommand implements ICommand {
             HttpSession session = request.getSession(true);
             session.setAttribute("list", ReportService.getReportsByParam("id_event", "1"));
             session.setAttribute("event", EventService.getEventById(1L));
-            session.setAttribute("salary", SalaryService.getSalary(LoginService.getUserId(login)));
+            session.setAttribute("salary", new SalaryService().getSalary(LoginService.getUserId(login)));
             session.setAttribute("userid",  LoginService.getUserId(login));
             session.setAttribute("role", UserService.getUserRole(login));
             session.setAttribute("eventlist", EventService.getAllEvent());
