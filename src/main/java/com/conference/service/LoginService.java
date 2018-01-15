@@ -16,9 +16,9 @@ import java.util.Locale;
  */
 public class LoginService {
     private static final Logger LOG = Logger.getLogger(EventService.class.getName());
-    private static IFactory factory = new MySqlDaoFactory();
+    private IFactory factory = new MySqlDaoFactory();
 
-    public static boolean checkLogin(String login, String password) {
+    public boolean checkLogin(String login, String password) {
         try (Connection connection = (Connection) factory.getContext()) {
             IGeneric dao = factory.getDao(connection, User.class);
             User user = (User) dao.getByParam("login", login);
@@ -31,7 +31,7 @@ public class LoginService {
         return false;
     }
 
-    public static boolean checkRole(String login, long role) {
+    public boolean checkRole(String login, long role) {
         try (Connection connection = (Connection) factory.getContext()) {
             IGeneric dao = factory.getDao(connection, User.class);
             User user = (User) dao.getByParam("login", login);
@@ -43,7 +43,7 @@ public class LoginService {
         return false;
     }
 
-    public static long getUserId(String login) {
+    public long getUserId(String login) {
         long result = 0L;
         try (Connection connection = (Connection) factory.getContext()) {
             IGeneric dao = factory.getDao(connection, User.class);

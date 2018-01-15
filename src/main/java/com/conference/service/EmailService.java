@@ -24,7 +24,7 @@ public class EmailService {
     private static IFactory factory = new MySqlDaoFactory();
     private static String recipient = "ggleb203@gmail.com ,qlp@ukr.net ";
 
-    public static void sendEmailToAllUsers(String subject, String text) throws AddressException {
+    public void sendEmailToAllUsers(String subject, String text) throws AddressException {
         List<String> emailList = new ArrayList<>();
         List<User> users;
         try (Connection connection = (Connection) factory.getContext()) {

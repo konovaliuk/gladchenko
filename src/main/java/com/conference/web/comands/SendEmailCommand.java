@@ -18,7 +18,7 @@ public class SendEmailCommand implements ICommand {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, PersistException {
         try {
-            EmailService.sendEmailToAllUsers(request.getParameter("emailtopic"), request.getParameter("emailtext"));
+            new EmailService().sendEmailToAllUsers(request.getParameter("emailtopic"), request.getParameter("emailtext"));
         } catch (AddressException e) {
             e.printStackTrace();
         }
