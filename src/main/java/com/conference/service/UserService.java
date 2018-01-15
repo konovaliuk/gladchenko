@@ -17,9 +17,9 @@ import java.util.List;
  */
 public class UserService {
     private static final Logger LOG = Logger.getLogger(EventService.class.getName());
-    private static IFactory factory = new MySqlDaoFactory();
+    private IFactory factory = new MySqlDaoFactory();
 
-    public static List<User> getUsersByParam(String param, String value) {
+    public List<User> getUsersByParam(String param, String value) {
         List<User> users = new ArrayList<>();
         try (Connection connection = (Connection) factory.getContext()) {
             IGeneric userDao = factory.getDao(connection, User.class);
@@ -30,7 +30,7 @@ public class UserService {
         return users;
     }
 
-    public static long getUserRole(String login) {
+    public long getUserRole(String login) {
         long result = 0L;
         try (Connection connection = (Connection) factory.getContext()) {
             IGeneric dao = factory.getDao(connection, User.class);

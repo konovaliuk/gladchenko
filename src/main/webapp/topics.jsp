@@ -6,7 +6,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ page import="java.util.*" %>
 <%
-    List<Topic> topics = TopicService.getAllTopics();
+    List<Topic> topics = new TopicService().getAllTopics();
 %>
 <html>
     <head>

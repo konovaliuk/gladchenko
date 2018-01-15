@@ -17,16 +17,17 @@ import java.io.IOException;
 public class ConfirmSpeakerTopicCommand implements ICommand {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, PersistException {
-        Topic topic = TopicService.getTopicById(Long.parseLong(request.getParameter("idconftopic")));
+        TopicService topicService = new TopicService();
+        Topic topic = topicService.getTopicById(Long.parseLong(request.getParameter("idconftopic")));
         String status = request.getParameter("topicstatus");
         if (status.equalsIgnoreCase("confirm")) {
             topic.setStatus("confmod");
         } else {
             topic.setStatus("cancel");
         }
-        TopicService.updateTopic(topic);
+        topicService.updateTopic(topic);
         HttpSession session = request.getSession(true);
-        session.setAttribute("newspeakertopics", TopicService.getTopicsByParam("status", "newsp"));
+        session.setAttribute("newspeakertopics", topicService.getTopicsByParam("status", "newsp"));
         return ConfigProperties.getInstance().getProperty(ConfigProperties.MODER_PAGE_PATH);
     }
 }

@@ -54,4 +54,28 @@ public class Topic implements Serializable, Identified<Long> {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Topic)) return false;
+
+        Topic topic1 = (Topic) o;
+
+        if (getIdSpeaker() != topic1.getIdSpeaker()) return false;
+        if (getIdModer() != topic1.getIdModer()) return false;
+        if (getId() != null ? !getId().equals(topic1.getId()) : topic1.getId() != null) return false;
+        if (getTopic() != null ? !getTopic().equals(topic1.getTopic()) : topic1.getTopic() != null) return false;
+        return getStatus() != null ? getStatus().equals(topic1.getStatus()) : topic1.getStatus() == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = getId() != null ? getId().hashCode() : 0;
+        result = 31 * result + (getTopic() != null ? getTopic().hashCode() : 0);
+        result = 31 * result + (int) (getIdSpeaker() ^ (getIdSpeaker() >>> 32));
+        result = 31 * result + (int) (getIdModer() ^ (getIdModer() >>> 32));
+        result = 31 * result + (getStatus() != null ? getStatus().hashCode() : 0);
+        return result;
+    }
 }

@@ -24,8 +24,8 @@ public class RegistrationCommand implements ICommand {
         registration.setUserId(Long.parseLong(request.getParameter("userid")));
         registration.setEventId(Long.parseLong(request.getParameter("eventid")));
         registration.setReportId(Long.parseLong(request.getParameter("reportid")));
-        registration = RegistrationService.createRegistration(registration);
-        Report report = ReportService.getReportByPK(registration.getReportId());
+        registration = new RegistrationService().createRegistration(registration);
+        Report report = new ReportService().getReportByPK(registration.getReportId());
         HttpSession session = request.getSession(true);
         session.setAttribute("report", report);
         String message = "Registration successful! \n Report: " + report.getTopic();

@@ -15,9 +15,9 @@ import java.util.List;
  */
 public class RegistrationService {
     private static final Logger LOG = Logger.getLogger(RegistrationService.class.getName());
-    private static IFactory factory = new MySqlDaoFactory();
+    private IFactory factory = new MySqlDaoFactory();
 
-    public static Registration createRegistration(Registration registration) {
+    public Registration createRegistration(Registration registration) {
         Registration result = null;
         try (Connection connection = (Connection) factory.getContext()) {
             IGeneric registrationDao = factory.getDao(connection, Registration.class);
@@ -28,7 +28,7 @@ public class RegistrationService {
         return result;
     }
 
-    public static int getRegistrationsCount() {
+    public int getRegistrationsCount() {
         List<Registration> result = new ArrayList<>();
         try (Connection connection = (Connection) factory.getContext()) {
             IGeneric registrationDao = factory.getDao(connection, Registration.class);

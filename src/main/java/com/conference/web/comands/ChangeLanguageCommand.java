@@ -20,6 +20,7 @@ public class ChangeLanguageCommand implements ICommand {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, PersistException {
         String lang = request.getParameter("lang");
+        EventService eventService = new EventService();
         HttpSession session = request.getSession();
 
         if (lang.equalsIgnoreCase("DE")) {
@@ -27,23 +28,23 @@ public class ChangeLanguageCommand implements ICommand {
             Locale locale = Locale.GERMANY;
             ResourceBundle bundle = ResourceBundle.getBundle("local", locale);
             Localization.setLocalProp(session, bundle);
-            session.setAttribute("event", EventService.getEventById(1L, "eventDe"));
-            session.setAttribute("eventlist", EventService.getAllEvent("eventDe"));
+            session.setAttribute("event", eventService.getEventById(1L, "eventDe"));
+            session.setAttribute("eventlist", eventService.getAllEvent("eventDe"));
         }
         if (lang.equalsIgnoreCase("RU")) {
             session.setAttribute("local", "RU");
             Locale locale = new Locale("ru", "RU");
             ResourceBundle bundle = ResourceBundle.getBundle("local", locale);
             Localization.setLocalProp(session, bundle);
-            session.setAttribute("event", EventService.getEventById(1L, "eventRu"));
-            session.setAttribute("eventlist", EventService.getAllEvent("eventRu"));
+            session.setAttribute("event", eventService.getEventById(1L, "eventRu"));
+            session.setAttribute("eventlist", eventService.getAllEvent("eventRu"));
         }
         if (lang.equalsIgnoreCase("EN")) {
             session.setAttribute("local", "EN");
             ResourceBundle bundle = ResourceBundle.getBundle("local", Locale.getDefault());
             Localization.setLocalProp(session, bundle);
-            session.setAttribute("event", EventService.getEventById(1L, "eventEn"));
-            session.setAttribute("eventlist", EventService.getAllEvent("eventEn"));
+            session.setAttribute("event", eventService.getEventById(1L, "eventEn"));
+            session.setAttribute("eventlist", eventService.getAllEvent("eventEn"));
         }
         return ConfigProperties.getInstance().getProperty(ConfigProperties.USER_PAGE_PATH);
     }

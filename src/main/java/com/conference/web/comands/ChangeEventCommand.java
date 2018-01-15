@@ -18,10 +18,11 @@ public class ChangeEventCommand implements ICommand {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, PersistException {
         String page = null;
+        EventService eventService = new EventService();
         long eventId = Long.parseLong(request.getParameter("idevent"));
         HttpSession session = request.getSession();
         session.setAttribute("idevent", eventId);
-        session.setAttribute("list", ReportService.getReportsByParam("id_event", String.valueOf(eventId)));
+        session.setAttribute("list", new ReportService().getReportsByParam("id_event", String.valueOf(eventId)));
         long role = (long) session.getAttribute("role");
         if (role == 4) {
             String language;
@@ -33,13 +34,13 @@ public class ChangeEventCommand implements ICommand {
             } else {
                 language = "eventEn";
             }
-            session.setAttribute("event", EventService.getEventById(eventId, language));
+            session.setAttribute("event", eventService.getEventById(eventId, language));
             page = ConfigProperties.getInstance().getProperty(ConfigProperties.USER_PAGE_PATH);
         } else if (role == 3) {
-            session.setAttribute("event", EventService.getEventById(eventId));
+            session.setAttribute("event", eventService.getEventById(eventId));
             page = ConfigProperties.getInstance().getProperty(ConfigProperties.SPEAKER_PAGE_PATH);
         } else if (role == 2) {
-            session.setAttribute("event", EventService.getEventById(eventId));
+            session.setAttribute("event", eventService.getEventById(eventId));
             page = ConfigProperties.getInstance().getProperty(ConfigProperties.MODER_PAGE_PATH);
         } else if (role == 1) {
             page = ConfigProperties.getInstance().getProperty(ConfigProperties.ADMIN_PAGE_PATH);

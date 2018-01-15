@@ -17,9 +17,9 @@ import java.util.List;
  */
 public class ReportService {
     private static final Logger LOG = Logger.getLogger(EventService.class.getName());
-    private static IFactory factory = new MySqlDaoFactory();
+    private IFactory factory = new MySqlDaoFactory();
 
-    public static List<Report> getAllReport() {
+    public List<Report> getAllReport() {
         List<Report> reports = new ArrayList<>();
         try (Connection connection = (Connection) factory.getContext()) {
             IGeneric reportDao = factory.getDao(connection, Report.class);
@@ -30,7 +30,7 @@ public class ReportService {
         return reports;
     }
 
-    public static void updateReport(Report report) {
+    public void updateReport(Report report) {
         try (Connection connection = (Connection) factory.getContext()) {
             IGeneric reportDao = factory.getDao(connection, Report.class);
             reportDao.update(report);
@@ -39,7 +39,7 @@ public class ReportService {
         }
     }
 
-    public static Report getReportByPK(Long id) {
+    public Report getReportByPK(Long id) {
         Report result = null;
         try (Connection connection = (Connection) factory.getContext()) {
             IGeneric reportDao = factory.getDao(connection, Report.class);
@@ -50,7 +50,7 @@ public class ReportService {
         return result;
     }
 
-    public static List<Report> getReportsByParam(String param, String value)  throws PersistException {
+    public List<Report> getReportsByParam(String param, String value)  throws PersistException {
         List<Report> result = null;
         try (Connection connection = (Connection) factory.getContext()) {
             IGeneric dao = factory.getDao(connection, Report.class);

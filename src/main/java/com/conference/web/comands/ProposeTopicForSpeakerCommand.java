@@ -18,11 +18,12 @@ import java.util.Locale;
 public class ProposeTopicForSpeakerCommand implements ICommand {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, PersistException {
+        TopicService topicService = new TopicService();
         Topic topic = new Topic();
         topic.setTopic(request.getParameter("topicforprop"));
         topic.setIdSpeaker(Long.parseLong(request.getParameter("idspeaker")));
         topic.setStatus("new");
-        topic = TopicService.createTopic(topic);
+        topic = topicService.createTopic(topic);
         String message = "Propose topic " + topic.getTopic() + " successful!";
         HttpSession session = request.getSession(true);
         session.setAttribute("msg", message);

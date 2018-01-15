@@ -22,12 +22,13 @@ public class UpdateEventCommand implements ICommand {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, PersistException {
         String page = null;
-        Event event = EventService.getEventById(Long.valueOf(request.getParameter("id")));
+        EventService eventService = new EventService();
+        Event event = eventService.getEventById(Long.valueOf(request.getParameter("id")));
         event.setTopic(request.getParameter("topic"));
         event.setPlace(request.getParameter("place"));
         event.setCalendar(dateTimeToCalendar(request.getParameter("date"),
                                             request.getParameter("time")));
-        EventService.updateEvent(event);
+        eventService.updateEvent(event);
         HttpSession session = request.getSession(true);
         session.setAttribute("event", event);
         page = ConfigProperties.getInstance().getProperty(ConfigProperties.MODER_PAGE_PATH);

@@ -15,9 +15,9 @@ import java.util.List;
  */
 public class TopicService {
     private static final Logger LOG = Logger.getLogger(TopicService.class.getName());
-    private static IFactory factory = new MySqlDaoFactory();
+    private IFactory factory = new MySqlDaoFactory();
 
-    public static Topic createTopic(Topic topic) {
+    public Topic createTopic(Topic topic) {
         Topic result = null;
         try (Connection connection = (Connection) factory.getContext()) {
             IGeneric topicDao = factory.getDao(connection, Topic.class);
@@ -28,7 +28,7 @@ public class TopicService {
         return result;
     }
 
-    public static List<Topic> getNewTopicsByParam(String param, String value) {
+    public List<Topic> getNewTopicsByParam(String param, String value) {
         List<Topic> topics = getTopicsByParam(param, value);
         List<Topic> result = new ArrayList<>();
         for (Topic t : topics) {
@@ -39,7 +39,7 @@ public class TopicService {
         return result;
     }
 
-    public static List<Topic> getConfModerTopicsByParam(String param, String value) {
+    public List<Topic> getConfModerTopicsByParam(String param, String value) {
         List<Topic> topics = getTopicsByParam(param, value);
         List<Topic> result = new ArrayList<>();
         for (Topic t : topics) {
@@ -51,7 +51,7 @@ public class TopicService {
     }
 
 
-    public static List<Topic> getTopicsByParam(String param, String value) {
+    public List<Topic> getTopicsByParam(String param, String value) {
         List<Topic> topics = null;
         try (Connection connection = (Connection) factory.getContext()) {
             IGeneric topicDao = factory.getDao(connection, Topic.class);
@@ -62,7 +62,7 @@ public class TopicService {
         return topics;
     }
 
-    public static Topic getTopicById(long id) {
+    public Topic getTopicById(long id) {
         Topic result = null;
         try (Connection connection = (Connection) factory.getContext()) {
             IGeneric topicDao = factory.getDao(connection, Topic.class);
@@ -73,7 +73,7 @@ public class TopicService {
         return result;
     }
 
-    public static void updateTopic(Topic topic) {
+    public void updateTopic(Topic topic) {
         try (Connection connection = (Connection) factory.getContext()) {
             IGeneric topicDao = factory.getDao(connection, Topic.class);
             topicDao.update(topic);
@@ -82,7 +82,7 @@ public class TopicService {
         }
     }
 
-    public static List<Topic> getAllTopics() {
+    public List<Topic> getAllTopics() {
         List<Topic> topics = new ArrayList<>();
         try (Connection connection = (Connection) factory.getContext()) {
             IGeneric topicDao = factory.getDao(connection, Topic.class);

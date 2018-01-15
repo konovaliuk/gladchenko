@@ -16,9 +16,9 @@ import java.util.List;
  */
 public class EventService {
     private static final Logger LOG = Logger.getLogger(EventService.class.getName());
-    private static IFactory factory = new MySqlDaoFactory();
+    private IFactory factory = new MySqlDaoFactory();
 
-    public static List<Event> getAllEvent() {
+    public List<Event> getAllEvent() {
         List<Event> events = new ArrayList<>();
         try (Connection connection = (Connection) factory.getContext()) {
             IGeneric eventDao = factory.getDao(connection, Event.class);
@@ -29,7 +29,7 @@ public class EventService {
         return events;
     }
 
-    public static Event getEventById(long id) {
+    public Event getEventById(long id) {
         Event event = null;
         try (Connection connection = (Connection) factory.getContext()) {
             IGeneric eventDao = factory.getDao(connection, Event.class);
@@ -40,7 +40,7 @@ public class EventService {
         return event;
     }
 
-    public static void updateEvent(Event event) {
+    public void updateEvent(Event event) {
         try (Connection connection = (Connection) factory.getContext()) {
             IGeneric eventDao = factory.getDao(connection, Event.class);
             eventDao.update(event);
@@ -49,7 +49,7 @@ public class EventService {
         }
     }
 
-    public static List<Event> getAllEvent(String lang) {
+    public List<Event> getAllEvent(String lang) {
         List<Event> events = new ArrayList<>();
         try (Connection connection = (Connection) factory.getContext()) {
             EventDao eventDao = (EventDao) factory.getDao(connection, Event.class);
@@ -61,7 +61,7 @@ public class EventService {
         return events;
     }
 
-    public static Event getEventById(long id, String lang) {
+    public Event getEventById(long id, String lang) {
         Event event = null;
         try (Connection connection = (Connection) factory.getContext()) {
             EventDao eventDao = (EventDao) factory.getDao(connection, Event.class);
@@ -73,7 +73,7 @@ public class EventService {
         return event;
     }
 
-    public static void updateEvent(Event event, String lang) {
+    public void updateEvent(Event event, String lang) {
         try (Connection connection = (Connection) factory.getContext()) {
             EventDao eventDao = (EventDao) factory.getDao(connection, Event.class);
             eventDao.setLanguage(lang);

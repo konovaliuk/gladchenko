@@ -16,7 +16,7 @@ import java.util.List;
  */
 public class SalaryService {
     private static final Logger LOG = Logger.getLogger(EventService.class.getName());
-    private static IFactory factory = new MySqlDaoFactory();
+    private IFactory factory = new MySqlDaoFactory();
 
     public Salary getSalary(long userId)  throws PersistException {
         Salary result = null;
