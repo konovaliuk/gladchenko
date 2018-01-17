@@ -12,20 +12,20 @@ import java.util.ResourceBundle;
  */
 public class Localization {
     public static void setLocalProp(HttpSession session, ResourceBundle bundle) throws UnsupportedEncodingException {
-        session.setAttribute("allreportslocalvar", uncoding(bundle.getString("ALL_REPORTS")));
-        session.setAttribute("varchosereport", uncoding(bundle.getString("CHOOSE_REPORT")));
-        session.setAttribute("varchangeevent", uncoding(bundle.getString("CHANGE_EVENT")));
-        session.setAttribute("varchooseevent", uncoding(bundle.getString("CHOOSE_EVENT")));
-        session.setAttribute("varchangeeventbtn", uncoding(bundle.getString("CHANGE_EVENT_BTN")));
-        session.setAttribute("varchangereport", uncoding(bundle.getString("CHANGE_REPORT")));
-        session.setAttribute("varregistrbtn", uncoding(bundle.getString("REGISTRATION_BTN")));
-        session.setAttribute("varlogout", uncoding(bundle.getString("LOGOUT")));
-        session.setAttribute("varlogoutbtn", uncoding(bundle.getString("LOGOUT_BTN")));
-        session.setAttribute("varchangelangbtn", uncoding(bundle.getString("CHANGE_LANG_BTN")));
-        session.setAttribute("varreportlocation", uncoding(bundle.getString("REPORT_LOCATION")));
+        session.setAttribute("allreportslocalvar", encoding(bundle.getString("ALL_REPORTS")));
+        session.setAttribute("varchosereport", encoding(bundle.getString("CHOOSE_REPORT")));
+        session.setAttribute("varchangeevent", encoding(bundle.getString("CHANGE_EVENT")));
+        session.setAttribute("varchooseevent", encoding(bundle.getString("CHOOSE_EVENT")));
+        session.setAttribute("varchangeeventbtn", encoding(bundle.getString("CHANGE_EVENT_BTN")));
+        session.setAttribute("varchangereport", encoding(bundle.getString("CHANGE_REPORT")));
+        session.setAttribute("varregistrbtn", encoding(bundle.getString("REGISTRATION_BTN")));
+        session.setAttribute("varlogout", encoding(bundle.getString("LOGOUT")));
+        session.setAttribute("varlogoutbtn", encoding(bundle.getString("LOGOUT_BTN")));
+        session.setAttribute("varchangelangbtn", encoding(bundle.getString("CHANGE_LANG_BTN")));
+        session.setAttribute("varreportlocation", encoding(bundle.getString("REPORT_LOCATION")));
     }
 
-    public static String uncoding(String value) throws UnsupportedEncodingException {
+    public static String encoding(String value) throws UnsupportedEncodingException {
         return new String(value.getBytes("ISO-8859-1"), "UTF-8");
     }
 }
