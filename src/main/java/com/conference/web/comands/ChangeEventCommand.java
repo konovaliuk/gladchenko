@@ -24,20 +24,21 @@ public class ChangeEventCommand implements ICommand {
         session.setAttribute("idevent", eventId);
         session.setAttribute("list", new ReportService().getReportsByParam("id_event", String.valueOf(eventId)));
         long role = (long) session.getAttribute("role");
+        String language;
+        String lang = (String) session.getAttribute("local");
+        if (lang.equalsIgnoreCase("RU")) {
+            language = "eventRu";
+        } else if (lang.equalsIgnoreCase("DE")) {
+            language = "eventDe";
+        } else {
+            language = "eventEn";
+        }
+
         if (role == 4) {
-            String language;
-            String lang = (String) session.getAttribute("local");
-            if (lang.equalsIgnoreCase("RU")) {
-                language = "eventRu";
-            } else if (lang.equalsIgnoreCase("DE")) {
-                language = "eventDe";
-            } else {
-                language = "eventEn";
-            }
             session.setAttribute("event", eventService.getEventById(eventId, language));
             page = ConfigProperties.getInstance().getProperty(ConfigProperties.USER_PAGE_PATH);
         } else if (role == 3) {
-            session.setAttribute("event", eventService.getEventById(eventId));
+            session.setAttribute("event", eventService.getEventById(eventId, language));
             page = ConfigProperties.getInstance().getProperty(ConfigProperties.SPEAKER_PAGE_PATH);
         } else if (role == 2) {
             session.setAttribute("event", eventService.getEventById(eventId));
