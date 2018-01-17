@@ -24,6 +24,7 @@ public class ServiceTest {
 
         when(mock.getSalary(3L)).thenReturn(salary);
         Salary result = mock.getSalary(3L);
+
         doThrow(new PersistException()).when(mock).getSalary(3L);
         assertEquals(salary, result);
     }
