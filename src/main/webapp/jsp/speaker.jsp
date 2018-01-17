@@ -67,20 +67,20 @@
                 <div>
                     <ul class="collapsible popout" data-collapsible="accordion">
                         <li>
-                            <div class="collapsible-header"><i class="material-icons">autorenew</i>Change event</div>
+                            <div class="collapsible-header"><i class="material-icons">autorenew</i>${varChangeEvent}</div>
                             <div class="collapsible-body">
                             <span>
                                 <div>
                                     <form name="loginForm" method="POST" action="controller">
                                         <input type="hidden" name="command" value="eventchange"/>
                                         <select name="idevent" required>
-                                            <option value="" disabled selected>Choose event</option>
+                                            <option value="" disabled selected>${varChooseEvent}</option>
                                             <c:forEach items="${eventlist}" var="el" >
                                                 <option value="${el.getId()}"><c:out value="${el.getTopic()}" /></option>
                                             </c:forEach>
                                         </select><br>
                                         <br>
-                                        <button class="btn waves-effect waves-light" type="submit" name="action">Change
+                                        <button class="btn waves-effect waves-light" type="submit" name="action">${varChangeEventBtn}
                                             <i class="material-icons right">content_paste</i>
                                         </button>
                                     </form>
@@ -89,19 +89,19 @@
                             </div>
                         </li>
                         <li>
-                            <div class="collapsible-header"><i class="material-icons">monetization_on</i>Salary</div>
+                            <div class="collapsible-header"><i class="material-icons">monetization_on</i>${varSalary}</div>
                             <div class="collapsible-body">
                             <span>
                                 <div>
-                                    <h5>Rating: <c:out value="${salary.getRating()}" /> <i class="material-icons">star_border</i></h5>
+                                    <h5>${varRating}: <c:out value="${salary.getRating()}" /> <i class="material-icons">star_border</i></h5>
                                     <br>
-                                    <h5>Bonus: <c:out value="${salary.getBonus()}" />   <i class="material-icons">attach_money</i></h5>
+                                    <h5>${varBonus}: <c:out value="${salary.getBonus()}" />   <i class="material-icons">attach_money</i></h5>
                                 </div>
                             </span>
                             </div>
                         </li>
                         <li>
-                            <div class="collapsible-header"><i class="material-icons">message</i>Propose topic</div>
+                            <div class="collapsible-header"><i class="material-icons">message</i>${varProposeTopic}</div>
                             <div class="collapsible-body">
                             <span>
                             <div>
@@ -109,11 +109,11 @@
                                 <input type="hidden" name="command" value="proptopicformoder"/>
                                 <input type="hidden" name="idspeaker" value="${userid}"/>
                                 <i class="material-icons prefix">mode_edit</i>
-                                <label for="icon_prefix2">Topic:</label><br>
+                                <label for="icon_prefix2">${varTopic}:</label><br>
                                 <input type="text"  name="topicformoder" required>
                                 <br/>
                                 <br/>
-                                <button class="btn waves-effect waves-light" type="submit" name="action">Send topic
+                                <button class="btn waves-effect waves-light" type="submit" name="action">${varProposeTopicBtn}
                                 <i class="material-icons right">send</i>
                                 </button>
                                 </form>
@@ -122,7 +122,7 @@
                             </div>
                         </li>
                         <li>
-                            <div class="collapsible-header"><i class="material-icons">mail_outline</i>New topics</div>
+                            <div class="collapsible-header"><i class="material-icons">mail_outline</i>${varNewTopics}</div>
                             <div class="collapsible-body">
                             <span>
                             <div>
@@ -131,7 +131,7 @@
                                         <li><c:out value="${ct.getTopic()}" /></li>
                                     </c:forEach>
                                 </ul>
-                                <a class="btn dropdown-button" href="#!" data-activates="dropdown2">Confirmed topics<i class="material-icons right">arrow_drop_down</i></a>
+                                <a class="btn dropdown-button" href="#!" data-activates="dropdown2">${varConfirmedTopics}<i class="material-icons right">arrow_drop_down</i></a>
                             </div>
                             <div>
                                 <form name="editEventForm" method="POST" action="controller">
@@ -144,12 +144,12 @@
                                 </c:forEach>
                                 <br>
                                 <select name="topicstatus" required>
-                                    <option value="" disabled selected>Confirm or cancel</option>
-                                    <option value="confirm">Confirm</option>
-                                    <option value="cancel">Cancel</option>
+                                    <option value="" disabled selected>${varConfirmOrCancel}</option>
+                                    <option value="confirm">${varConfirm}</option>
+                                    <option value="cancel">${varCancel}</option>
                                 </select>
                                 <br>
-                                <button class="btn waves-effect waves-light" type="submit" name="action">Send
+                                <button class="btn waves-effect waves-light" type="submit" name="action">${varConfirmTopicBtn}
                                 <i class="material-icons left">send</i>
                                 </button>
                                 </form>
@@ -178,7 +178,7 @@
                         <br>
                         <br>
                         <br>
-                        <button class="btn waves-effect waves-light" type="submit" name="action">${varchangelangbtn}
+                        <button class="btn waves-effect waves-light" type="submit" name="action">${varChangeLangBtn}
                             <i class="material-icons left">autorenew</i>
                         </button>
                     </form>

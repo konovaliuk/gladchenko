@@ -25,7 +25,6 @@
             <div class="col s5 offset-s1">
                 <div>
                     <h5><c:out value="${varAllReports}" /></h5>
-                    <br>
                     <ul class="collection">
                         <c:forEach items="${list}" var="i" >
                             <li class="collection-item avatar">
@@ -59,20 +58,20 @@
                <div>
                 <ul class="collapsible popout" data-collapsible="accordion">
                     <li>
-                        <div class="collapsible-header"><i class="material-icons">autorenew</i>${varchangeevent}</div>
+                        <div class="collapsible-header"><i class="material-icons">autorenew</i>${varChangeEvent}</div>
                         <div class="collapsible-body">
                         <span>
                              <div>
                                 <form name="loginForm" method="POST" action="controller">
                                     <input type="hidden" name="command" value="eventchange"/>
                                     <select name="idevent" required>
-                                        <option value="" disabled selected>${varchooseevent}</option>
+                                        <option value="" disabled selected>${varChooseEvent}</option>
                                         <c:forEach items="${eventlist}" var="el" >
                                             <option value="${el.getId()}"><c:out value="${el.getTopic()}" /></option>
                                         </c:forEach>
                                     </select><br>
                                     <br>
-                                    <button class="btn waves-effect waves-light" type="submit" name="action">${varchangeeventbtn}
+                                    <button class="btn waves-effect waves-light" type="submit" name="action">${varChangeEventBtn}
                                         <i class="material-icons right">content_paste</i>
                                     </button>
                                 </form>
@@ -81,7 +80,7 @@
                         </div>
                     </li>
                     <li>
-                    <div class="collapsible-header"><i class="material-icons">event_note</i>${varchosereport}</div>
+                    <div class="collapsible-header"><i class="material-icons">event_note</i>${varChooseReport}</div>
                     <div class="collapsible-body">
                     <span>
                         <div>
@@ -90,13 +89,13 @@
                                 <input type="hidden" name="userid" value="${userid}"/>
                                 <input type="hidden" name="eventid" value="${event.getId()}"/>
                                 <select name="reportid" required>
-                                    <option value="" disabled selected>${varchangereport}</option>
+                                    <option value="" disabled selected>${varChangeReport}</option>
                                     <c:forEach items="${list}" var="rp" >
                                         <option value="${rp.getId()}"><c:out value="${rp.getTopic()}" /></option>
                                     </c:forEach>
                                 </select><br>
                                 <br>
-                                <button class="btn waves-effect waves-light" type="submit" name="action">${varregistrbtn}
+                                <button class="btn waves-effect waves-light" type="submit" name="action">${varRegistrationBtn}
                                     <i class="material-icons left">send</i>
                                 </button>
                             </form>
@@ -105,7 +104,7 @@
                     </div>
                     </li>
                     <li>
-                    <div class="collapsible-header"><i class="material-icons">filter_drama</i>${varlogout}</div>
+                    <div class="collapsible-header"><i class="material-icons">filter_drama</i>${varLogout}</div>
                     <div class="collapsible-body">
                     <span>
                         <div>
@@ -136,7 +135,7 @@
                         <br>
                         <br>
                         <br>
-                        <button class="btn waves-effect waves-light" type="submit" name="action">${varchangelangbtn}
+                        <button class="btn waves-effect waves-light" type="submit" name="action">${varChangeLangBtn}
                             <i class="material-icons left">autorenew</i>
                         </button>
                     </form>
