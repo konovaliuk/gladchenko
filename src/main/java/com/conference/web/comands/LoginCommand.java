@@ -38,16 +38,18 @@ public class LoginCommand implements ICommand {
             session.setAttribute("event", eventService.getEventById(1L));
             page = ConfigProperties.getInstance().getProperty(ConfigProperties.ADMIN_PAGE_PATH);
         } else if (loginService.checkLogin(login, pass) && loginService.checkRole(login, 2)) {
-            HttpSession session = request.getSession(true);
+            HttpSession session = request.getSession();
+            session.setAttribute("role", userService.getUserRole(login));
             session.setAttribute("list", reportService.getReportsByParam("id_event", "1"));
-            session.setAttribute("event", eventService.getEventById(1L));
+            session.setAttribute("event", eventService.getEventById(1L, "eventRu"));
             session.setAttribute("speakers", userService.getUsersByParam("id_role", "3"));
             session.setAttribute("moderid",  loginService.getUserId(login));
+            session.setAttribute("local", "RU");
             session.setAttribute("conftopic", topicService.getTopicsByParam("status", "confirmed"));
             session.setAttribute("registrstat", new RegistrationService().getRegistrationsCount());
-            session.setAttribute("role", userService.getUserRole(login));
-            session.setAttribute("eventlist", eventService.getAllEvent());
-            session.setAttribute("newspeakertopics", topicService.getTopicsByParam("status", "newsp"));
+            session.setAttribute("eventlist", eventService.getAllEvent("eventRu"));
+            ResourceBundle bundle = ResourceBundle.getBundle("local", new Locale("ru", "RU"));
+            Localization.setLocalProp(session, bundle);session.setAttribute("newspeakertopics", topicService.getTopicsByParam("status", "newsp"));
             page = ConfigProperties.getInstance().getProperty(ConfigProperties.MODER_PAGE_PATH);
         } else if (loginService.checkLogin(login, pass) && loginService.checkRole(login, 3)) {
             HttpSession session = request.getSession();

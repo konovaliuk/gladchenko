@@ -163,7 +163,6 @@
                 <div>
                     <h5><c:out value="${msg}" /></h5>
                 </div>
-
                 <br>
                 <br>
                 <div align="center">

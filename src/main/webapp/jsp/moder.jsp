@@ -8,7 +8,7 @@
         <!--Import materialize.css-->
         <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
         <link type="text/css" rel="stylesheet" href="css/main.css"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Conference</title>
     </head>
     <body>
@@ -16,7 +16,7 @@
             <div class="nav-wrapper">
                 <a href="/conference" class="brand-logo center">Conference<i class="material-icons">event</i></a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="/conference/topics.jsp">All topics</a></li>
+                    <li><a href="/conference/topics.jsp">${varAllTopics}</a></li>
                 </ul>
             </div>
         </nav>
@@ -29,9 +29,9 @@
                             <div class="collapsible-header active"><h4><c:out value="${event.getTopic()}" /></h4></div>
                             <div class="collapsible-body">
                             <span>
-                            <h5>Place : <c:out value="${event.getPlace()}" /></h5>
-                            <h5>Date : <fmt:formatDate value="${event.getCalendar().getTime()}" type="date"/></h5>
-                            <h5>Time : <fmt:formatDate value="${event.getCalendar().getTime()}" type="time" timeStyle = "short"/></h5>
+                            <h5>${varPlace} : <c:out value="${event.getPlace()}" /></h5>
+                            <h5>${varDate} : <fmt:formatDate value="${event.getCalendar().getTime()}" type="date"/></h5>
+                            <h5>${varTime} : <fmt:formatDate value="${event.getCalendar().getTime()}" type="time" timeStyle = "short"/></h5>
                             </span></div>
                         </li>
                       </ul>
@@ -39,20 +39,20 @@
                 <div>
                     <ul class="collapsible popout" data-collapsible="accordion">
                         <li>
-                            <div class="collapsible-header"><i class="material-icons">autorenew</i>Change event</div>
+                            <div class="collapsible-header"><i class="material-icons">autorenew</i>${varChangeEvent}</div>
                             <div class="collapsible-body">
                             <span>
                                 <div>
                                     <form name="loginForm" method="POST" action="controller">
                                         <input type="hidden" name="command" value="eventchange"/>
                                         <select name="idevent" required>
-                                            <option value="" disabled selected>Choose event</option>
+                                            <option value="" disabled selected>${varChooseEvent}</option>
                                             <c:forEach items="${eventlist}" var="el" >
                                                 <option value="${el.getId()}"><c:out value="${el.getTopic()}" /></option>
                                             </c:forEach>
                                         </select><br>
                                         <br>
-                                        <button class="btn waves-effect waves-light" type="submit" name="action">Change
+                                        <button class="btn waves-effect waves-light" type="submit" name="action">${varChangeEventBtn}
                                             <i class="material-icons right">content_paste</i>
                                         </button>
                                     </form>
@@ -236,6 +236,24 @@
                         </div>
                     </li>
                     </ul>
+                </div>
+                <br>
+                <div align="center">
+                    <form name="loginForm" method="POST" action="controller">
+                        <input type="hidden" name="command" value="changelang"/>
+                        <input class="with-gap" name="lang" type="radio" id="1" value="EN" checked/>
+                        <label for="1">English</label> |
+                        <input class="with-gap" name="lang" type="radio" id="2" value="DE" checked/>
+                        <label for="2">Deutsch</label> |
+                        <input class="with-gap" name="lang" type="radio" id="3" value="RU" checked/>
+                        <label for="3">Русский</label>
+                        <br>
+                        <br>
+                        <br>
+                        <button class="btn waves-effect waves-light" type="submit" name="action">${varChangeLangBtn}
+                            <i class="material-icons left">autorenew</i>
+                        </button>
+                    </form>
                 </div>
             </div>
             <div class="col s4 offset-s1">

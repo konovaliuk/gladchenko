@@ -41,6 +41,23 @@ public class Localization {
             session.setAttribute("varConfirmTopicBtn", encoding(bundle.getString("CONFIRM_TOPIC_BTN")));
             session.setAttribute("varAllTopics", encoding(bundle.getString("ALL_TOPICS")));
         }
+        if (role == 2) {
+            session.setAttribute("varEditPlaceDate", encoding(bundle.getString("EDIT_PLACE_DATE")));
+            session.setAttribute("varPlace", encoding(bundle.getString("PLACE")));
+            session.setAttribute("varDate", encoding(bundle.getString("DATE")));
+            session.setAttribute("varTime", encoding(bundle.getString("TIME")));
+            session.setAttribute("varEditPlaceDateBtn", encoding(bundle.getString("EDIT_PLACE_DATE_BTN")));
+            session.setAttribute("varEditReport", encoding(bundle.getString("EDIT_REPORT")));
+            session.setAttribute("varChooseSpeaker", encoding(bundle.getString("CHOOSE_SPEAKER")));
+            session.setAttribute("varEditReportBtn", encoding(bundle.getString("EDIT_REPORT_BTN")));
+            session.setAttribute("varRegistrations", encoding(bundle.getString("REGISTRATIONS")));
+            session.setAttribute("varRegistrationStatistic", encoding(bundle.getString("REGISTRATIONS_STATISTIC")));
+            session.setAttribute("varVisitors", encoding(bundle.getString("VISITORS")));
+            session.setAttribute("varSendEmails", encoding(bundle.getString("SEND_EMAILS")));
+            session.setAttribute("varText", encoding(bundle.getString("TEXT")));
+            session.setAttribute("varSendEmailsBtn", encoding(bundle.getString("SEND_EMAILS_BTN")));
+            session.setAttribute("varAllTopics", encoding(bundle.getString("ALL_TOPICS")));
+        }
     }
 
     public static String encoding(String value) throws UnsupportedEncodingException {

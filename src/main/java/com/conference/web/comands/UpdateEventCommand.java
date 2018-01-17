@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Locale;
@@ -28,8 +29,17 @@ public class UpdateEventCommand implements ICommand {
         event.setPlace(request.getParameter("place"));
         event.setCalendar(dateTimeToCalendar(request.getParameter("date"),
                                             request.getParameter("time")));
-        eventService.updateEvent(event);
         HttpSession session = request.getSession(true);
+        String language;
+        String lang = (String) session.getAttribute("local");
+        if (lang.equalsIgnoreCase("RU")) {
+            language = "eventRu";
+        } else if (lang.equalsIgnoreCase("DE")) {
+            language = "eventDe";
+        } else {
+            language = "eventEn";
+        }
+        eventService.updateEvent(event, language);
         session.setAttribute("event", event);
         page = ConfigProperties.getInstance().getProperty(ConfigProperties.MODER_PAGE_PATH);
         return page;

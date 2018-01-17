@@ -53,6 +53,8 @@ public class ChangeLanguageCommand implements ICommand {
             page = ConfigProperties.getInstance().getProperty(ConfigProperties.USER_PAGE_PATH);
         } else if (role == 3) {
             page = ConfigProperties.getInstance().getProperty(ConfigProperties.SPEAKER_PAGE_PATH);
+        } else if (role == 2) {
+            page = ConfigProperties.getInstance().getProperty(ConfigProperties.MODER_PAGE_PATH);
         } else {
             page = ConfigProperties.getInstance().getProperty(ConfigProperties.ERROR_PAGE_PATH);
         }
