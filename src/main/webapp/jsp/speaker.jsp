@@ -5,10 +5,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <html>
     <head>
-        <!--Import Google Icon Font-->
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <!--Import materialize.css-->
         <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+        <link type="text/css" rel="stylesheet" href="css/main.css"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Conference</title>
     </head>
@@ -17,7 +16,7 @@
             <div class="nav-wrapper">
                 <a href="/conference" class="brand-logo center">Conference<i class="material-icons">event</i></a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="/conference/topics.jsp">All topics</a></li>
+                    <li><a href="/conference/topics.jsp">${varAllTopics}</a></li>
                 </ul>
             </div>
         </nav>
@@ -25,19 +24,30 @@
         <div class="row">
             <div class="col s5 offset-s1">
                 <div>
-                    <h5>All reports:</h5>
+                    <h5>${varAllReports}</h5>
                     <ul class="collection">
                         <c:forEach items="${list}" var="i" >
                             <li class="collection-item avatar">
                                 <i class="material-icons circle">event_available</i>
                                 <span class="title"><c:out value="${i.getTopic()}" /></span>
-                                <p>Place: <c:out value="${i.getPlace()}" /><br>
+                                <p>${varReportLocation} <c:out value="${i.getPlace()}" /><br>
                                     <fmt:formatDate value="${i.getCalendar().getTime()}" type="both" timeStyle = "short"/>
                                 </p>
                                 <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
                             </li>
                         </c:forEach>
                     </ul>
+                </div>
+                <br>
+                <br>
+                 <div align="center">
+                    <form name="loginForm" method="POST" action="controller">
+                        <input type="hidden" name="command" value="logout"/>
+                        <br>
+                        <button class="btn waves-effect waves-light" type="submit" name="action">${varLogoutBtn}
+                            <i class="material-icons left">exit_to_app</i>
+                        </button>
+                    </form>
                 </div>
             </div>
             <div class="col s4 offset-s1">
@@ -47,9 +57,9 @@
                             <div class="collapsible-header active"><h4><c:out value="${event.getTopic()}" /></h4></div>
                             <div class="collapsible-body">
                             <span>
-                            <h5>Place : <c:out value="${event.getPlace()}" /></h5>
-                            <h5>Date : <fmt:formatDate value="${event.getCalendar().getTime()}" type="date"/></h5>
-                            <h5>Time : <fmt:formatDate value="${event.getCalendar().getTime()}" type="time" timeStyle = "short"/></h5>
+                            <h5><i class="material-icons">location_on</i> <c:out value="${event.getPlace()}" /></h5>
+                            <h5><i class="material-icons">date_range</i> <fmt:formatDate value="${event.getCalendar().getTime()}" type="date"/></h5>
+                            <h5><i class="material-icons">timer</i> <fmt:formatDate value="${event.getCalendar().getTime()}" type="time" timeStyle = "short"/></h5>
                             </span></div>
                         </li>
                       </ul>
@@ -153,12 +163,23 @@
                 <div>
                     <h5><c:out value="${msg}" /></h5>
                 </div>
+
+                <br>
+                <br>
                 <div align="center">
                     <form name="loginForm" method="POST" action="controller">
-                        <input type="hidden" name="command" value="logout"/>
+                        <input type="hidden" name="command" value="changelang"/>
+                        <input class="with-gap" name="lang" type="radio" id="1" value="EN" checked/>
+                        <label for="1">English</label> |
+                        <input class="with-gap" name="lang" type="radio" id="2" value="DE" checked/>
+                        <label for="2">Deutsch</label> |
+                        <input class="with-gap" name="lang" type="radio" id="3" value="RU" checked/>
+                        <label for="3">Русский</label>
                         <br>
-                        <button class="btn waves-effect waves-light" type="submit" name="action">Logout
-                            <i class="material-icons left">exit_to_app</i>
+                        <br>
+                        <br>
+                        <button class="btn waves-effect waves-light" type="submit" name="action">${varchangelangbtn}
+                            <i class="material-icons left">autorenew</i>
                         </button>
                     </form>
                 </div>

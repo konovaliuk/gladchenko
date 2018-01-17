@@ -22,6 +22,8 @@ public class ChangeLanguageCommand implements ICommand {
         String lang = request.getParameter("lang");
         EventService eventService = new EventService();
         HttpSession session = request.getSession();
+        long role = (long) session.getAttribute("role");
+        String page;
 
         if (lang.equalsIgnoreCase("DE")) {
             session.setAttribute("local", "DE");
@@ -46,6 +48,15 @@ public class ChangeLanguageCommand implements ICommand {
             session.setAttribute("event", eventService.getEventById(1L, "eventEn"));
             session.setAttribute("eventlist", eventService.getAllEvent("eventEn"));
         }
-        return ConfigProperties.getInstance().getProperty(ConfigProperties.USER_PAGE_PATH);
+
+        if (role == 4) {
+            page = ConfigProperties.getInstance().getProperty(ConfigProperties.USER_PAGE_PATH);
+        } else if (role == 3) {
+            page = ConfigProperties.getInstance().getProperty(ConfigProperties.SPEAKER_PAGE_PATH);
+        } else {
+            page = ConfigProperties.getInstance().getProperty(ConfigProperties.ERROR_PAGE_PATH);
+        }
+
+        return page;
     }
 }

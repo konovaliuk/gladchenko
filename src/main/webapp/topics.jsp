@@ -10,10 +10,9 @@
 %>
 <html>
     <head>
-        <!--Import Google Icon Font-->
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <!--Import materialize.css-->
         <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+        <link type="text/css" rel="stylesheet" href="css/main.css"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Conference</title>
     </head>
@@ -26,14 +25,14 @@
             <div class="nav-wrapper">
                 <a href="/conference" class="brand-logo center">Conference<i class="material-icons">event</i></a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="#">All topics</a></li>
+                    <li><a href="#">${varAllTopics}</a></li>
                 </ul>
             </div>
         </nav>
         <br>
         <div class="row">
             <div class="col s5 offset-s1">
-                <h5>All topics:</h5>
+                <h5>${varAllTopics}:</h5>
                 <c:if test="${empty pageStart or pageStart < 0}">
                        <c:set var="pageStart" value="0"/>
                 </c:if>

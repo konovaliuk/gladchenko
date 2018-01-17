@@ -5,11 +5,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
     <head>
-        <!--Import Google Icon Font-->
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <!--Import materialize.css-->
         <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link type="text/css" rel="stylesheet" href="css/main.css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Conference</title>
     </head>
     <body>
@@ -17,7 +16,6 @@
             <div class="nav-wrapper">
                 <a href="/conference" class="brand-logo center">Conference<i class="material-icons">event</i></a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a id="target">All Events</a></li>
                     <li><a href="#">Account</a></li>
                 </ul>
             </div>
@@ -26,14 +24,14 @@
         <div class="row">
             <div class="col s5 offset-s1">
                 <div>
-                    <h5><c:out value="${allreportslocalvar}" /></h5>
+                    <h5><c:out value="${varAllReports}" /></h5>
                     <br>
                     <ul class="collection">
                         <c:forEach items="${list}" var="i" >
                             <li class="collection-item avatar">
                                 <i class="material-icons circle">event_available</i>
                                 <span class="title"><c:out value="${i.getTopic()}" /></span>
-                                <p>${varreportlocation} <c:out value="${i.getPlace()}" /><br>
+                                <p>${varReportLocation} <c:out value="${i.getPlace()}" /><br>
                                     <fmt:formatDate value="${i.getCalendar().getTime()}" type="time" timeStyle = "short"/>
                                 </p>
                                 <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
@@ -114,7 +112,7 @@
                             <form name="loginForm" method="POST" action="controller">
                                 <input type="hidden" name="command" value="logout"/>
                                 <br>
-                                <button class="btn waves-effect waves-light" type="submit" name="action">${varlogoutbtn}
+                                <button class="btn waves-effect waves-light" type="submit" name="action">${varLogoutBtn}
                                     <i class="material-icons left">exit_to_app</i>
                                 </button>
                             </form>

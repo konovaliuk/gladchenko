@@ -50,25 +50,28 @@ public class LoginCommand implements ICommand {
             session.setAttribute("newspeakertopics", topicService.getTopicsByParam("status", "newsp"));
             page = ConfigProperties.getInstance().getProperty(ConfigProperties.MODER_PAGE_PATH);
         } else if (loginService.checkLogin(login, pass) && loginService.checkRole(login, 3)) {
-            HttpSession session = request.getSession(true);
-            session.setAttribute("list", reportService.getReportsByParam("id_event", "1"));
-            session.setAttribute("event", eventService.getEventById(1L));
-            session.setAttribute("salary", new SalaryService().getSalary(loginService.getUserId(login)));
-            session.setAttribute("userid",  loginService.getUserId(login));
+            HttpSession session = request.getSession();
             session.setAttribute("role", userService.getUserRole(login));
-            session.setAttribute("eventlist", eventService.getAllEvent());
+            session.setAttribute("list", reportService.getReportsByParam("id_event", "1"));
+            session.setAttribute("event", eventService.getEventById(1L, "eventRu"));
+            session.setAttribute("salary", new SalaryService().getSalary(loginService.getUserId(login)));
+            session.setAttribute("local", "RU");
+            ResourceBundle bundle = ResourceBundle.getBundle("local", new Locale("ru", "RU"));
+            Localization.setLocalProp(session, bundle);
+            session.setAttribute("userid",  loginService.getUserId(login));
+            session.setAttribute("eventlist", eventService.getAllEvent("eventRu"));
             session.setAttribute("newtopic", topicService.getNewTopicsByParam("id_speaker", String.valueOf(loginService.getUserId(login))));
             session.setAttribute("confmodtopic", topicService.getConfModerTopicsByParam("id_speaker", String.valueOf(loginService.getUserId(login))));
             page = ConfigProperties.getInstance().getProperty(ConfigProperties.SPEAKER_PAGE_PATH);
         } else if (loginService.checkLogin(login, pass)) {
             HttpSession session = request.getSession();
+            session.setAttribute("role", userService.getUserRole(login));
             session.setAttribute("event", eventService.getEventById(1L, "eventRu"));
             session.setAttribute("local", "RU");
             ResourceBundle bundle = ResourceBundle.getBundle("local", new Locale("ru", "RU"));
             Localization.setLocalProp(session, bundle);
             session.setAttribute("userid",  loginService.getUserId(login));
             session.setAttribute("list", reportService.getReportsByParam("id_event", "1"));
-            session.setAttribute("role", userService.getUserRole(login));
             session.setAttribute("eventlist", eventService.getAllEvent("eventRu"));
             page = ConfigProperties.getInstance().getProperty(ConfigProperties.USER_PAGE_PATH);
         } else {
