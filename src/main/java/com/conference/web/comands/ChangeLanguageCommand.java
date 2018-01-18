@@ -2,6 +2,7 @@ package com.conference.web.comands;
 
 import com.conference.persistence.dao.PersistException;
 import com.conference.service.EventService;
+import com.conference.service.ReportService;
 import com.conference.web.Localization;
 import com.conference.web.properties.ConfigProperties;
 
@@ -20,6 +21,7 @@ public class ChangeLanguageCommand implements ICommand {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, PersistException {
         String lang = request.getParameter("lang");
+        ReportService reportService = new ReportService();
         EventService eventService = new EventService();
         HttpSession session = request.getSession();
         long role = (long) session.getAttribute("role");
@@ -32,6 +34,7 @@ public class ChangeLanguageCommand implements ICommand {
             Localization.setLocalProp(session, bundle);
             session.setAttribute("event", eventService.getEventById(1L, "eventDe"));
             session.setAttribute("eventlist", eventService.getAllEvent("eventDe"));
+            session.setAttribute("list", reportService.getReportsByParam("id_event", "1"));
         }
         if (lang.equalsIgnoreCase("RU")) {
             session.setAttribute("local", "RU");
@@ -40,6 +43,7 @@ public class ChangeLanguageCommand implements ICommand {
             Localization.setLocalProp(session, bundle);
             session.setAttribute("event", eventService.getEventById(1L, "eventRu"));
             session.setAttribute("eventlist", eventService.getAllEvent("eventRu"));
+            session.setAttribute("list", reportService.getReportsByParam("id_event", "1"));
         }
         if (lang.equalsIgnoreCase("EN")) {
             session.setAttribute("local", "EN");
@@ -47,6 +51,7 @@ public class ChangeLanguageCommand implements ICommand {
             Localization.setLocalProp(session, bundle);
             session.setAttribute("event", eventService.getEventById(1L, "eventEn"));
             session.setAttribute("eventlist", eventService.getAllEvent("eventEn"));
+            session.setAttribute("list", reportService.getReportsByParam("id_event", "1"));
         }
 
         if (role == 4) {

@@ -1,9 +1,6 @@
 package com.conference.web;
 
 import javax.servlet.http.HttpSession;
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.util.ResourceBundle;
 
@@ -11,6 +8,10 @@ import java.util.ResourceBundle;
  * Created by gleb on 10.01.18.
  */
 public class Localization {
+    public static String encoding(String value) throws UnsupportedEncodingException {
+        return new String(value.getBytes("ISO-8859-1"), "UTF-8");
+    }
+
     public static void setLocalProp(HttpSession session, ResourceBundle bundle) throws UnsupportedEncodingException {
         long role = (long) session.getAttribute("role");
         session.setAttribute("varAllReports", encoding(bundle.getString("ALL_REPORTS")));
@@ -67,9 +68,5 @@ public class Localization {
             session.setAttribute("varSendEmailsBtn", encoding(bundle.getString("SEND_EMAILS_BTN")));
             session.setAttribute("varAllTopics", encoding(bundle.getString("ALL_TOPICS")));
         }
-    }
-
-    public static String encoding(String value) throws UnsupportedEncodingException {
-        return new String(value.getBytes("ISO-8859-1"), "UTF-8");
     }
 }
