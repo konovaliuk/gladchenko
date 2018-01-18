@@ -61,7 +61,7 @@
                             </div>
                         </li>
                         <li>
-                        <div class="collapsible-header"><i class="material-icons">edit_location</i>Edit place & date</div>
+                        <div class="collapsible-header"><i class="material-icons">edit_location</i>${varEditPlaceDate}</div>
                         <div class="collapsible-body">
                         <span>
                         <div>
@@ -70,19 +70,19 @@
                                 <input type="hidden" name="id" value="${event.getId()}"/>
                                 <input type="hidden" name="topic" value="${event.getTopic()}"/>
                                 <div class="input-field">
-                                    <label for="place">Place</label>
+                                    <label for="place">${varPlace}</label>
                                     <input id="place" type="text" class="validate" name="place" value="${event.getPlace()}" required>
                                 </div>
                                 <div class="input-field">
-                                    <label for="date">Date</label>
+                                    <label for="date">${varDate}</label>
                                     <input id="date" type="text" class="datepicker" name="date" required>
                                 </div>
                                 <div class="input-field">
-                                    <label for="time">Time</label>
+                                    <label for="time">${varTime}</label>
                                     <input id="time" type="text" class="timepicker" name="time" required>
                                 </div>
                                 <br>
-                                <button class="btn waves-effect waves-light" type="submit" name="action">Update
+                                <button class="btn waves-effect waves-light" type="submit" name="action">${varEditPlaceDateBtn}
                                     <i class="material-icons left">update</i>
                                 </button>
                             </form>
@@ -91,7 +91,7 @@
                         </div>
                         </li>
                         <li>
-                        <div class="collapsible-header"><i class="material-icons">edit</i>Edit report</div>
+                        <div class="collapsible-header"><i class="material-icons">edit</i>${varEditReport}</div>
                         <div class="collapsible-body">
                         <span>
                         <div>
@@ -99,34 +99,34 @@
                                 <input type="hidden" name="command" value="updatereport"/>
                                 <input type="hidden" name="idevent" value="${event.getId()}"/>
                                 <select name="idreport" required>
-                                    <option value="" disabled selected>Choose report</option>
+                                    <option value="" disabled selected>${varChooseReport}</option>
                                     <c:forEach items="${list}" var="rp" >
                                         <option value="${rp.getId()}"><c:out value="${rp.getTopic()}" /></option>
                                     </c:forEach>
                                 </select>
                                 <div class="input-field">
-                                    <label for="topic">Topic</label>
+                                    <label for="topic">${varTopic}</label>
                                     <input id="topic" type="text" class="validate" name="topicreport" value="" required>
                                 </div>
                                 <div class="input-field">
-                                    <label for="place">Place</label>
+                                    <label for="place">${varPlace}</label>
                                     <input id="place" type="text" class="validate" name="placereport" value="" required>
                                 </div>
                                 <div class="input-field">
-                                    <label for="date">Date</label>
+                                    <label for="date">${varDate}</label>
                                     <input id="date" type="text" class="datepicker" name="datereport" required>
                                 </div>
                                 <div class="input-field">
-                                    <label for="time">Time</label>
+                                    <label for="time">${varTime}</label>
                                     <input id="time" type="text" class="timepicker" name="timereport" required>
                                 </div>
                                 <select name="idspeaker" required>
-                                    <option value="" disabled selected>Choose Speaker</option>
+                                    <option value="" disabled selected>${varChooseSpeaker}</option>
                                     <c:forEach items="${speakers}" var="sp" >
                                         <option value="${sp.getId()}"><c:out value="${sp.getLastName()}" /></option>
                                     </c:forEach>
                                 </select>
-                                <button class="btn waves-effect waves-light" type="submit" name="action">Update
+                                <button class="btn waves-effect waves-light" type="submit" name="action">${varEditReportBtn}
                                     <i class="material-icons left">update</i>
                                 </button>
                             </form>
@@ -136,24 +136,24 @@
                         </div>
                         </li>
                         <li>
-                        <div class="collapsible-header"><i class="material-icons">message</i>Propose topic for speaker</div>
+                        <div class="collapsible-header"><i class="material-icons">message</i>${varProposeTopic}</div>
                         <div class="collapsible-body">
                         <span>
                             <div>
                                 <form name="editEventForm" method="POST" action="controller">
                                     <input type="hidden" name="command" value="proptopicforspeaker"/>
                                     <div class="input-field">
-                                        <label for="topicfs">Topic</label><br>
+                                        <label for="topicfs">${varTopic}</label><br>
                                         <input id="topicfs" type="text" class="validate" name="topicforprop" required>
                                     </div>
                                     <select name="idspeaker" required>
-                                        <option value="" disabled selected>Choose Speaker</option>
+                                        <option value="" disabled selected>${varChooseSpeaker}</option>
                                         <c:forEach items="${speakers}" var="s" >
                                             <option value="${s.getId()}"><c:out value="${s.getLastName()}" /></option>
                                         </c:forEach>
                                     </select>
                                     <br/>
-                                    <button class="btn waves-effect waves-light" type="submit" name="action">Send topic
+                                    <button class="btn waves-effect waves-light" type="submit" name="action">${varProposeTopicBtn}
                                     <i class="material-icons right">send</i>
                                     </button>
                                 </form>
@@ -163,7 +163,7 @@
                         </div>
                         </li>
                         <li>
-                        <div class="collapsible-header"><i class="material-icons">check</i>Confirmed topics</div>
+                        <div class="collapsible-header"><i class="material-icons">check</i>${varConfirmedTopics}</div>
                         <div class="collapsible-body">
                         <span>
                             <div>
@@ -172,7 +172,7 @@
                                         <li><c:out value="${ct.getTopic()}" /> - Speaker: <c:out value="${ct.getIdSpeaker()}" /></li>
                                     </c:forEach>
                                 </ul>
-                                <a class="btn dropdown-button" href="#!" data-activates="dropdown2">Confirmed topics<i class="material-icons right">arrow_drop_down</i></a>
+                                <a class="btn dropdown-button" href="#!" data-activates="dropdown2">${varConfirmedTopics}<i class="material-icons right">arrow_drop_down</i></a>
                             </div>
                             <div>
                                 <form name="editEventForm" method="POST" action="controller">
@@ -185,12 +185,12 @@
                                 </c:forEach>
                                 <br>
                                 <select name="topicstatus" required>
-                                    <option value="" disabled selected>Confirm or cancel</option>
-                                    <option value="confirm">Confirm</option>
-                                    <option value="cancel">Cancel</option>
+                                    <option value="" disabled selected>${varConfirmOrCancel}</option>
+                                    <option value="confirm">${varConfirm}</option>
+                                    <option value="cancel">${varCancel}</option>
                                 </select>
                                 <br>
-                                <button class="btn waves-effect waves-light" type="submit" name="action">Send
+                                <button class="btn waves-effect waves-light" type="submit" name="action">${varConfirmTopicBtn}
                                 <i class="material-icons left">send</i>
                                 </button>
                                 </form>
@@ -199,35 +199,35 @@
                         </div>
                         </li>
                         <li>
-                            <div class="collapsible-header"><i class="material-icons">subject</i>Registration statistic</div>
+                            <div class="collapsible-header"><i class="material-icons">subject</i>${varRegistrationStatistic}</div>
                             <div class="collapsible-body">
                             <span>
                                 <div>
-                                    <h5>Registrations: <c:out value="${registrstat}" /> <i class="material-icons">person</i></h5>
+                                    <h5>${varRegistrations}: <c:out value="${registrstat}" /> <i class="material-icons">person</i></h5>
                                     <br>
-                                    <h5>Visitors: 10    <i class="material-icons">person</i></h5>
+                                    <h5>${varVisitors}: 10    <i class="material-icons">person</i></h5>
                                 </div>
                             </span>
                             </div>
                         </li>
                         <li>
-                        <div class="collapsible-header"><i class="material-icons">email</i>Send Emails</div>
+                        <div class="collapsible-header"><i class="material-icons">email</i>${varSendEmails}</div>
                         <div class="collapsible-body">
                         <span>
                             <div>
                                 <form name="editEventForm" method="POST" action="controller">
                                     <input type="hidden" name="command" value="sendemail"/>
                                     <div class="input-field">
-                                        <label for="topic">Topic</label>
+                                        <label for="topic">${varTopic}</label>
                                         <input type="text" name="emailtopic" value="" required>
                                     </div>
                                     <div class="input-field">
-                                        <label for="textarea1">Text</label>
+                                        <label for="textarea1">${varText}</label>
                                         <textarea id="textarea1" class="materialize-textarea" name="emailtext"></textarea>
                                     </div>
                                     <br/>
                                     <br/>
-                                    <button class="btn waves-effect waves-light" type="submit" name="action">Send Emails
+                                    <button class="btn waves-effect waves-light" type="submit" name="action">${varSendEmailsBtn}
                                     <i class="material-icons right">send</i>
                                     </button>
                                 </form>
@@ -258,13 +258,13 @@
             </div>
             <div class="col s4 offset-s1">
                 <div>
-                    <h5>All reports:</h5>
+                    <h5>${varAllReports}</h5>
                     <ul class="collection">
                         <c:forEach items="${list}" var="i" >
                             <li class="collection-item avatar">
                                 <i class="material-icons circle">event_available</i>
                                 <span class="title"><c:out value="${i.getTopic()}" /></span>
-                                <p>Place: <c:out value="${i.getPlace()}" /><br>
+                                <p>${varPlace}: <c:out value="${i.getPlace()}" /><br>
                                     <fmt:formatDate value="${i.getCalendar().getTime()}" type="both" timeStyle = "short"/>
                                 </p>
                                 <a class="secondary-content"><i class="material-icons">grade</i></a>
@@ -280,7 +280,7 @@
                     <form name="loginForm" method="POST" action="controller">
                         <input type="hidden" name="command" value="logout"/>
                         <br>
-                        <button class="btn waves-effect waves-light" type="submit" name="action">Logout
+                        <button class="btn waves-effect waves-light" type="submit" name="action">${varLogoutBtn}
                             <i class="material-icons left">exit_to_app</i>
                         </button>
                     </form>

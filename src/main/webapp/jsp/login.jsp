@@ -30,10 +30,14 @@
             <div class="col s6 offset-s3" align="center">
                 <form name="loginForm" method="POST" action="controller">
                     <input type="hidden" name="command" value="login" required/>
-                    Login:<br/>
-                    <input type="text" name="login" value=""><br/>
-                    Password:<br/>
-                    <input type="password" name="password" value="" required>
+                    <div class="input-field">
+                        <label for="login">Login</label>
+                        <input id="login" type="text" class="validate" name="login" value="" required>
+                    </div>
+                    <div class="input-field">
+                       <label for="password">Password</label>
+                       <input id="password" type="password" class="validate" name="password" value="" required>
+                    </div>
                     <br/>
                     <br/>
                     <br/>

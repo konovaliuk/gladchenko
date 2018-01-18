@@ -48,8 +48,17 @@ public class Localization {
             session.setAttribute("varTime", encoding(bundle.getString("TIME")));
             session.setAttribute("varEditPlaceDateBtn", encoding(bundle.getString("EDIT_PLACE_DATE_BTN")));
             session.setAttribute("varEditReport", encoding(bundle.getString("EDIT_REPORT")));
+            session.setAttribute("varChooseReport", encoding(bundle.getString("CHOOSE_REPORT")));
             session.setAttribute("varChooseSpeaker", encoding(bundle.getString("CHOOSE_SPEAKER")));
+            session.setAttribute("varTopic", encoding(bundle.getString("TOPIC")));
             session.setAttribute("varEditReportBtn", encoding(bundle.getString("EDIT_REPORT_BTN")));
+            session.setAttribute("varProposeTopic", encoding(bundle.getString("PROPOSE_TOPIC")));
+            session.setAttribute("varProposeTopicBtn", encoding(bundle.getString("PROPOSE_TOPIC_BTN")));
+            session.setAttribute("varConfirmedTopics", encoding(bundle.getString("CONFIRMED_TOPICS")));
+            session.setAttribute("varConfirmOrCancel", encoding(bundle.getString("CONFIRM_OR_CANCEL")));
+            session.setAttribute("varConfirm", encoding(bundle.getString("CONFIRM")));
+            session.setAttribute("varCancel", encoding(bundle.getString("CANCEL")));
+            session.setAttribute("varConfirmTopicBtn", encoding(bundle.getString("CONFIRM_TOPIC_BTN")));
             session.setAttribute("varRegistrations", encoding(bundle.getString("REGISTRATIONS")));
             session.setAttribute("varRegistrationStatistic", encoding(bundle.getString("REGISTRATIONS_STATISTIC")));
             session.setAttribute("varVisitors", encoding(bundle.getString("VISITORS")));
