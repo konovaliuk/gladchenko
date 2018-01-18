@@ -19,20 +19,26 @@ public class ChangeEventCommand implements ICommand {
     public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, PersistException {
         String page = null;
         EventService eventService = new EventService();
+        ReportService reportService = new ReportService();
         long eventId = Long.parseLong(request.getParameter("idevent"));
         HttpSession session = request.getSession();
         session.setAttribute("idevent", eventId);
-        session.setAttribute("list", new ReportService().getReportsByParam("id_event", String.valueOf(eventId)));
         long role = (long) session.getAttribute("role");
         String language;
+        String reportLanguage;
         String lang = (String) session.getAttribute("local");
         if (lang.equalsIgnoreCase("RU")) {
             language = "eventRu";
+            reportLanguage = "reportRu";
         } else if (lang.equalsIgnoreCase("DE")) {
             language = "eventDe";
+            reportLanguage = "reportDe";
         } else {
             language = "eventEn";
+            reportLanguage = "reportEn";
         }
+
+        session.setAttribute("list", reportService.getReportsByParam("id_event", String.valueOf(eventId), reportLanguage));
 
         if (role == 4) {
             session.setAttribute("event", eventService.getEventById(eventId, language));

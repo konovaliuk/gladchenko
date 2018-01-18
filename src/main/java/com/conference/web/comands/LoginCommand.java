@@ -34,13 +34,13 @@ public class LoginCommand implements ICommand {
 
         if (loginService.checkLogin(login, pass) && loginService.checkRole(login, 1)) {
             HttpSession session = request.getSession(true);
-            session.setAttribute("list", reportService.getAllReport());
+            session.setAttribute("list", reportService.getAllReport("reportEn"));
             session.setAttribute("event", eventService.getEventById(1L));
             page = ConfigProperties.getInstance().getProperty(ConfigProperties.ADMIN_PAGE_PATH);
         } else if (loginService.checkLogin(login, pass) && loginService.checkRole(login, 2)) {
             HttpSession session = request.getSession();
             session.setAttribute("role", userService.getUserRole(login));
-            session.setAttribute("list", reportService.getReportsByParam("id_event", "1"));
+            session.setAttribute("list", reportService.getReportsByParam("id_event", "1", "reportRu"));
             session.setAttribute("event", eventService.getEventById(1L, "eventRu"));
             session.setAttribute("speakers", userService.getUsersByParam("id_role", "3"));
             session.setAttribute("moderid",  loginService.getUserId(login));
@@ -54,7 +54,7 @@ public class LoginCommand implements ICommand {
         } else if (loginService.checkLogin(login, pass) && loginService.checkRole(login, 3)) {
             HttpSession session = request.getSession();
             session.setAttribute("role", userService.getUserRole(login));
-            session.setAttribute("list", reportService.getReportsByParam("id_event", "1"));
+            session.setAttribute("list", reportService.getReportsByParam("id_event", "1", "reportRu"));
             session.setAttribute("event", eventService.getEventById(1L, "eventRu"));
             session.setAttribute("salary", new SalaryService().getSalary(loginService.getUserId(login)));
             session.setAttribute("local", "RU");
@@ -73,7 +73,7 @@ public class LoginCommand implements ICommand {
             ResourceBundle bundle = ResourceBundle.getBundle("local", new Locale("ru", "RU"));
             Localization.setLocalProp(session, bundle);
             session.setAttribute("userid",  loginService.getUserId(login));
-            session.setAttribute("list", reportService.getReportsByParam("id_event", "1"));
+            session.setAttribute("list", reportService.getReportsByParam("id_event", "1", "reportRu"));
             session.setAttribute("eventlist", eventService.getAllEvent("eventRu"));
             page = ConfigProperties.getInstance().getProperty(ConfigProperties.USER_PAGE_PATH);
         } else {

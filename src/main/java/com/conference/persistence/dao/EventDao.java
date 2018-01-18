@@ -196,7 +196,7 @@ public class EventDao extends AbstractDao<Event, Long> {
                 throw new PersistException("On update modify more then 1 record: " + count);
             }
             prepareStatementForUpdateSecond(statement2, object);
-            int count1 = statement.executeUpdate();
+            int count1 = statement2.executeUpdate();
             if (count1 != 1) {
                 throw new PersistException("On update modify more then 1 record: " + count);
             }

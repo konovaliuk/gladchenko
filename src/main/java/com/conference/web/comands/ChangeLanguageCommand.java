@@ -34,7 +34,7 @@ public class ChangeLanguageCommand implements ICommand {
             Localization.setLocalProp(session, bundle);
             session.setAttribute("event", eventService.getEventById(1L, "eventDe"));
             session.setAttribute("eventlist", eventService.getAllEvent("eventDe"));
-            session.setAttribute("list", reportService.getReportsByParam("id_event", "1"));
+            session.setAttribute("list", reportService.getReportsByParam("id_event", "1", "reportDe"));
         }
         if (lang.equalsIgnoreCase("RU")) {
             session.setAttribute("local", "RU");
@@ -43,7 +43,7 @@ public class ChangeLanguageCommand implements ICommand {
             Localization.setLocalProp(session, bundle);
             session.setAttribute("event", eventService.getEventById(1L, "eventRu"));
             session.setAttribute("eventlist", eventService.getAllEvent("eventRu"));
-            session.setAttribute("list", reportService.getReportsByParam("id_event", "1"));
+            session.setAttribute("list", reportService.getReportsByParam("id_event", "1", "reportRu"));
         }
         if (lang.equalsIgnoreCase("EN")) {
             session.setAttribute("local", "EN");
@@ -51,7 +51,7 @@ public class ChangeLanguageCommand implements ICommand {
             Localization.setLocalProp(session, bundle);
             session.setAttribute("event", eventService.getEventById(1L, "eventEn"));
             session.setAttribute("eventlist", eventService.getAllEvent("eventEn"));
-            session.setAttribute("list", reportService.getReportsByParam("id_event", "1"));
+            session.setAttribute("list", reportService.getReportsByParam("id_event", "1", "reportEn"));
         }
 
         if (role == 4) {

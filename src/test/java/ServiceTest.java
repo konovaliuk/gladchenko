@@ -136,20 +136,20 @@ public class ServiceTest {
         List<Report> reports = mock(ArrayList.class);
         Report report = mock(Report.class);
 
-        when(mock.getAllReport()).thenReturn(reports);
-        List<Report> result = mock.getAllReport();
+        when(mock.getAllReport("reportEn")).thenReturn(reports);
+        List<Report> result = mock.getAllReport("reportEn");
         assertEquals(reports, result);
 
-        mock.updateReport(report);
-        verify(mock).updateReport(report);
+        mock.updateReport(report, "reportEn");
+        verify(mock).updateReport(report, "reportEn");
 
         when(mock.getReportByPK(1L)).thenReturn(report);
         Report result1= mock.getReportByPK(1L);
         assertEquals(report, result1);
 
-        when(mock.getReportsByParam("", "")).thenReturn(reports);
-        List<Report> result2 = mock.getReportsByParam("", "");
-        doThrow(new PersistException()).when(mock).getReportsByParam("", "");
+        when(mock.getReportsByParam("", "", "reportEn")).thenReturn(reports);
+        List<Report> result2 = mock.getReportsByParam("", "", "reportEn");
+        doThrow(new PersistException()).when(mock).getReportsByParam("", "", "reportEn");
         assertEquals(reports, result);
 
     }

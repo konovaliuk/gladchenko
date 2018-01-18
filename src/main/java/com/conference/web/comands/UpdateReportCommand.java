@@ -23,6 +23,7 @@ public class UpdateReportCommand implements ICommand {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, PersistException {
         String page = null;
+        HttpSession session = request.getSession(true);
         ReportService reportService = new ReportService();
         Report report = reportService.getReportByPK(Long.valueOf(request.getParameter("idreport")));
         report.setTopic(request.getParameter("topicreport"));
@@ -32,9 +33,17 @@ public class UpdateReportCommand implements ICommand {
         long eventId = Long.parseLong(request.getParameter("idevent"));
         report.setIdEvent(eventId);
         report.setIdSpeaker(Long.parseLong(request.getParameter("idspeaker")));
-        reportService.updateReport(report);
-        HttpSession session = request.getSession(true);
-        session.setAttribute("list", reportService.getReportsByParam("id_event", String.valueOf(eventId)));
+        String language;
+        String lang = (String) session.getAttribute("local");
+        if (lang.equalsIgnoreCase("RU")) {
+            language = "reportRu";
+        } else if (lang.equalsIgnoreCase("DE")) {
+            language = "reportDe";
+        } else {
+            language = "reportEn";
+        }
+        reportService.updateReport(report, language);
+        session.setAttribute("list", reportService.getReportsByParam("id_event", String.valueOf(eventId), language));
         page = ConfigProperties.getInstance().getProperty(ConfigProperties.MODER_PAGE_PATH);
         return page;
     }
