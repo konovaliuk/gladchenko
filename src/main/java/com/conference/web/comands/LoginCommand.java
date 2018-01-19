@@ -33,9 +33,15 @@ public class LoginCommand implements ICommand {
         ReportService reportService = new ReportService();
 
         if (loginService.checkLogin(login, pass) && loginService.checkRole(login, 1)) {
-            HttpSession session = request.getSession(true);
-            session.setAttribute("list", reportService.getAllReport("reportEn"));
-            session.setAttribute("event", eventService.getEventById(1L));
+            HttpSession session = request.getSession();
+            session.setAttribute("role", userService.getUserRole(login));
+            session.setAttribute("event", eventService.getEventById(1L, "eventRu"));
+            session.setAttribute("local", "RU");
+            ResourceBundle bundle = ResourceBundle.getBundle("local", new Locale("ru", "RU"));
+            Localization.setLocalProp(session, bundle);
+            session.setAttribute("userid",  loginService.getUserId(login));
+            session.setAttribute("list", reportService.getReportsByParam("id_event", "1", "reportRu"));
+            session.setAttribute("eventlist", eventService.getAllEvent("eventRu"));
             page = ConfigProperties.getInstance().getProperty(ConfigProperties.ADMIN_PAGE_PATH);
         } else if (loginService.checkLogin(login, pass) && loginService.checkRole(login, 2)) {
             HttpSession session = request.getSession();

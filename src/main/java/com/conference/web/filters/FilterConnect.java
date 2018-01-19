@@ -40,7 +40,7 @@ public class FilterConnect implements Filter {
                 RequestDispatcher dispatcher = request.getRequestDispatcher(page);  //вызов страницы ответа на запрос
                 dispatcher.forward(request, response);
             }
-            if (role == 2 || role == 3) {
+            if (role == 2 || role == 3 || role == 1) {
                 filterChain.doFilter(servletRequest,servletResponse);
             } else if (role == 4) {
                 String page = ConfigProperties.getInstance().getProperty(ConfigProperties.USER_PAGE_PATH);

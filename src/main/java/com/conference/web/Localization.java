@@ -68,5 +68,16 @@ public class Localization {
             session.setAttribute("varSendEmailsBtn", encoding(bundle.getString("SEND_EMAILS_BTN")));
             session.setAttribute("varAllTopics", encoding(bundle.getString("ALL_TOPICS")));
         }
+        if (role == 1) {
+            session.setAttribute("varChooseReport", encoding(bundle.getString("CHOOSE_REPORT")));
+            session.setAttribute("varChangeReport", encoding(bundle.getString("CHANGE_REPORT")));
+            session.setAttribute("varRegistrationBtn", encoding(bundle.getString("REGISTRATION_BTN")));
+            session.setAttribute("varLogout", encoding(bundle.getString("LOGOUT")));
+            session.setAttribute("varAllTopics", encoding(bundle.getString("ALL_TOPICS")));
+            session.setAttribute("varTopic", encoding(bundle.getString("TOPIC")));
+            session.setAttribute("varPlace", encoding(bundle.getString("PLACE")));
+            session.setAttribute("varDate", encoding(bundle.getString("DATE")));
+            session.setAttribute("varTime", encoding(bundle.getString("TIME")));
+        }
     }
 }

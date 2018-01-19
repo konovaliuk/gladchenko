@@ -50,6 +50,7 @@ public class ChangeEventCommand implements ICommand {
             session.setAttribute("event", eventService.getEventById(eventId, language));
             page = ConfigProperties.getInstance().getProperty(ConfigProperties.MODER_PAGE_PATH);
         } else if (role == 1) {
+            session.setAttribute("event", eventService.getEventById(eventId, language));
             page = ConfigProperties.getInstance().getProperty(ConfigProperties.ADMIN_PAGE_PATH);
         }
         return page;
