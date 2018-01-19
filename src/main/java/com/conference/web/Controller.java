@@ -45,7 +45,7 @@ public class Controller extends HttpServlet {
             page = command.execute(request,response);                       //передача параметров классу-обработчику конкретной команды
         } catch (Exception e) {
             LOG.error("Exception: ", e);
-            request.setAttribute("errormessage", MessageProperties.getInstance().getProperty(MessageProperties.SERVLET_EXCEPTION_ERROR_MESSAGE));//генерация сообщения об ошибке
+            request.setAttribute("errormessage", MessageProperties.getInstance(Locale.getDefault()).getProperty(MessageProperties.SERVLET_EXCEPTION_ERROR_MESSAGE));//генерация сообщения об ошибке
             page = ConfigProperties.getInstance().getProperty(ConfigProperties.ERROR_PAGE_PATH);          //вызов JSP-страницы с сообщением об ошибке
         }
         RequestDispatcher dispatcher = request.getRequestDispatcher(page);  //вызов страницы ответа на запрос

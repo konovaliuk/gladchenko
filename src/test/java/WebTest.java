@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
+import java.util.Locale;
 
 import static org.mockito.Mockito.*;
 import static org.junit.Assert.*;
@@ -33,7 +34,7 @@ public class WebTest {
 
     @Test
     public void testMessagePropertiesGetInstance() {
-        MessageProperties messageProperties = MessageProperties.getInstance();
+        MessageProperties messageProperties = MessageProperties.getInstance(Locale.GERMAN);
         Assert.assertNotNull(messageProperties);
     }
 

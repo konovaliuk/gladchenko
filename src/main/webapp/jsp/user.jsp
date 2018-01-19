@@ -118,10 +118,12 @@
                     </span>
                     </div>
                     </li>
-               </div>
-               <br>
-               <br>
-                <h5><c:out value="${succesmsg}" /></h5>
+                </div>
+                <br>
+                <div align="center">
+                    <h5><c:out value="${succesmsg}" /></h5>
+                </div>
+                <br>
                 <div align="center">
                     <form name="loginForm" method="POST" action="controller">
                         <input type="hidden" name="command" value="changelang"/>

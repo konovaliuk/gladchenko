@@ -23,6 +23,15 @@ public class SalaryService {
         try (Connection connection = (Connection) factory.getContext()) {
             IGeneric dao = factory.getDao(connection, Salary.class);
             result = (Salary) dao.getByParam("id_user", String.valueOf(userId));
+            if (result.getRating() > 49) {
+                result.setBonus(500);
+            }
+            if (result.getRating() > 99) {
+                result.setBonus(1000);
+            }
+            if (result.getRating() > 149) {
+                result.setBonus(1500);
+            }
         } catch (Exception e) {
             LOG.error("Exception: ", e);
         }

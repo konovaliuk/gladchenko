@@ -24,8 +24,10 @@ public class UpdateReportCommand implements ICommand {
     public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, PersistException {
         String page = null;
         HttpSession session = request.getSession(true);
+        String lang = (String) session.getAttribute("local");
         ReportService reportService = new ReportService();
-        Report report = reportService.getReportByPK(Long.valueOf(request.getParameter("idreport")));
+        Report report = reportService.getReportByPK(Long.valueOf(request.getParameter("idreport")),
+                lang.equalsIgnoreCase("DE") ? "reportDe" : lang.equalsIgnoreCase("Ru") ? "reportRu" : "reportEn");
         report.setTopic(request.getParameter("topicreport"));
         report.setPlace(request.getParameter("placereport"));
         report.setCalendar(dateTimeToCalendar(request.getParameter("datereport"),
@@ -33,17 +35,10 @@ public class UpdateReportCommand implements ICommand {
         long eventId = Long.parseLong(request.getParameter("idevent"));
         report.setIdEvent(eventId);
         report.setIdSpeaker(Long.parseLong(request.getParameter("idspeaker")));
-        String language;
-        String lang = (String) session.getAttribute("local");
-        if (lang.equalsIgnoreCase("RU")) {
-            language = "reportRu";
-        } else if (lang.equalsIgnoreCase("DE")) {
-            language = "reportDe";
-        } else {
-            language = "reportEn";
-        }
-        reportService.updateReport(report, language);
-        session.setAttribute("list", reportService.getReportsByParam("id_event", String.valueOf(eventId), language));
+        reportService.updateReport(report, lang.equalsIgnoreCase("DE") ? "reportDe"
+                            : lang.equalsIgnoreCase("Ru") ? "reportRu" : "reportEn");
+        session.setAttribute("list", reportService.getReportsByParam("id_event", String.valueOf(eventId),
+                lang.equalsIgnoreCase("DE") ? "reportDe" : lang.equalsIgnoreCase("Ru") ? "reportRu" : "reportEn"));
         page = ConfigProperties.getInstance().getProperty(ConfigProperties.MODER_PAGE_PATH);
         return page;
     }

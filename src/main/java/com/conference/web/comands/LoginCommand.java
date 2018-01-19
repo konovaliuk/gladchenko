@@ -23,7 +23,7 @@ public class LoginCommand implements ICommand {
 
     public String execute(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, PersistException {
-        String page = null;
+        String page;
         String login = request.getParameter(PARAM_NAME_LOGIN);
         String pass = request.getParameter(PARAM_NAME_PASSWORD);
         LoginService loginService = new LoginService();
@@ -82,7 +82,7 @@ public class LoginCommand implements ICommand {
             session.setAttribute("eventlist", eventService.getAllEvent("eventRu"));
             page = ConfigProperties.getInstance().getProperty(ConfigProperties.USER_PAGE_PATH);
         } else {
-            request.setAttribute("errormessage", MessageProperties.getInstance().getProperty(MessageProperties.LOGIN_ERROR_MESSAGE));
+            request.setAttribute("errormessage", MessageProperties.getInstance(new Locale("ru", "RU")).getProperty(MessageProperties.LOGIN_ERROR_MESSAGE));
             page = ConfigProperties.getInstance().getProperty(ConfigProperties.ERROR_PAGE_PATH);
         }
         return page;

@@ -143,8 +143,8 @@ public class ServiceTest {
         mock.updateReport(report, "reportEn");
         verify(mock).updateReport(report, "reportEn");
 
-        when(mock.getReportByPK(1L)).thenReturn(report);
-        Report result1= mock.getReportByPK(1L);
+        when(mock.getReportByPK(1L, "reportEn")).thenReturn(report);
+        Report result1= mock.getReportByPK(1L, "reportEn");
         assertEquals(report, result1);
 
         when(mock.getReportsByParam("", "", "reportEn")).thenReturn(reports);

@@ -42,11 +42,12 @@ public class ReportService {
         }
     }
 
-    public Report getReportByPK(Long id) {
+    public Report getReportByPK(Long id, String lang) {
         Report result = null;
         try (Connection connection = (Connection) factory.getContext()) {
-            IGeneric reportDao = factory.getDao(connection, Report.class);
-            result = (Report) reportDao.getByPK(id);
+            ReportDao reportDao = (ReportDao) factory.getDao(connection, Report.class);
+            reportDao.setLanguage(lang);
+            result = reportDao.getByPK(id);
         } catch (Exception e) {
             LOG.error("Exception: ", e);
         }
