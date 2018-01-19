@@ -28,6 +28,13 @@ http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
         <welcome-file>jsp/login.jsp</welcome-file>
     </welcome-file-list>
 
+    <jsp-config>
+        <taglib>
+            <taglib-uri>myTLD</taglib-uri>
+            <taglib-location>custom.tld</taglib-location>
+        </taglib>
+    </jsp-config>
+
     <filter>
         <filter-name>FormEncodingSetterFilter</filter-name>
         <filter-class>com.conference.web.filters.FormEncodingSetterFilter</filter-class>

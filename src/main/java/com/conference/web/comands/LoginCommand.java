@@ -46,7 +46,6 @@ public class LoginCommand implements ICommand {
             session.setAttribute("moderid",  loginService.getUserId(login));
             session.setAttribute("local", "RU");
             session.setAttribute("conftopic", topicService.getTopicsByParam("status", "confirmed"));
-            session.setAttribute("registrstat", new RegistrationService().getRegistrationsCount());
             session.setAttribute("eventlist", eventService.getAllEvent("eventRu"));
             ResourceBundle bundle = ResourceBundle.getBundle("local", new Locale("ru", "RU"));
             Localization.setLocalProp(session, bundle);session.setAttribute("newspeakertopics", topicService.getTopicsByParam("status", "newsp"));
