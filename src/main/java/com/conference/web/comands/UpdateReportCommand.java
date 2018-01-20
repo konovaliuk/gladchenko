@@ -3,6 +3,7 @@ package com.conference.web.comands;
 import com.conference.persistence.dao.PersistException;
 import com.conference.persistence.entity.Report;
 import com.conference.service.ReportService;
+import com.conference.service.UserService;
 import com.conference.web.properties.ConfigProperties;
 
 import javax.servlet.ServletException;
@@ -22,7 +23,8 @@ public class UpdateReportCommand implements ICommand {
 
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, PersistException {
-        String page = null;
+        String page;
+        UserService userService = new UserService();
         HttpSession session = request.getSession(true);
         String lang = (String) session.getAttribute("local");
         ReportService reportService = new ReportService();
@@ -35,6 +37,7 @@ public class UpdateReportCommand implements ICommand {
         long eventId = Long.parseLong(request.getParameter("idevent"));
         report.setIdEvent(eventId);
         report.setIdSpeaker(Long.parseLong(request.getParameter("idspeaker")));
+        report.setSpeakerLastName(userService.getUserByPK(Long.parseLong(request.getParameter("idspeaker"))).getLastName());
         reportService.updateReport(report, lang.equalsIgnoreCase("DE") ? "reportDe"
                             : lang.equalsIgnoreCase("Ru") ? "reportRu" : "reportEn");
         session.setAttribute("list", reportService.getReportsByParam("id_event", String.valueOf(eventId),

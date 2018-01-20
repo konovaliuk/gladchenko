@@ -32,6 +32,7 @@
                                 <p>${varReportLocation} <c:out value="${i.getPlace()}" /><br>
                                     <fmt:formatDate value="${i.getCalendar().getTime()}" type="time" timeStyle = "short"/>
                                 </p>
+                                <p>${varSpeaker}: ${i.getSpeakerLastName()}</p>
                                 <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
                             </li>
                         </c:forEach>

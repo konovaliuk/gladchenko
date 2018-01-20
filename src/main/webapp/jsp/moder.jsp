@@ -267,6 +267,7 @@
                                 <p>${varPlace}: <c:out value="${i.getPlace()}" /><br>
                                     <fmt:formatDate value="${i.getCalendar().getTime()}" type="both" timeStyle = "short"/>
                                 </p>
+                                <p>${varSpeaker}: ${i.getSpeakerLastName()}</p>
                                 <a class="secondary-content"><i class="material-icons">grade</i></a>
                             </li>
                         </c:forEach>

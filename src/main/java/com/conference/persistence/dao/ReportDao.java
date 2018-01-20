@@ -37,7 +37,7 @@ public class ReportDao extends AbstractDao<Report, Long> {
 
     @Override
     public String getSelectQuery() {
-        return "select id, topic, place, e_date, e_time, id_speaker, id_event from report  join "+language+" on report.id = "+language+".report_id";
+        return "select id, topic, place, e_date, e_time, id_speaker, id_event, speaker_lname from report  join "+language+" on report.id = "+language+".report_id";
     }
 
     @Override
@@ -46,7 +46,7 @@ public class ReportDao extends AbstractDao<Report, Long> {
     }
 
     public String getCreateQuerySecond() {
-        return "insert into "+language+" (report_id, topic, place) values(last_insert_id(), ?, ?);";
+        return "insert into "+language+" (report_id, topic, place, speaker_lname) values(last_insert_id(), ?, ?, ?);";
     }
 
     @Override
@@ -55,7 +55,7 @@ public class ReportDao extends AbstractDao<Report, Long> {
     }
 
     public String getUpdateQuerySecond() {
-        return "update "+language+" set topic = ?, place = ? where report_id = ?;";
+        return "update "+language+" set topic = ?, place = ?, speaker_lname = ? where report_id = ?;";
     }
 
     @Override
@@ -76,6 +76,7 @@ public class ReportDao extends AbstractDao<Report, Long> {
                                                                 rs.getString("e_time")));
                 report.setIdSpeaker(rs.getLong("id_speaker"));
                 report.setIdEvent(rs.getLong("id_event"));
+                report.setSpeakerLastName(rs.getString("speaker_lname"));
                 result.add(report);
             }
         } catch (Exception e) {
@@ -102,6 +103,7 @@ public class ReportDao extends AbstractDao<Report, Long> {
         try {
             statement.setString(1, object.getTopic());
             statement.setString(2, object.getPlace());
+            statement.setString(3, object.getSpeakerLastName());
         } catch (Exception e) {
             LOG.error("Exception: ", e);
             throw new PersistException(e);
@@ -126,7 +128,8 @@ public class ReportDao extends AbstractDao<Report, Long> {
         try {
             statement.setString(1, object.getTopic());
             statement.setString(2, object.getPlace());
-            statement.setLong(3, object.getId());
+            statement.setString(3, object.getSpeakerLastName());
+            statement.setLong(4, object.getId());
         } catch (Exception e) {
             LOG.error("Exception: ", e);
             throw new PersistException(e);

@@ -21,6 +21,7 @@ public class Localization {
         session.setAttribute("varLogoutBtn", encoding(bundle.getString("LOGOUT_BTN")));
         session.setAttribute("varChangeLangBtn", encoding(bundle.getString("CHANGE_LANG_BTN")));
         session.setAttribute("varReportLocation", encoding(bundle.getString("REPORT_LOCATION")));
+        session.setAttribute("varSpeaker", encoding(bundle.getString("SPEAKER")));
         if (role == 4) {
             session.setAttribute("varChooseReport", encoding(bundle.getString("CHOOSE_REPORT")));
             session.setAttribute("varChangeReport", encoding(bundle.getString("CHANGE_REPORT")));

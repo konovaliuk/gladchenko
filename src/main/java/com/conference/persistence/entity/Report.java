@@ -16,6 +16,7 @@ public class Report implements Serializable, Identified<Long> {
     private Calendar calendar = new GregorianCalendar();
     private long idSpeaker;
     private long idEvent;
+    private String speakerLastName;
 
     @Override
     public Long getId() {
@@ -64,5 +65,13 @@ public class Report implements Serializable, Identified<Long> {
 
     public void setIdEvent(long idEvent) {
         this.idEvent = idEvent;
+    }
+
+    public String getSpeakerLastName() {
+        return speakerLastName;
+    }
+
+    public void setSpeakerLastName(String speakerLastName) {
+        this.speakerLastName = speakerLastName;
     }
 }

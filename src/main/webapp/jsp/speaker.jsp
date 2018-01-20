@@ -1,4 +1,3 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -33,6 +32,7 @@
                                 <p>${varReportLocation} <c:out value="${i.getPlace()}" /><br>
                                     <fmt:formatDate value="${i.getCalendar().getTime()}" type="both" timeStyle = "short"/>
                                 </p>
+                                <p>${varSpeaker}: ${i.getSpeakerLastName()}</p>
                                 <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
                             </li>
                         </c:forEach>

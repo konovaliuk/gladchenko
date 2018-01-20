@@ -24,6 +24,9 @@ public class UserService {
         try (Connection connection = (Connection) factory.getContext()) {
             IGeneric userDao = factory.getDao(connection, User.class);
             users = userDao.getAllByParam(param, value);
+            for (User user : users) {
+                user.setPassword("");
+            }
         } catch (Exception e) {
             LOG.error("Exception: ", e);
         }
@@ -40,5 +43,17 @@ public class UserService {
             LOG.error("Exception: ", e);
         }
         return result;
+    }
+
+    public User getUserByPK(long id) {
+        User user = null;
+        try (Connection connection = (Connection) factory.getContext()) {
+            IGeneric dao = factory.getDao(connection, User.class);
+            user = (User) dao.getByPK(id);
+            user.setPassword("");
+        } catch (Exception e) {
+            LOG.error("Exception: ", e);
+        }
+        return user;
     }
 }
