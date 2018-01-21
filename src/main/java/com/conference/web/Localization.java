@@ -48,6 +48,7 @@ public class Localization {
             session.setAttribute("varPlace", encoding(bundle.getString("PLACE")));
             session.setAttribute("varDate", encoding(bundle.getString("DATE")));
             session.setAttribute("varTime", encoding(bundle.getString("TIME")));
+            session.setAttribute("varNewTopics", encoding(bundle.getString("NEW_TOPICS")));
             session.setAttribute("varEditPlaceDateBtn", encoding(bundle.getString("EDIT_PLACE_DATE_BTN")));
             session.setAttribute("varEditReport", encoding(bundle.getString("EDIT_REPORT")));
             session.setAttribute("varChooseReport", encoding(bundle.getString("CHOOSE_REPORT")));

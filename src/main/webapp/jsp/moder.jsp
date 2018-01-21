@@ -21,6 +21,99 @@
             </div>
         </nav>
         <br>
+        <div>
+        <ul id="slide-out" class="side-nav">
+        <li><div class="user-view">
+        <div class="background">
+        <img src="images/image.jpg">
+        </div>
+        <a href="#!user"><img class="circle" src="images/no_image.jpg"></a>
+        <a href="#!name"><span class="white-text name">John Dou</span></a>
+        <a href="#!email"><span class="white-text email">johndou@gmail.com</span></a>
+        <a href="#!role"><span class="white-text role">Moderator</span></a>
+        </div></li>
+        <br>
+        <li><a href="/conference/topics.jsp"><i class="material-icons">border_all</i>${varAllTopics}</a></li>
+        <li>
+        <div>
+        	<ul class="collapsible" data-collapsible="accordion">
+        	<li>
+            <div class="collapsible-header"><i class="material-icons">mail_outline</i>${varNewTopics}</div>
+            <div class="collapsible-body">
+            <span>
+                <div align="center">
+                    <form name="editEventForm" method="POST" action="controller">
+                    <input type="hidden" name="command" value="confspeakertopic"/>
+                    <c:forEach items="${newspeakertopics}" var="nt" >
+                    <p>
+                      <input class="with-gap" name="idconftopic" type="radio" id="${nt.getId()}" value="${nt.getId()}" checked/>
+                      <label for="${nt.getId()}"><c:out value="${nt.getTopic()} ${varSpeaker}: ${nt.getIdSpeaker()}" /></label>
+                    </p>
+                    </c:forEach>
+                    <select name="topicstatus" required>
+                        <option value="" disabled selected>${varConfirmOrCancel}</option>
+                        <option value="confirm">${varConfirm}</option>
+                        <option value="cancel">${varCancel}</option>
+                    </select>
+                    <div align="center">
+                        <button class="btn waves-effect waves-light" type="submit" name="action">${varConfirmTopicBtn}
+                        <i class="material-icons left">send</i>
+                        </button>
+                    </div>
+                    </form>
+                </div>
+            </span>
+            </div>
+            </li>
+        	<li>
+        	<div class="collapsible-header"><i class="material-icons">subject</i>${varRegistrationStatistic}</div>
+        	<div class="collapsible-body">
+        	<span>
+        	<div align="center">
+        	    <h6>${varRegistrations}: <rs:RegistrationStatistic/> <i class="material-icons">person</i></h6>
+        	    <h6>${varVisitors}: 10    <i class="material-icons">person</i></h6>
+        	</div>
+        	</span>
+        	</div>
+        	</li>
+        	</ul>
+        </div>
+        </li>
+        <li><div class="divider"></div></li>
+        <li>
+        <div>
+            <ul class="collapsible" data-collapsible="accordion">
+            <li>
+            <div class="collapsible-header"><i class="material-icons">check_circle</i>${varConfirmedTopics}</div>
+            <div class="collapsible-body">
+            <span>
+            <div align="center">
+                <ul>
+                    <c:forEach items="${conftopic}" var="ct" >
+                        <li><c:out value="${ct.getTopic()}" /> - ${varSpeaker}: <c:out value="${ct.getIdSpeaker()}" /></li>
+                    </c:forEach>
+                </ul>
+            </div>
+            </span>
+            </div>
+            </li>
+            </ul>
+        </div>
+        </li>
+        <br>
+        <li>
+            <div align="center">
+                <form name="loginForm" method="POST" action="controller">
+                    <input type="hidden" name="command" value="logout"/>
+                    <br>
+                    <button class="btn waves-effect waves-light" type="submit" name="action">${varLogoutBtn}
+                        <i class="material-icons left">exit_to_app</i>
+                    </button>
+                </form>
+            </div>
+        </li>
+        </ul>
+        </div>
         <div class="row">
             <div class="col s4 offset-s2">
                 <div>
@@ -163,54 +256,6 @@
                         </div>
                         </li>
                         <li>
-                        <div class="collapsible-header"><i class="material-icons">check</i>${varConfirmedTopics}</div>
-                        <div class="collapsible-body">
-                        <span>
-                            <div>
-                                <ul id="dropdown2" class="dropdown-content">
-                                    <c:forEach items="${conftopic}" var="ct" >
-                                        <li><c:out value="${ct.getTopic()}" /> - Speaker: <c:out value="${ct.getIdSpeaker()}" /></li>
-                                    </c:forEach>
-                                </ul>
-                                <a class="btn dropdown-button" href="#!" data-activates="dropdown2">${varConfirmedTopics}<i class="material-icons right">arrow_drop_down</i></a>
-                            </div>
-                            <div>
-                                <form name="editEventForm" method="POST" action="controller">
-                                <input type="hidden" name="command" value="confspeakertopic"/>
-                                <c:forEach items="${newspeakertopics}" var="nt" >
-                                <p>
-                                  <input class="with-gap" name="idconftopic" type="radio" id="${nt.getId()}" value="${nt.getId()}" checked/>
-                                  <label for="${nt.getId()}"><c:out value="${nt.getTopic()}" /></label>
-                                </p>
-                                </c:forEach>
-                                <br>
-                                <select name="topicstatus" required>
-                                    <option value="" disabled selected>${varConfirmOrCancel}</option>
-                                    <option value="confirm">${varConfirm}</option>
-                                    <option value="cancel">${varCancel}</option>
-                                </select>
-                                <br>
-                                <button class="btn waves-effect waves-light" type="submit" name="action">${varConfirmTopicBtn}
-                                <i class="material-icons left">send</i>
-                                </button>
-                                </form>
-                            </div>
-                        </span>
-                        </div>
-                        </li>
-                        <li>
-                            <div class="collapsible-header"><i class="material-icons">subject</i>${varRegistrationStatistic}</div>
-                            <div class="collapsible-body">
-                            <span>
-                                <div>
-                                    <h5>${varRegistrations}: <rs:RegistrationStatistic/> <i class="material-icons">person</i></h5>
-                                    <br>
-                                    <h5>${varVisitors}: 10    <i class="material-icons">person</i></h5>
-                                </div>
-                            </span>
-                            </div>
-                        </li>
-                        <li>
                         <div class="collapsible-header"><i class="material-icons">email</i>${varSendEmails}</div>
                         <div class="collapsible-body">
                         <span>
@@ -255,6 +300,10 @@
                         </button>
                     </form>
                 </div>
+                <br>
+                <div align="center">
+                    <a href="#" data-activates="slide-out" class="button-collapse"><i class="medium material-icons">playlist_add_check</i></a>
+                </div>
             </div>
             <div class="col s4 offset-s1">
                 <div>
@@ -277,22 +326,8 @@
                 <div>
                     <h5><c:out value="${msg}" /></h5>
                 </div>
-                <div align="center">
-                    <form name="loginForm" method="POST" action="controller">
-                        <input type="hidden" name="command" value="logout"/>
-                        <br>
-                        <button class="btn waves-effect waves-light" type="submit" name="action">${varLogoutBtn}
-                            <i class="material-icons left">exit_to_app</i>
-                        </button>
-                    </form>
-                </div>
             </div>
-            <br>
-            <br>
         </div>
-        <br>
-        <br>
-        <br>
         <footer class="cyan darken-4">
             <div class="container">
                 <div class="row">
@@ -325,6 +360,7 @@
            $(document).ready(function() {
                $('select').material_select();
              });
+            $(".button-collapse").sideNav();
        </script>
     </body>
 </html>
