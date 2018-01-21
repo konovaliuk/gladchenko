@@ -12,14 +12,17 @@
         <title>Conference</title>
     </head>
     <body>
-        <nav class="cyan darken-4">
-            <div class="nav-wrapper">
-                <a href="/conference" class="brand-logo center">Conference<i class="material-icons">event</i></a>
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="/conference/topics.jsp">${varAllTopics}</a></li>
-                </ul>
-            </div>
-        </nav>
+        <header>
+            <nav class="cyan darken-4">
+                <div class="nav-wrapper">
+                    <a href="/conference" class="brand-logo center">Conference<i class="material-icons">event</i></a>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li><a href="/conference/topics.jsp">${varAllTopics}</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <main>
         <br>
         <div>
         <ul id="slide-out" class="side-nav">
@@ -328,6 +331,7 @@
                 </div>
             </div>
         </div>
+        </main>
         <footer class="cyan darken-4">
             <div class="container">
                 <div class="row">

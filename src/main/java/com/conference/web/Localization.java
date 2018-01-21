@@ -22,6 +22,9 @@ public class Localization {
         session.setAttribute("varChangeLangBtn", encoding(bundle.getString("CHANGE_LANG_BTN")));
         session.setAttribute("varReportLocation", encoding(bundle.getString("REPORT_LOCATION")));
         session.setAttribute("varSpeaker", encoding(bundle.getString("SPEAKER")));
+        session.setAttribute("varPlace", encoding(bundle.getString("PLACE")));
+        session.setAttribute("varDate", encoding(bundle.getString("DATE")));
+        session.setAttribute("varTime", encoding(bundle.getString("TIME")));
         if (role == 4) {
             session.setAttribute("varChooseReport", encoding(bundle.getString("CHOOSE_REPORT")));
             session.setAttribute("varChangeReport", encoding(bundle.getString("CHANGE_REPORT")));
@@ -45,9 +48,6 @@ public class Localization {
         }
         if (role == 2) {
             session.setAttribute("varEditPlaceDate", encoding(bundle.getString("EDIT_PLACE_DATE")));
-            session.setAttribute("varPlace", encoding(bundle.getString("PLACE")));
-            session.setAttribute("varDate", encoding(bundle.getString("DATE")));
-            session.setAttribute("varTime", encoding(bundle.getString("TIME")));
             session.setAttribute("varNewTopics", encoding(bundle.getString("NEW_TOPICS")));
             session.setAttribute("varEditPlaceDateBtn", encoding(bundle.getString("EDIT_PLACE_DATE_BTN")));
             session.setAttribute("varEditReport", encoding(bundle.getString("EDIT_REPORT")));
