@@ -267,7 +267,7 @@
                                     <input type="hidden" name="command" value="sendemail"/>
                                     <div class="input-field">
                                         <label for="topic">${varTopic}</label>
-                                        <input type="text" name="emailtopic" value="" required>
+                                        <input type="text" name="emailtopic" class="validate" value="" required>
                                     </div>
                                     <div class="input-field">
                                         <label for="textarea1">${varText}</label>
@@ -315,7 +315,7 @@
                         <c:forEach items="${list}" var="i" >
                             <li class="collection-item avatar">
                                 <i class="material-icons circle">event_available</i>
-                                <span class="title"><c:out value="${i.getTopic()}" /></span>
+                                <span class="title"><p class="flow-text"><c:out value="${i.getTopic()}" /></p></span>
                                 <p>${varPlace}: <c:out value="${i.getPlace()}" /><br>
                                     <fmt:formatDate value="${i.getCalendar().getTime()}" type="both" timeStyle = "short"/>
                                 </p>

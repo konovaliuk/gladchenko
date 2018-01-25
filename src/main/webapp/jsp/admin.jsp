@@ -154,7 +154,7 @@
                         <c:forEach items="${list}" var="i" >
                             <li class="collection-item avatar">
                                 <i class="material-icons circle">event_available</i>
-                                <span class="title"><c:out value="${i.getTopic()}" /></span>
+                                <span class="title"><p class="flow-text"><c:out value="${i.getTopic()}" /></p></span>
                                 <p>${varPlace}: <c:out value="${i.getPlace()}" /><br>
                                     <fmt:formatDate value="${i.getCalendar().getTime()}" type="both" timeStyle = "short"/>
                                 </p>

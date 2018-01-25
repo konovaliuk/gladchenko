@@ -29,7 +29,6 @@
             <ul id="slide-out" class="side-nav fixed">
             <li>
             <div class="user-view">
-                <h4><c:out value="${event.getTopic()}" /></h4>
                 <h5>${varPlace} : <c:out value="${event.getPlace()}" /></h5>
                 <h5>${varDate} : <fmt:formatDate value="${event.getCalendar().getTime()}" type="date"/></h5>
                 <h5>${varTime} : <fmt:formatDate value="${event.getCalendar().getTime()}" type="time" timeStyle = "short"/></h5>
@@ -107,49 +106,68 @@
             <li>
             <br>
             <div align="center">
-                <h6><b><c:out value="${succesmsg}" /></b></h6>
+                <c:out value="${succesmsg}" />
             </div>
             </li>
         </ul>
         </div>
 	    <div class="row">
             <div class="col s7 offset-s2">
-                <div>
-                    <h5>${varAllReports} </h5>
+                <div id="event" class="section scrollspy" align="center">
+                    <h4><c:out value="${event.getTopic()}" /></h4>
+                </div>
+                <br>
+                <h5>${varAllReports}</h5>
+                <div id="reports" class="section scrollspy">
                     <ul class="collection">
                         <c:forEach items="${list}" var="i" >
                             <li class="collection-item avatar">
                                 <i class="material-icons circle">event_available</i>
-                                <span class="title"><c:out value="${i.getTopic()}" /></span>
-                                <p>${varPlace}: <c:out value="${i.getPlace()}" /><br>
-                                    <fmt:formatDate value="${i.getCalendar().getTime()}" type="both" timeStyle = "short"/>
-                                </p>
+                                <span class="title"><p class="flow-text"><c:out value="${i.getTopic()}" /></p></span>
                                 <p>${varSpeaker}: ${i.getSpeakerLastName()}</p>
-                                <a id="menu" class="secondary-content"><i class="material-icons">grade</i></a>
-
+                                <p>${varPlace}: <c:out value="${i.getPlace()}" /><br>
+                                    <fmt:formatDate value="${i.getCalendar().getTime()}" type="time" timeStyle = "short"/>
+                                </p>
+                                <a class="secondary-content"><i class="material-icons">grade</i></a>
                             </li>
                         </c:forEach>
                     </ul>
                 </div>
-            <div>
-            <br>
-			<div align="center">
-                <form name="loginForm" method="POST" action="controller">
-                <input type="hidden" name="command" value="changelang"/>
-                <input class="with-gap" name="lang" type="radio" id="1" value="EN" checked/>
-                <label for="1">English</label> |
-                <input class="with-gap" name="lang" type="radio" id="2" value="DE" checked/>
-                <label for="2">Deutsch</label> |
-                <input class="with-gap" name="lang" type="radio" id="3" value="RU" checked/>
-                <label for="3">Русский</label>
-			</div>
-			<div align="center">
-			    <button class="btn waves-effect waves-light" type="submit" name="action">${varChangeLangBtn}
-                   <i class="material-icons left">autorenew</i>
-                </button>
-			</div>
-		    </form>
-		</div>
+                <div>
+                    <br>
+                    <div id="language" class="section scrollspy" align="center">
+                        <form name="loginForm" method="POST" action="controller">
+                        <input type="hidden" name="command" value="changelang"/>
+                        <input class="with-gap" name="lang" type="radio" id="1" value="EN" checked/>
+                        <label for="1">English</label> |
+                        <input class="with-gap" name="lang" type="radio" id="2" value="DE" checked/>
+                        <label for="2">Deutsch</label> |
+                        <input class="with-gap" name="lang" type="radio" id="3" value="RU" checked/>
+                        <label for="3">Русский</label>
+                        <div align="center">
+                        <br>
+                            <button class="btn waves-effect waves-light" type="submit" name="action">${varChangeLangBtn}
+                               <i class="material-icons left">autorenew</i>
+                            </button>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br>
+            <div class="col s2">
+                <div class="col hide-on-small-only m3 l2">
+                    <ul class="section table-of-contents">
+                    <li><a href="#event">Event</a></li>
+                    <li><a href="#reports">Reports</a></li>
+                    <li><a href="#language">Language</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
 	</main>
         <footer class="cyan darken-4">
             <div class="container">
@@ -176,6 +194,7 @@
                 </div>
             </div>
             <br>
+        </div>
         </footer>
         <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
         <script type="text/javascript" src="js/materialize.min.js"></script>
@@ -185,6 +204,9 @@
                $('select').material_select();
              });
              $(".button-collapse").sideNav();
+             $(document).ready(function(){
+                 $('.scrollspy').scrollSpy();
+               });
        </script>
     </body>
 </html>
